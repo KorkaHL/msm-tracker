@@ -21,6 +21,7 @@ COMMANDS = [
     ("now", "Что идёт сейчас"),
     ("soon", "Ближайшие события"),
     ("pred", "Прогноз по прошлым годам"),
+    ("roadmap", "В разработке: планы без дат"),
     ("shop", "Монстры: когда доступны"),
     ("event", "Найти событие: /event название"),
     ("settings", "Уведомления и часовой пояс"),
@@ -96,12 +97,13 @@ class Bot:
         for ev in self.events:
             st = render.status_of(ev, now, tz)
             s, _ = render.span_dates(ev)
-            predicted = ev.get("status") == "predicted"
+            predicted = ev.get("status") == "predicted"  # остальное (confirmed/announced) — официальные данные
+            days = (s - td).days
             if screen == "now" and st == "active" and not predicted:
                 out.append(ev)
-            elif screen == "soon" and st == "upcoming" and not predicted and (s - td).days <= 45:
-                out.append(ev)
-            elif screen == "pred" and predicted and st != "past" and (s - td).days <= 180:
+            elif screen == "soon" and st == "upcoming" and ((not predicted and days <= 45) or (predicted and days <= 30)):
+                out.append(ev)  # прогнозы — запасной вариант, чтобы раздел не был пустым
+            elif screen == "pred" and predicted and st != "past" and days <= 180:
                 out.append(ev)
         key = (lambda x: x["end"]) if screen == "now" else (lambda x: x["start"])
         return sorted(out, key=key)
@@ -116,7 +118,7 @@ class Bot:
         return kind in FILTER_KINDS.get(flt, set())
 
     TITLES = {"now": "🟢 Идёт сейчас", "soon": "🗓 Ближайшие события", "pred": "🔮 Прогноз по прошлым годам"}
-    EMPTY = {"now": "Сейчас ничего не идёт. Загляни в «Скоро» 🗓", "soon": "В вики пока нет анонсов на ближайшие 45 дней.\nЗагляни в 🔮 Прогноз — там даты по прошлым годам.",
+    EMPTY = {"now": "Сейчас ничего не идёт. Загляни в «Скоро» 🗓", "soon": "Пока нет ни анонсов, ни прогнозов на ближайшие недели.\nЗагляни в 🧭 «В разработке».",
              "pred": "Прогнозов на ближайшие полгода нет."}
 
     def screen_list(self, chat_id: int, screen: str, flt: str = "all", page: int = 0) -> Screen:
@@ -178,9 +180,27 @@ class Bot:
                 "Выбирай раздел кнопками ниже 👇")
         kb = [[_btn("🟢 Сейчас", "l:now:all:0"), _btn("🗓 Скоро", "l:soon:all:0")],
               [_btn("🐾 Монстры", "s:0"), _btn("🔮 Прогноз", "l:pred:all:0")],
-              [_btn("🔔 Уведомления", "st"), _btn("🌍 Часовой пояс", "z")],
-              [_btn("ℹ️ О боте", "a")]]
+              [_btn("🧭 В разработке", "rd"), _btn("🔔 Уведомления", "st")],
+              [_btn("🌍 Часовой пояс", "z"), _btn("ℹ️ О боте", "a")]]
         return text, {"inline_keyboard": kb}
+
+    def screen_roadmap(self, chat_id: int) -> Screen:
+        rm = self.ds.get("roadmap") or {}
+        lines = [f"<b>🧭 В разработке</b>\n<i>Анонсировано, но точных дат пока нет.</i>"]
+        plans = rm.get("plans", [])
+        if plans:
+            body = "\n".join(f"• <b>{escape(render.plan_when(p['when']).capitalize())}</b> — {escape(p['text'])}" for p in plans[:12])
+            lines.append(f"<b>📅 Планы</b>\n{body}")
+        groups = rm.get("monsters", [])
+        if groups:
+            body = "\n".join(
+                f"• <b>{escape(g['group'].replace('Upcoming ', ''))}</b> ({len(g['monsters'])}): "
+                + ", ".join(escape(m) for m in g["monsters"][:8]) + ("…" if len(g["monsters"]) > 8 else "")
+                for g in groups[:8])
+            lines.append(f"<b>🐾 Монстры в очереди</b>\n{body}")
+        if len(lines) == 1:
+            lines.append("Пока нет данных.")
+        return render.paginate_lines(lines[1:], lines[0]), {"inline_keyboard": [[_btn("🏠 Меню", "m")]]}
 
     def screen_settings(self, chat_id: int) -> Screen:
         u = self.state.user(chat_id)
@@ -216,7 +236,8 @@ class Bot:
         text = (f"<b>ℹ️ О боте</b>\n{render.LINE}\n"
                 f"Данные собираются автоматически из вики My Singing Monsters (таблицы Availability).\n\n"
                 f"🔄 Обновлено {age} назад\n📚 Записей расписания: <b>{st.get('availability_rows', st.get('events', 0))}</b>\n"
-                f"🎯 Событий в базе: <b>{st.get('events', 0)}</b>\n\n"
+                f"🎯 Событий в базе: <b>{st.get('events', 0)}</b> · официальных анонсов: <b>{st.get('announced', 0)}</b>\n"
+                f"📡 Источники: вики (Availability, History), Bluesky BBB, Steam, Big Blue Bubble\n\n"
                 "🔮 <b>Прогноз</b> — даты прошлых лет, перенесённые на следующий год. Не официальный анонс.\n"
                 "📅 В вики указаны даты без времени старта, поэтому бот считает дни.")
         return text, {"inline_keyboard": [[_btn("🏠 Меню", "m")]]}
@@ -282,6 +303,8 @@ class Bot:
             return self.tg.send(chat_id, *self.screen_list(chat_id, cmd))
         if cmd == "shop":
             return self.tg.send(chat_id, *self.screen_shop(chat_id))
+        if cmd == "roadmap":
+            return self.tg.send(chat_id, *self.screen_roadmap(chat_id))
         if cmd == "settings":
             return self.tg.send(chat_id, *self.screen_settings(chat_id))
         if cmd == "about":
@@ -332,6 +355,8 @@ class Bot:
             show(self.screen_list(chat_id, parts[1], parts[2], int(parts[3])))
         elif head == "s":
             show(self.screen_shop(chat_id, int(parts[1]) if len(parts) > 1 else 0))
+        elif head == "rd":
+            show(self.screen_roadmap(chat_id))
         elif head == "st":
             show(self.screen_settings(chat_id))
         elif head == "a":
@@ -368,7 +393,7 @@ class Bot:
         """→ [(kind, dedupe_key, header, event)] для подтверждённых событий."""
         out = []
         for ev in self.events:
-            if ev.get("status") != "confirmed":
+            if ev.get("status") not in ("confirmed", "announced"):
                 continue
             s, en = parse_iso(ev["start"]), parse_iso(ev["end"])
             if parse_iso(ev.get("first_seen", "1970-01-01T00:00:00Z")) > now - NEW_WINDOW and s > now:

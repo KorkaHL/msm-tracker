@@ -18,9 +18,12 @@ def _norm_ordinal(d: date) -> int:
 
 def predict(events: list[dict], today: date) -> list[dict]:
     series: dict[str, list[dict]] = defaultdict(list)
+    occupied: dict[str, set[int]] = defaultdict(set)  # годы, на которые уже есть официальная дата
     for e in events:
         if e.get("status") == "confirmed":
             series[e["series"]].append(e)
+        if e.get("status") in ("confirmed", "announced"):
+            occupied[e["series"]].add(int(e["start"][:4]))
 
     out: list[dict] = []
     now = datetime(today.year, today.month, today.day, tzinfo=timezone.utc)
@@ -46,7 +49,7 @@ def predict(events: list[dict], today: date) -> list[dict]:
             continue
         template = occ[-1]
         for year in (today.year, today.year + 1):
-            if year in past_years:
+            if year in past_years or year in occupied[key]:
                 continue
             try:
                 start = datetime(year, base.month, base.day, tzinfo=timezone.utc)

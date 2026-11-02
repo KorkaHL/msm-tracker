@@ -1,10 +1,21 @@
 {
   "wiki": "https://mysingingmonsters.fandom.com",
-  "availability_prefixes": ["Availability"],
+  "availability_prefixes": [
+    "Availability"
+  ],
   "availability_pages": [],
   "event_categories": [],
   "event_pages": [],
   "list_pages": [],
   "monster_categories": [],
-  "scan_monster_pages": false
+  "scan_monster_pages": false,
+  "external": {
+    "history": true,
+    "roadmap_page": "Upcoming Features",
+    "bluesky": [
+      "mysingingmonsters.com"
+    ],
+    "steam_appid": 1419170,
+    "bbb_feed": "https://www.bigbluebubble.com/feed"
+  }
 }

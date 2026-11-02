@@ -7,7 +7,7 @@ import os
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
-from . import extract
+from . import extract, sources
 from .dates import iso
 from .predict import predict
 from .wiki import Wiki
@@ -33,6 +33,61 @@ def build_shop(events: list[dict], windows: list[dict]) -> list[dict]:
         key = (w["monster"], w["start"], w["end"])
         rows.setdefault(key, {**w, "status": "confirmed", "confidence": 0.8, "event_id": None, "event": None})
     return sorted(rows.values(), key=lambda r: (r["start"], r["monster"]))
+
+
+def collect_external(cfg: dict, wiki: Wiki, today: datetime, events: list[dict]) -> tuple[list[dict], dict, dict]:
+    """Анонсы из внешних источников → (события, roadmap, статистика по источникам). Каждый источник изолирован."""
+    ext = cfg.get("external", {})
+    d = today.date()
+    added: list[dict] = []
+    roadmap: dict = {"monsters": [], "plans": []}
+    stats: dict[str, int | str] = {}
+
+    def run(name: str, fn):
+        try:
+            res = fn()
+            stats[name] = len(res) if hasattr(res, "__len__") else 0
+            return res
+        except Exception as e:  # один сломавшийся источник не должен ронять сборку
+            stats[name] = f"error: {type(e).__name__}"
+            log.warning("source %s failed: %s", name, e)
+            return None
+
+    if ext.get("history", True):
+        plans: list[dict] = []
+        for year in (d.year, d.year + 1):
+            def hist(year=year):
+                txt = wiki.wikitexts([f"History/{year}"]).get(f"History/{year}")
+                if not txt:
+                    return []
+                evs, pl = sources.history_events(txt, year, d, wiki.base)
+                plans.extend(pl)
+                return evs
+            added += run(f"history/{year}", hist) or []
+        roadmap["plans"] = plans
+
+    page = ext.get("roadmap_page", "Upcoming Features")
+    if page:
+        def road():
+            txt = wiki.wikitexts([page]).get(page, "")
+            return sources.roadmap(txt)
+        roadmap["monsters"] = run("roadmap", road) or []
+
+    posts: list[sources.Post] = []
+    for actor in ext.get("bluesky", []):
+        posts += run(f"bluesky/{actor}", lambda actor=actor: sources.fetch_bluesky(actor)) or []
+    if ext.get("steam_appid"):
+        posts += run("steam", lambda: sources.fetch_steam(int(ext["steam_appid"]))) or []
+    if ext.get("bbb_feed"):
+        posts += run("bbb", lambda: sources.fetch_bbb(ext["bbb_feed"])) or []
+    stats["posts"] = len(posts)
+    if posts:
+        added += sources.posts_to_events(posts, d, events + added)
+    # дубликаты: одно и то же событие из нескольких источников
+    uniq: dict[tuple, dict] = {}
+    for e in added:
+        uniq.setdefault((e["series"], e["start"][:10]), e)
+    return list(uniq.values()), roadmap, stats
 
 
 def merge_first_seen(events: list[dict], previous: dict | None, now_iso: str) -> None:
@@ -116,6 +171,8 @@ def build_dataset(cfg: dict, wiki: Wiki, today: datetime, previous: dict | None 
         for title, text in wiki.wikitexts(mp).items():
             windows += extract.monster_windows(title, text, today=d)
 
+    ext_events, roadmap, ext_stats = collect_external(cfg, wiki, today, events)
+    events += ext_events
     events += predict(events, d)
     events.sort(key=lambda e: (e["start"], e["title"]))
     attach_images(events, wiki, today)
@@ -126,7 +183,9 @@ def build_dataset(cfg: dict, wiki: Wiki, today: datetime, previous: dict | None 
         "wiki": wiki.base,
         "events": events,
         "shop": build_shop(events, windows),
-        "stats": {"events": len(events), "monsters": len(mt), "event_pages": len(texts), "availability_rows": n_rows},
+        "roadmap": roadmap,
+        "stats": {"events": len(events), "monsters": len(mt), "event_pages": len(texts), "availability_rows": n_rows,
+                  "announced": sum(1 for e in events if e["status"] == "announced"), "sources": ext_stats},
     }
 
 
@@ -139,7 +198,7 @@ def attach_images(events: list[dict], wiki: Wiki, today: datetime) -> None:
     cutoff = iso(today - timedelta(days=30))
     cand: dict[int, list[str]] = {}
     for i, ev in enumerate(events):
-        if ev["end"] < cutoff:
+        if ev["end"] < cutoff or ev.get("image"):
             continue
         titles = [m for m in ev.get("monsters", [])[:3] if not m.lower().startswith(_GENERIC)][:1]
         if ev.get("url"):
