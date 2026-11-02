@@ -1,37 +1,26 @@
-"""Проверка внешних источников анонсов с раннера Actions."""
-import json, re, urllib.request, urllib.parse
+"""Диагностика на раннере Actions. PAGES='A|B' (вики-тексты), URLS='name=>url=>chars=>skip;;...' (любые URL)."""
+import os, urllib.request
+from msm.wiki import Wiki
 
-UA = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36",
-      "Accept-Language": "en-US,en;q=0.9"}
+UA = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36"}
 
-def get(name, url, n=600, headers=None):
+chars = int(os.environ.get("CHARS", "3000"))
+skip = int(os.environ.get("SKIP", "0"))
+pages = [p for p in os.environ.get("PAGES", "").split("|") if p]
+if pages:
+    w = Wiki("https://mysingingmonsters.fandom.com")
+    for t, txt in w.wikitexts(pages).items():
+        print("=" * 30, "PAGE", t, "len", len(txt))
+        print(txt[skip:skip + chars])
+
+for item in [x for x in os.environ.get("URLS", "").split(";;") if x.strip()]:
+    parts = (item.strip().split("=>") + ["1500", "0"])[:4]
+    name, url, n, sk = parts[0], parts[1], int(parts[2]), int(parts[3])
     print("=" * 20, name, url)
     try:
-        req = urllib.request.Request(url, headers={**UA, **(headers or {})})
-        with urllib.request.urlopen(req, timeout=25) as r:
+        with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=25) as r:
             body = r.read().decode("utf-8", "replace")
-            print("STATUS", r.status, r.headers.get("content-type"), "len", len(body))
-            print(body[:n].replace("\n", " "))
-            return body
+            print("STATUS", r.status, "len", len(body))
+            print(body[sk:sk + n])
     except Exception as e:
         print("FAIL", repr(e)[:200])
-
-get("reddit.json", "https://www.reddit.com/r/MySingingMonsters/new.json?limit=5")
-get("reddit.rss", "https://www.reddit.com/r/MySingingMonsters/new/.rss?limit=5")
-get("reddit.api", "https://api.reddit.com/r/MySingingMonsters/new?limit=3")
-b = get("itunes.search", "https://itunes.apple.com/search?term=my+singing+monsters&entity=software&limit=3&country=us", 1500)
-get("bsky.search", "https://public.api.bsky.app/xrpc/app.bsky.actor.searchActors?q=my%20singing%20monsters&limit=5", 1200)
-for h in ("@MySingingMonsters", "@MySingingMonstersOfficial", "@mysingingmonsters"):
-    body = get("youtube " + h, f"https://www.youtube.com/{h}", 200)
-    if body:
-        print("CHANNEL IDS", set(re.findall(r'"channelId":"(UC[\w-]{22})"', body))[:5] if False else list(set(re.findall(r'"(?:channelId|externalId)":"(UC[\w-]{22})"', body)))[:5])
-get("fandom.recentchanges", "https://mysingingmonsters.fandom.com/api.php?action=query&list=recentchanges&rcnamespace=0&rclimit=25&rcprop=title|timestamp|comment&format=json", 2500)
-get("fandom.search.upcoming", "https://mysingingmonsters.fandom.com/api.php?action=query&list=search&srsearch=upcoming+OR+%22sneak+peek%22+OR+roadmap&srlimit=10&format=json", 1500)
-get("fandom.blogs", "https://mysingingmonsters.fandom.com/api.php?action=query&list=allpages&apnamespace=500&aplimit=15&format=json", 1500)
-get("fandom.news", "https://mysingingmonsters.fandom.com/api.php?action=query&list=search&srsearch=news+update+announcement&srlimit=10&format=json", 1500)
-get("official.site", "https://www.mysingingmonsters.com/", 800)
-get("bbb.news", "https://www.bigbluebubble.com/news", 800)
-get("bbb.rss", "https://www.bigbluebubble.com/feed", 500)
-get("gplay", "https://play.google.com/store/apps/details?id=com.bigbluebubble.singingmonsters&hl=en&gl=us", 300)
-get("steam.search", "https://store.steampowered.com/api/storesearch/?term=singing+monsters&cc=us&l=en", 800)
-get("twitter.syndication", "https://syndication.twitter.com/srv/timeline-profile/screen-name/SingingMonsters", 400)
