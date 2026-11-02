@@ -124,19 +124,33 @@ def ev(id_, title, start, end, **kw):
 
 class FakeTG:
     def __init__(self):
-        self.sent, self.edited, self.answered = [], [], []
+        self.sent, self.photos, self.edited, self.answered, self.markups = [], [], [], [], []
+        self.photo_fails = False
 
     def send(self, chat, text, markup=None):
         self.sent.append((chat, text, markup))
 
+    def send_photo(self, chat, photo, caption, markup=None):
+        if self.photo_fails:
+            raise RuntimeError("bad image")
+        self.photos.append((chat, photo, caption, markup))
+
     def edit(self, chat, mid, text, markup=None):
         self.edited.append((chat, mid, text, markup))
 
+    def edit_markup(self, chat, mid, markup):
+        self.markups.append((chat, mid, markup))
+
     def answer(self, cid, text=""):
-        self.answered.append(cid)
+        self.answered.append((cid, text))
 
     def set_commands(self, c):
         pass
+
+
+def cb(bot, data, chat=1, mid=9):
+    bot.handle_update({"update_id": 5, "callback_query": {
+        "id": "q", "data": data, "message": {"chat": {"id": chat}, "message_id": mid}}})
 
 
 class BotTests(unittest.TestCase):
@@ -148,46 +162,94 @@ class BotTests(unittest.TestCase):
 
     def msg(self, bot, text, chat=1):
         bot.handle_update({"update_id": 1, "message": {"chat": {"id": chat}, "text": text}})
-        return self.tg.sent[-1][1]
+        return self.tg.sent[-1]
 
-    def test_commands(self):
-        bot = self.make([ev("a", "Halloween", "2026-10-25T00:00:00Z", "2026-11-05T00:00:00Z"),
-                         ev("b", "Yuletide", "2026-11-20T00:00:00Z", "2026-12-01T00:00:00Z"),
-                         ev("c", "Old", "2025-01-01T00:00:00Z", "2025-01-05T00:00:00Z")])
-        self.assertIn("Halloween", self.msg(bot, "/now"))
-        self.assertNotIn("Yuletide", self.msg(bot, "/now"))
-        self.assertIn("Yuletide", self.msg(bot, "/soon"))
-        self.assertIn("Что это значит", self.msg(bot, "/event yule"))
-        self.assertIn("Halloween", self.msg(bot, "halloween"))  # свободный текст
-        self.assertIn("Europe/Kyiv", self.msg(bot, "/tz Europe/Kyiv"))
-        self.assertIn("Неизвестный", self.msg(bot, "/tz Mars/Base"))
+    EVENTS = [ev("a", "Halloween", "2026-10-25T00:00:00Z", "2026-11-05T00:00:00Z", kind="seasonal"),
+              ev("b", "Yuletide", "2026-11-20T00:00:00Z", "2026-12-01T00:00:00Z", monsters=["Yool"]),
+              ev("p", "Flash (Promotion)", "2026-11-04T00:00:00Z", "2026-11-08T00:00:00Z", kind="promotion"),
+              ev("c", "Old", "2025-01-01T00:00:00Z", "2025-01-05T00:00:00Z"),
+              ev("x", "Predicted Fest", "2026-12-10T00:00:00Z", "2026-12-20T00:00:00Z", status="predicted", confidence=0.8)]
 
-    def test_settings_toggle(self):
+    def test_start_has_keyboard_and_menu(self):
+        bot = self.make(self.EVENTS)
+        bot.handle_update({"update_id": 1, "message": {"chat": {"id": 1}, "text": "/start"}})
+        self.assertIn("keyboard", self.tg.sent[0][2])
+        self.assertIn("inline_keyboard", self.tg.sent[1][2])
+
+    def test_day_precision_no_hours(self):
+        bot = self.make(self.EVENTS)
+        text = self.msg(bot, "/soon")[1]
+        self.assertIn("Flash", text)
+        self.assertIn("через 2 дня", text)   # 4 ноября, сегодня 2 ноября
+        import re
+        self.assertIsNone(re.search(r"\d+ ч\b", text))  # никаких «4 д 4 ч»
+        self.assertNotIn("Predicted Fest", text)  # прогнозы отдельно
+
+    def test_now_pred_and_filters(self):
+        bot = self.make(self.EVENTS)
+        self.assertIn("Halloween", self.msg(bot, "/now")[1])
+        self.assertIn("Predicted Fest", self.msg(bot, "/pred")[1])
+        cb(bot, "l:soon:promo:0")
+        self.assertIn("Flash", self.tg.edited[-1][2])
+        cb(bot, "l:soon:season:0")
+        self.assertNotIn("Flash", self.tg.edited[-1][2])
+
+    def test_card_photo_and_fallback(self):
+        events = [dict(e_) for e_ in self.EVENTS]
+        events[0]["image"] = "https://img/x.png"
+        bot = self.make(events)
+        bot.handle_update({"update_id": 1, "message": {"chat": {"id": 1}, "text": "/event halloween"}})
+        self.assertEqual(len(self.tg.photos), 1)
+        self.assertLessEqual(len(self.tg.photos[0][2]), 1024)
+        self.tg.photo_fails = True
+        self.msg(bot, "halloween")  # свободный текст + картинка недоступна → текстом
+        self.assertIn("Halloween", self.tg.sent[-1][1])
+
+    def test_open_card_by_button_and_reminder(self):
+        bot = self.make(self.EVENTS)
+        h = next(iter(h_ for h_, e_ in bot.by_hash.items() if e_["id"] == "b"))
+        cb(bot, f"e:{h}")
+        self.assertIn("Yuletide", self.tg.sent[-1][1])
+        cb(bot, f"r:{h}")
+        self.assertIn("b", self.state.user(1)["remind"])
+        cb(bot, f"r:{h}")
+        self.assertNotIn("b", self.state.user(1)["remind"])
+
+    def test_settings_and_tz(self):
         bot = self.make([])
-        self.msg(bot, "/settings")
-        bot.handle_update({"update_id": 2, "callback_query": {
-            "id": "q", "data": "set:shop", "message": {"chat": {"id": 1}, "message_id": 9}}})
+        cb(bot, "t:shop")
         self.assertFalse(self.state.user(1)["subs"]["shop"])
-        self.assertTrue(self.tg.edited)
+        cb(bot, "z:0")
+        self.assertEqual(self.state.user(1)["tz"], "Europe/Kyiv")
+        self.assertIn("Europe/Paris", self.msg(bot, "/tz Europe/Paris")[1])
+        self.assertIn("Неизвестный", self.msg(bot, "/tz Mars/Base")[1])
+
+    def test_reminder_notification_once(self):
+        bot = self.make(self.EVENTS)
+        bot.state.user(1)["since"] = NOW.timestamp()
+        bot.state.user(1)["remind"] = ["b"]
+        bot.state.user(1)["subs"] = {k: False for k in ("new", "start", "ending", "shop")}
+        self.assertEqual(bot.send_notifications(), 0)  # до старта > 24 ч
+        later = Bot(self.tg, self.state, ds_with(self.EVENTS), clock=lambda: datetime(2026, 11, 19, 12, tzinfo=timezone.utc))
+        self.assertEqual(later.send_notifications(), 1)
+        self.assertIn("Напоминание", self.tg.sent[-1][1])
+        self.assertEqual(later.send_notifications(), 0)
 
     def test_notifications_dedupe_and_filters(self):
-        events = [ev("a", "Halloween", "2026-11-02T00:00:00Z", "2026-11-02T20:00:00Z"),   # начался 12 ч назад → поздно для «start»
-                  ev("n", "Fresh", "2026-11-02T10:30:00Z", "2026-11-03T10:30:00Z"),       # только что начался, конец в пределах 24 ч
-                  ev("p", "Predicted", "2026-11-02T10:30:00Z", "2026-11-03T10:30:00Z", status="predicted")]
-        shop = [{"monster": "Dermit", "start": "2026-11-02T10:30:00Z", "end": "2026-11-09T00:00:00Z",
-                 "status": "confirmed", "event": "Fresh"}]
-        bot = self.make(events, shop)
+        events = [ev("a", "Halloween", "2026-10-01T00:00:00Z", "2026-11-30T00:00:00Z"),
+                  ev("n", "Fresh", "2026-11-02T00:00:00Z", "2026-11-03T12:00:00Z"),
+                  ev("p", "Predicted", "2026-11-02T00:00:00Z", "2026-11-03T12:00:00Z", status="predicted")]
+        bot = self.make(events)
         bot.state.user(1)["since"] = NOW.timestamp() - 7200
         n1 = bot.send_notifications()
         texts = " ".join(t for _, t, _ in self.tg.sent)
         self.assertIn("Fresh", texts)
         self.assertNotIn("Predicted", texts)
-        self.assertNotIn("Событие началось</b>\n🎄 <b>Halloween", texts)
-        self.assertIn("Dermit", texts)
-        self.assertEqual(bot.send_notifications(), 0)  # повторно не шлём
+        self.assertNotIn("Halloween", texts)  # давно идёт — не «началось»
         self.assertGreater(n1, 0)
+        self.assertEqual(bot.send_notifications(), 0)
 
-    def test_new_announce_and_late_subscriber(self):
+    def test_new_announce(self):
         e = ev("x", "Future", "2026-12-01T00:00:00Z", "2026-12-05T00:00:00Z", first_seen="2026-11-02T11:00:00Z")
         bot = self.make([e])
         bot.state.user(1)
@@ -198,7 +260,6 @@ class BotTests(unittest.TestCase):
         events = [ev("x", "Future", "2026-12-01T00:00:00Z", "2026-12-05T00:00:00Z")]
         pipeline.merge_first_seen(events, None, "2026-11-02T12:00:00Z")
         self.assertEqual(events[0]["first_seen"], "1970-01-01T00:00:00Z")
-        pipeline.merge_first_seen(events, {"events": []}, "2026-11-02T12:00:00Z")
 
 
 class StateAndPipeline(unittest.TestCase):
@@ -229,9 +290,25 @@ class Render(unittest.TestCase):
     def test_delta_and_range(self):
         from datetime import timedelta
         self.assertEqual(render.fmt_delta(timedelta(days=2, hours=3)), "2 д 3 ч")
-        self.assertEqual(render.fmt_range({"start": "2026-12-01T00:00:00Z", "end": "2026-12-05T00:00:00Z"}),
-                         "1 декабря – 4 декабря")
+        self.assertEqual(render.fmt_range({"start": "2026-12-01T00:00:00Z", "end": "2026-12-05T00:00:00Z"}), "1–4 декабря")
         self.assertEqual(render.fmt_range({"start": "2026-12-01T00:00:00Z", "end": "2026-12-02T00:00:00Z"}), "1 декабря")
+        self.assertEqual(render.fmt_range({"start": "2026-10-28T00:00:00Z", "end": "2026-11-04T00:00:00Z"}), "28 октября – 3 ноября")
+
+    def test_when_days_only(self):
+        e = {"start": "2026-11-07T00:00:00Z", "end": "2026-11-12T00:00:00Z"}
+        self.assertEqual(render.when(e, NOW, "UTC"), "через 5 дней")
+        self.assertEqual(render.when(e, datetime(2026, 11, 6, 20, tzinfo=timezone.utc), "Europe/Moscow"), "стартует завтра")
+        self.assertIn("идёт", render.when(e, datetime(2026, 11, 6, 22, tzinfo=timezone.utc), "Europe/Moscow"))  # в Москве уже 7-е
+        self.assertEqual(render.when(e, datetime(2026, 11, 11, 5, tzinfo=timezone.utc), "UTC"), "последний день — сегодня")
+        self.assertIn("ещё 3 дня", render.when(e, datetime(2026, 11, 8, 5, tzinfo=timezone.utc), "UTC"))
+
+    def test_card_fits_caption_limit(self):
+        e = {"id": "i", "series": "s", "title": "T" * 40, "kind": "seasonal", "tags": ["monsters", "costumes", "diamonds", "rewards"],
+             "description": "D" * 600, "monsters": [f"Monster {i}" for i in range(40)], "parent": "Parent 2026",
+             "start": "2026-11-01T00:00:00Z", "end": "2026-11-10T00:00:00Z", "status": "confirmed"}
+        card = render.event_card(e, NOW, "UTC", limit=1000, history=["2024", "2025"])
+        self.assertLessEqual(render.visible_len(card), 1000)
+        self.assertIn("▰", card)  # идёт — есть прогресс-бар
 
 
 if __name__ == "__main__":

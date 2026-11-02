@@ -63,3 +63,17 @@ class Telegram:
 
     def set_commands(self, commands: list[tuple[str, str]]):
         return self.call("setMyCommands", commands=[{"command": c, "description": d} for c, d in commands])
+
+    def send_photo(self, chat_id: int, photo: str, caption: str, markup: dict | None = None):
+        p = {"chat_id": chat_id, "photo": photo, "caption": caption, "parse_mode": "HTML"}
+        if markup:
+            p["reply_markup"] = markup
+        return self.call("sendPhoto", **p)
+
+    def edit_markup(self, chat_id: int, message_id: int, markup: dict):
+        try:
+            return self.call("editMessageReplyMarkup", chat_id=chat_id, message_id=message_id, reply_markup=markup)
+        except TelegramError as e:
+            if "not modified" in e.desc:
+                return None
+            raise

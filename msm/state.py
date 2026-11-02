@@ -10,7 +10,7 @@ import os
 import time
 from pathlib import Path
 
-DEFAULT_USER = {"tz": "Europe/Moscow", "subs": {"new": True, "start": True, "ending": True, "shop": True}}
+DEFAULT_USER = {"tz": "Europe/Moscow", "subs": {"new": True, "start": True, "ending": True, "shop": True}, "remind": []}
 SENT_TTL = 45 * 86400
 
 
