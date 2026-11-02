@@ -96,3 +96,23 @@ class Wiki:
         """Основная страница + подстраницы (Availability, Availability/Seasonal, …)."""
         r = self.api(action="query", list="allpages", apprefix=prefix, aplimit=str(limit))
         return [p["title"] for p in r.get("query", {}).get("allpages", [])]
+
+    def page_images(self, titles: list[str], size: int = 600) -> dict[str, str]:
+        """Главная картинка страницы (PageImages) → {исходный заголовок: url}. Пустой результат — не ошибка."""
+        out: dict[str, str] = {}
+        for i in range(0, len(titles), 50):
+            batch = titles[i : i + 50]
+            try:
+                r = self.api(action="query", prop="pageimages", piprop="thumbnail", pithumbsize=str(size),
+                             redirects="1", titles="|".join(batch))
+            except Exception:
+                continue
+            q = r.get("query", {})
+            alias = {x["from"]: x["to"] for x in q.get("normalized", [])}
+            alias2 = {x["from"]: x["to"] for x in q.get("redirects", [])}
+            final = {p["title"]: p["thumbnail"]["source"] for p in q.get("pages", []) if p.get("thumbnail")}
+            for t in batch:
+                tt = alias2.get(alias.get(t, t), alias.get(t, t))
+                if tt in final:
+                    out[t] = final[tt]
+        return out

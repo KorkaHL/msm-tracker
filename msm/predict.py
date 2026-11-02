@@ -55,7 +55,7 @@ def predict(events: list[dict], today: date) -> list[dict]:
             end = start + timedelta(days=dur)
             if end <= now or start > now + timedelta(days=HORIZON_DAYS):
                 continue
-            ev = {k: template[k] for k in ("series", "title", "kind", "tags", "description", "monsters", "url")
+            ev = {k: template[k] for k in ("series", "title", "kind", "tags", "description", "monsters", "url", "parent", "section")
                   if k in template}
             ev.update({
                 "id": f"{key}-{start.date().isoformat()}-pred",

@@ -4,7 +4,7 @@ from __future__ import annotations
 import json
 import logging
 import os
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 from . import extract
@@ -118,6 +118,7 @@ def build_dataset(cfg: dict, wiki: Wiki, today: datetime, previous: dict | None 
 
     events += predict(events, d)
     events.sort(key=lambda e: (e["start"], e["title"]))
+    attach_images(events, wiki, today)
     now_iso = iso(today)
     merge_first_seen(events, previous, now_iso)
     return {
@@ -127,6 +128,33 @@ def build_dataset(cfg: dict, wiki: Wiki, today: datetime, previous: dict | None 
         "shop": build_shop(events, windows),
         "stats": {"events": len(events), "monsters": len(mt), "event_pages": len(texts), "availability_rows": n_rows},
     }
+
+
+_GENERIC = ("all ", "rares", "epics", "seasonal", "rare monsters", "epic monsters", "mythical")
+
+
+def attach_images(events: list[dict], wiki: Wiki, today: datetime) -> None:
+    """Картинка для актуальных событий: страница первого «конкретного» монстра, иначе страница события."""
+    from urllib.parse import unquote
+    cutoff = iso(today - timedelta(days=30))
+    cand: dict[int, list[str]] = {}
+    for i, ev in enumerate(events):
+        if ev["end"] < cutoff:
+            continue
+        titles = [m for m in ev.get("monsters", [])[:3] if not m.lower().startswith(_GENERIC)][:1]
+        if ev.get("url"):
+            titles.append(unquote(ev["url"].rsplit("/wiki/", 1)[-1]).replace("_", " "))
+        cand[i] = titles
+    wanted = sorted({t for ts in cand.values() for t in ts})
+    imgs = wiki.page_images(wanted) if wanted else {}
+    hit = 0
+    for i, titles in cand.items():
+        for t in titles:
+            if t in imgs:
+                events[i]["image"] = imgs[t]
+                hit += 1
+                break
+    log.info("images attached: %d/%d", hit, len(cand))
 
 
 def load_dataset(path: Path = DATA) -> dict | None:
