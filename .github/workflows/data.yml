@@ -19,6 +19,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main   # всегда свежий main, а не коммит, на котором стартовал запуск
       - uses: actions/setup-python@v5
         with: { python-version: "3.12", cache: pip }
       - run: pip install -r requirements.txt
@@ -29,14 +31,21 @@ jobs:
           ADMIN_CHAT_ID: ${{ secrets.ADMIN_CHAT_ID }}
         run: python -m msm.cli update-data
       - name: Commit data
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          ADMIN_CHAT_ID: ${{ secrets.ADMIN_CHAT_ID }}
         run: |
           git config user.name "msm-tracker[bot]"
           git config user.email "actions@users.noreply.github.com"
-          git add data/events.json
-          if git diff --cached --quiet; then echo "no changes"; else
-            # generated_at меняется каждый раз — коммитим только если изменились события
-            git commit -m "data: update events [skip ci]" && git push
-          fi
+          for attempt in 1 2 3; do
+            git add data/events.json
+            if git diff --cached --quiet; then echo "no changes"; break; fi
+            git commit -q -m "data: update events [skip ci]"
+            if git push; then break; fi
+            echo "push rejected (attempt $attempt) — пересобираем данные поверх свежего main"
+            git fetch -q origin main && git reset -q --hard origin/main
+            python -m msm.cli update-data
+          done
       - name: Build site
         run: |
           mkdir -p _site && cp site/* _site/ && cp data/events.json _site/events.json
