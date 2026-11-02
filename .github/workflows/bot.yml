@@ -7,6 +7,7 @@ on:
   workflow_dispatch:
 permissions:
   contents: write
+  actions: write   # чтобы запустить следующий цикл бота
 concurrency:
   group: bot            # одновременно работает один экземпляр, следующий ждёт в очереди
   cancel-in-progress: false
@@ -30,6 +31,7 @@ jobs:
             mkdir state && cd state && git init -q -b bot-state && git remote add origin "$URL"
           fi
       - name: Run bot
+        id: bot
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           STATE_KEY: ${{ secrets.STATE_KEY }}
@@ -42,3 +44,11 @@ jobs:
           git config user.email "actions@users.noreply.github.com"
           git add -A
           git diff --cached --quiet || { git commit -q -m "state" && git push -q origin bot-state; }
+      # Эстафета: после успешного цикла сразу запускаем следующий (cron GitHub бывает с большими задержками).
+      # workflow_dispatch от GITHUB_TOKEN запуск создаёт; очередь concurrency не даёт циклам пересекаться.
+      # При ошибке бота эстафета не продолжается (нет «горячего» цикла) — остаётся cron.
+      - name: Relay next cycle
+        if: steps.bot.outcome == 'success'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run bot.yml --ref main
