@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MSM Tracker</title>
+<style>
+  :root { --bg:#fff; --fg:#1b1b1f; --mut:#6b6b76; --card:#f4f4f8; --acc:#5b4bd6; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#14141a; --fg:#ececf1; --mut:#9a9aa8; --card:#1f1f28; --acc:#8f82ff; } }
+  body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.45 system-ui,sans-serif; }
+  main { max-width:760px; margin:0 auto; padding:16px; }
+  h1 { font-size:1.4rem; } .tabs { display:flex; gap:8px; margin:12px 0; }
+  button { border:0; border-radius:20px; padding:8px 14px; background:var(--card); color:var(--fg); font:inherit; cursor:pointer; }
+  button.on { background:var(--acc); color:#fff; }
+  .card { background:var(--card); border-radius:12px; padding:12px 14px; margin:10px 0; }
+  .card h3 { margin:0 0 4px; font-size:1.05rem; } .mut { color:var(--mut); font-size:.9rem; }
+  .pill { display:inline-block; font-size:.78rem; padding:1px 8px; border-radius:10px; background:var(--acc); color:#fff; margin-right:4px; }
+</style>
+</head>
+<body><main>
+<h1>🎵 MSM Tracker</h1>
+<div class="mut" id="meta">Загрузка…</div>
+<div class="tabs" id="tabs"></div>
+<div id="list"></div>
+</main>
+<script>
+const TABS = {active:'Идут сейчас', upcoming:'Скоро', shop:'Монстры', past:'Прошедшие'};
+let data, tab = 'active';
+const fmt = s => new Date(s).toLocaleDateString('ru', {day:'numeric', month:'long', timeZone:'UTC'});
+const range = e => { const l = new Date(new Date(e.end) - 1000).toISOString(); return fmt(e.start)===fmt(l) ? fmt(e.start) : fmt(e.start)+' – '+fmt(l); };
+const st = (e, now) => now >= new Date(e.end) ? 'past' : now >= new Date(e.start) ? 'active' : 'upcoming';
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function draw() {
+  const now = new Date();
+  document.getElementById('tabs').innerHTML = Object.entries(TABS).map(([k,v]) => `<button class="${k===tab?'on':''}" data-t="${k}">${v}</button>`).join('');
+  let items;
+  if (tab === 'shop') items = data.shop.filter(r => st(r, now) !== 'past').map(r => ({title:r.monster, start:r.start, end:r.end, sub:r.event, status:r.status}));
+  else items = data.events.filter(e => st(e, now) === tab).sort((a,b) => tab==='past' ? b.start.localeCompare(a.start) : a.start.localeCompare(b.start)).slice(0, 80);
+  document.getElementById('list').innerHTML = items.map(e =>
+    `<div class="card"><h3>${esc(e.title)}</h3><div class="mut">${range(e)} ${e.status==='predicted'?'· 🔮 прогноз':''} ${e.sub?'· '+esc(e.sub):''}</div>
+     ${e.description?`<p>${esc(e.description)}</p>`:''}${(e.tags||[]).map(t=>`<span class="pill">${esc(t)}</span>`).join('')}
+     ${e.url?`<div><a href="${esc(e.url)}">Вики</a></div>`:''}</div>`).join('') || '<p class="mut">Пока пусто.</p>';
+}
+document.getElementById('tabs').addEventListener('click', ev => { if (ev.target.dataset.t) { tab = ev.target.dataset.t; draw(); } });
+fetch('events.json').then(r => r.json()).then(d => {
+  data = d; document.getElementById('meta').textContent = 'Обновлено: ' + new Date(d.generated_at).toLocaleString('ru') + ' · событий: ' + d.events.length;
+  draw();
+}).catch(() => document.getElementById('meta').textContent = 'Не удалось загрузить данные');
+</script>
+</body></html>
