@@ -62,6 +62,8 @@ def fmt_day(d: date) -> str:
 
 def fmt_range(ev: dict, tz: str = "UTC") -> str:
     s, en = span_dates(ev)
+    if ev.get("open_ended"):  # известна только дата начала
+        return f"с {fmt_day(s)}"
     if s == en:
         return fmt_day(s)
     if s.year == en.year and s.month == en.month:
@@ -133,7 +135,28 @@ def kind_icon(kind: str) -> str:
     return e(f"kind_{kind}") if f"kind_{kind}" in DEFAULT else e("kind_other")
 
 
+SOURCE_LABELS = {"bluesky": "Bluesky BBB", "steam": "Steam", "bbb": "Big Blue Bubble", "history": "вики (редакторы)"}
+MONTHS_NOM = ["январь", "февраль", "март", "апрель", "май", "июнь", "июль", "август", "сентябрь", "октябрь",
+              "ноябрь", "декабрь"]
+
+
+def source_label(ev: dict) -> str:
+    return SOURCE_LABELS.get(ev.get("source", "").split(":")[0], "")
+
+
+def plan_when(key: str) -> str:
+    """'2026-12' → 'декабрь 2026'; '' → 'без даты'."""
+    try:
+        y, m = key.split("-")
+        return f"{MONTHS_NOM[int(m) - 1]} {y}"
+    except (ValueError, IndexError):
+        return "без даты"
+
+
 def pred_mark(ev: dict) -> str:
+    if ev.get("status") == "announced":
+        src = source_label(ev)
+        return f"📣 официальный анонс" + (f" · {src}" if src else "")
     if ev.get("status") != "predicted":
         return ""
     c = ev.get("confidence", 0)
@@ -147,7 +170,7 @@ def visible_len(html: str) -> int:
 
 def event_list_item(ev: dict, now: datetime, tz: str, num: int | None = None) -> str:
     n = f"<b>{num}.</b> " if num else ""
-    extra = f"\n      <i>{pred_mark(ev)}</i>" if ev.get("status") == "predicted" else ""
+    extra = f"\n      <i>{pred_mark(ev)}</i>" if ev.get("status") in ("predicted", "announced") else ""
     return (f"{n}{kind_icon(ev.get('kind', 'other'))} <b>{escape(ev['title'])}</b>\n"
             f"      {e('cal')} {fmt_range(ev, tz)} · {when(ev, now, tz)}{extra}")
 
@@ -160,7 +183,7 @@ def event_card(ev: dict, now: datetime, tz: str = "UTC", *, limit: int = 3900, h
     """Карточка события. Если не влезает в limit (подпись к фото ≤ 1024) — урезаем по приоритету."""
     kind = ev.get("kind", "other")
     head = f"{kind_icon(kind)} <b>{escape(ev['title'])}</b>\n<i>{escape(kind_name(kind))}</i>"
-    if ev.get("status") == "predicted":
+    if ev.get("status") in ("predicted", "announced"):
         head += f"\n{pred_mark(ev)}"
     st = status_of(ev, now, tz)
     when_block = [f"{e('cal')} <b>{fmt_range(ev, tz)}</b>", f"{e('clock')} {when(ev, now, tz)}"]

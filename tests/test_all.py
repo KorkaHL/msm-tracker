@@ -311,6 +311,140 @@ class Render(unittest.TestCase):
         self.assertIn("▰", card)  # идёт — есть прогресс-бар
 
 
+
+# Фрагмент РЕАЛЬНОЙ разметки History/2026 (из лога Actions 2026-11-02)
+REAL_HISTORY = """==October 2026==
+*'''October 28th:''' 
+**The fifth [[Beat Hereafter]] was celebrated.
+**[[Epic Withur]] was made available on [[Bone Island]].
+
+==November 2026==
+*'''November 18th:'''
+**The eighth [[Feast-Ember]] will be celebrated.<ref>https://www.youtube.com/watch?v=bPDySf_5gsk&t=131s</ref>
+**A new [[Legendary Monsters|Legendary Monster]] will be released.<ref>https://www.youtube.com/watch?v=x</ref>
+*'''November 25th:'''
+**A new [[Epic Monsters|Epic]] [[Magical Monsters|Magical Monster]] will be released.
+**New [[Dipsters|Dipster]] variants will be released, including a new Astral Dipster.
+
+==December 2026==
+*'''Unknown dates:'''
+**The fifteenth [[Festival of Yay]] will be celebrated.
+
+==Unknown Months==
+*The [[Bone Island]] [[Titansouls|Titansoul]] will be released.
+*More Epic [[Magical Monsters]] will be released.
+
+==Highlights of the year (so far)==
+*Introduction of Clubbox as a feature.
+"""
+
+
+class ExternalSources(unittest.TestCase):
+    TODAY = date(2026, 11, 2)
+
+    def test_history_future_entries(self):
+        from msm import sources
+        evs, plans = sources.history_events(REAL_HISTORY, 2026, self.TODAY, "https://w")
+        titles = {e["title"]: e for e in evs}
+        self.assertNotIn("Beat Hereafter", titles)             # прошлое не берём
+        self.assertEqual(titles["Feast-Ember"]["start"][:10], "2026-11-18")
+        self.assertEqual(titles["Feast-Ember"]["kind"], "seasonal")
+        self.assertEqual(titles["Feast-Ember"]["status"], "announced")
+        self.assertTrue(titles["Feast-Ember"]["open_ended"])
+        self.assertEqual(sum(1 for e in evs if e["start"].startswith("2026-11-25")), 2)
+        # «Unknown dates» не наследует дату предыдущей записи (25 ноября) — уходит в планы
+        self.assertFalse(any("Festival of Yay" in e["title"] for e in evs))
+        whens = {(p["when"], p["text"][:20]) for p in plans}
+        self.assertIn(("2026-12", "The fifteenth Festiv"), whens)
+        self.assertTrue(any(p["when"] == "" and "Titansoul" in p["text"] for p in plans))
+        self.assertFalse(any("Clubbox" in p["text"] for p in plans))  # раздел «Highlights» не планы
+
+    def test_bluesky_post_to_event(self):
+        from msm import sources
+        ts = datetime(2026, 11, 2, 15, 0, tzinfo=timezone.utc)
+        posts = [
+            sources.Post("bluesky", "a1", ts, "Get ready! The Feast-Ember promotion starts November 7th through November 11th \U0001F983 #MSM", "Get ready! The Feast-Ember promotion starts November 7th through November 11th \U0001F983 #MSM",
+                         "https://bsky.app/p/a1", "https://img/1.jpg"),
+            sources.Post("bluesky", "a2", ts, "x", "Thanks for the fanart! See you on Discord", "u2"),
+            sources.Post("bluesky", "a3", ts, "x", "Update showcase was on October 1st, thanks for watching the event", "u3"),
+        ]
+        evs = sources.posts_to_events(posts, self.TODAY)
+        self.assertEqual(len(evs), 1)
+        e = evs[0]
+        self.assertEqual((e["start"][:10], e["end"][:10]), ("2026-11-07", "2026-11-12"))
+        self.assertEqual(e["status"], "announced")
+        self.assertEqual(e["image"], "https://img/1.jpg")
+        self.assertNotIn("#MSM", e["title"])
+        # то же событие уже есть в вики → не дублируем
+        unrelated = [{"title": "Black Friday", "start": "2026-11-07T00:00:00Z"}]
+        self.assertEqual(sources.posts_to_events(posts, self.TODAY, unrelated), evs)   # другое событие — не мешает
+        same = [{"title": "Feast-Ember", "start": "2026-11-08T00:00:00Z"}]            # то же событие уже есть из вики (±1 день)
+        self.assertEqual(sources.posts_to_events(posts, self.TODAY, same), [])
+
+    def test_year_rollover_in_post(self):
+        from msm import sources
+        ts = datetime(2026, 12, 28, tzinfo=timezone.utc)
+        p = sources.Post("bluesky", "z", ts, "x", "New event coming January 5th - January 9th!", "u")
+        e = sources.posts_to_events([p], date(2026, 12, 29))[0]
+        self.assertEqual(e["start"][:10], "2027-01-05")
+
+    def test_rss_and_roadmap(self):
+        from msm import sources
+        rss = b"""<?xml version="1.0"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel>
+        <item><title>Update 5.8.0</title><link>https://bbb/update-5-8-0/</link><pubDate>Mon, 02 Nov 2026 12:00:00 +0000</pubDate>
+        <content:encoded><![CDATA[<p>New event starts November 12th - November 20th!</p><img src="https://img/x.jpg"/>]]></content:encoded></item></channel></rss>"""
+        posts = sources.parse_rss(rss)
+        self.assertEqual(posts[0].title, "Update 5.8.0")
+        self.assertEqual(posts[0].image, "https://img/x.jpg")
+        self.assertEqual(sources.posts_to_events(posts, self.TODAY)[0]["start"][:10], "2026-11-12")
+        wt = "!colspan=\"6\"|Upcoming Epic Magical Monsters\n|-\n|{{PortraitLink|Bonkers|Upcoming|Epic}}\n|{{PortraitLink|Poppette|Upcoming|Epic}}\n"
+        self.assertEqual(sources.roadmap(wt), [{"group": "Upcoming Epic Magical Monsters", "monsters": ["Bonkers", "Poppette"]}])
+
+    def test_announced_suppresses_prediction_and_soon_never_empty(self):
+        hist = {"id": "h", "series": "feast-ember", "title": "Feast-Ember", "start": "2026-11-18T00:00:00Z",
+                "end": "2026-11-19T00:00:00Z", "status": "announced", "kind": "seasonal", "tags": []}
+        past = [{"id": f"f{y}", "series": "feast-ember", "title": "Feast-Ember", "status": "confirmed", "kind": "seasonal", "tags": [],
+                 "start": f"{y}-11-15T00:00:00Z", "end": f"{y}-11-28T00:00:00Z"} for y in (2024, 2025)]
+        pred = predict.predict(past + [hist], self.TODAY)
+        self.assertFalse(any(p["start"].startswith("2026") for p in pred))  # на 2026 есть официальная дата
+        self.assertTrue(any(p["start"].startswith("2027") for p in pred))
+
+    def test_pipeline_isolates_failing_source(self):
+        from unittest import mock
+        from msm import sources as src
+        cfg = {"external": {"history": False, "roadmap_page": "", "bluesky": ["a"], "steam_appid": 1, "bbb_feed": "u"}}
+        ok = [src.Post("steam", "1", datetime(2026, 11, 2, tzinfo=timezone.utc), "t",
+                       "Event starts November 9th - November 12th", "u")]
+        with mock.patch.object(src, "fetch_bluesky", side_effect=RuntimeError("boom")), \
+             mock.patch.object(src, "fetch_steam", return_value=ok), \
+             mock.patch.object(src, "fetch_bbb", side_effect=OSError("down")):
+            evs, rm, stats = pipeline.collect_external(cfg, object(), datetime(2026, 11, 2, tzinfo=timezone.utc), [])
+        self.assertEqual(len(evs), 1)
+        self.assertTrue(str(stats["bluesky/a"]).startswith("error"))
+        self.assertTrue(str(stats["bbb"]).startswith("error"))
+        self.assertEqual(stats["steam"], 1)
+
+    def test_bot_soon_includes_announced_and_roadmap_screen(self):
+        ann = ev("n", "Feast-Ember", "2026-11-18T00:00:00Z", "2026-11-19T00:00:00Z", status="announced",
+                 source="history:2026", open_ended=True)
+        pred_ev = ev("q", "Black Friday (Promotion)", "2026-11-24T00:00:00Z", "2026-11-28T00:00:00Z",
+                     status="predicted", confidence=0.6, kind="promotion")
+        ds = ds_with([ann, pred_ev])
+        ds["roadmap"] = {"plans": [{"when": "2026-12", "text": "The fifteenth Festival of Yay will be celebrated."}],
+                         "monsters": [{"group": "Upcoming Epic Magical Monsters", "monsters": ["Bonkers", "Poppette"]}]}
+        tg = FakeTG()
+        bot = Bot(tg, State(Path(tempfile.mkdtemp()) / "s", key=""), ds, clock=lambda: NOW)
+        bot.handle_update({"update_id": 1, "message": {"chat": {"id": 1}, "text": "/soon"}})
+        text = tg.sent[-1][1]
+        self.assertIn("Feast-Ember", text)
+        self.assertIn("официальный анонс", text)
+        self.assertIn("с 18 ноября", text)
+        self.assertIn("Black Friday", text)   # прогноз как запасной вариант
+        bot.handle_update({"update_id": 2, "message": {"chat": {"id": 1}, "text": "/roadmap"}})
+        self.assertIn("Декабрь 2026", tg.sent[-1][1])
+        self.assertIn("Bonkers", tg.sent[-1][1])
+
+
 if __name__ == "__main__":
     unittest.main()
 
