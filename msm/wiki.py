@@ -91,3 +91,8 @@ class Wiki:
     def categories_with_prefix(self, prefix: str, limit: int = 50) -> list[str]:
         r = self.api(action="query", list="allcategories", acprefix=prefix, aclimit=str(limit))
         return [c["category"] for c in r.get("query", {}).get("allcategories", [])]
+
+    def pages_with_prefix(self, prefix: str, limit: int = 50) -> list[str]:
+        """Основная страница + подстраницы (Availability, Availability/Seasonal, …)."""
+        r = self.api(action="query", list="allpages", apprefix=prefix, aplimit=str(limit))
+        return [p["title"] for p in r.get("query", {}).get("allpages", [])]

@@ -236,3 +236,91 @@ class Render(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+# Фрагмент РЕАЛЬНОЙ разметки Availability/Seasonal (скопирован из лога Actions 2026-11-02)
+REAL_AVAIL = """==Availability==
+===2026===
+<div class="mw-collapsible mw-collapsed custom-button">
+{|class="article-table" style="white-space: nowrap"
+!From
+!To
+!Monster(s)
+!Occasion
+|-
+|February 4th
+|February 23rd
+|[[Schmoochle]]
+|[[Season of Love]] 2026
+|-
+|February 11th
+|February 16th
+|[[Rare Schmoochle]]<br>[[Epic Schmoochle]]
+|'4 Heads Are Better Than 2' Promotion<br>([[Season of Love]] 2026)
+|-
+|January 15th
+|January 19th
+|[[Hoola]]<br>[[Rare Hoola]]<br>[[Epic Hoola]]
+|Out-of-Season
+|-
+|December 11th
+|January 2nd
+|[[Dermit]]
+|New Rare Introduction<br>([[Rare Dermit]])
+|}
+</div>
+===2025===
+{|class="article-table"
+!From
+!To
+!Monster(s)
+!Occasion
+|-
+|February 5th
+|February 24th
+|[[Schmoochle]]
+|[[Season of Love]] 2025
+|}
+==Vessels==
+{|class="article-table mw-collapsible"
+|+
+!Month
+!Available Vessels
+!Occasion
+|-
+|January
+|{{PortraitList|Phangler|Wynq}}
+|Quintessence
+|}
+"""
+
+
+class Availability(unittest.TestCase):
+    def setUp(self):
+        self.rows = extract.availability_rows(REAL_AVAIL, today=NOW.date())
+        self.events = extract.events_from_availability(self.rows, base_url="https://w", source="Availability/Seasonal")
+
+    def test_rows(self):
+        self.assertEqual(len(self.rows), 5)  # таблица «Month» пропущена
+        r = self.rows[0]
+        self.assertEqual((r["start"], r["end"]), (date(2026, 2, 4), date(2026, 2, 23)))
+        # переход через год: December 11th → January 2nd
+        wrap = next(r for r in self.rows if r["monsters"] == ["Dermit"])
+        self.assertEqual((wrap["start"], wrap["end"]), (date(2026, 12, 11), date(2027, 1, 2)))
+
+    def test_events(self):
+        by = {e["title"]: e for e in self.events}
+        self.assertEqual(by["Season of Love"]["kind"], "seasonal")
+        promo = by["4 Heads Are Better Than 2 (Promotion)"]
+        self.assertEqual(promo["kind"], "promotion")
+        self.assertEqual(promo["monsters"], ["Rare Schmoochle", "Epic Schmoochle"])
+        self.assertEqual(by["Out-of-Season: Hoola"]["kind"], "outofseason")
+        self.assertIn("monsters", promo["tags"])
+
+    def test_prediction_for_recurring_only(self):
+        pred = predict.predict(self.events, date(2026, 11, 2))
+        titles = {p["title"] for p in pred}
+        self.assertIn("Season of Love", titles)       # было в 2025 и 2026 → прогноз на 2027
+        self.assertNotIn("Out-of-Season: Hoola", titles)  # единственный год → не прогнозируем
+        sol = next(p for p in pred if p["title"] == "Season of Love")
+        self.assertEqual(sol["start"][:4], "2027")
