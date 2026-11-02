@@ -10,10 +10,12 @@ import re
 
 # kind: (regex по названию/тексту, русское название, общий смысл)
 KINDS: list[tuple[str, str, str, str]] = [
+    ("promotion", r"\bpromotion\b", "🏷️ Акция", "Короткая акция на конкретных монстров (часто Rare/Epic): окно в несколько дней, потом они пропадают из магазина."),
+    ("outofseason", r"out[- ]of[- ]season", "🔁 Вне сезона", "Сезонные монстры ненадолго вернулись вне своего праздника — шанс добрать пропущенное."),
     ("wublin", r"\bwublin", "🥁 Wublin", "Раз в какое-то время Wublin-остров оживает: нужно собрать монстров острова, пока он «включён»."),
     ("celestial", r"\bcelestial", "🌌 Celestial", "Небесный остров: Celestial-монстры доступны по расписанию и требуют заранее накопленных ресурсов."),
     ("amber", r"\bamber|\bamber island", "🔶 Amber Island", "Янтарный остров открывается периодически — собирай Amber-монстров и их предметы пока он активен."),
-    ("seasonal", r"christmas|halloween|valentine|easter|thanksgiving|new year|lunar|spring|summer|autumn|winter|holiday|yuletide|harvest|snow", "🎄 Сезонное", "Сезонное событие: приносит тематических монстров/украшения, которые возвращаются только раз в год."),
+    ("seasonal", r"christmas|halloween|valentine|easter|thanksgiving|new year|lunar|spring|summer|autumn|winter|holiday|yuletide|harvest|snow|spooktacle|festival of yay|season of love|eggs-travaganza|summersong|feast-ember|beat hereafter|echoes of eco|crescendo moon|skypainting|life-formula|cloverspell|mindboggle|perplexplore", "🎄 Сезонное", "Сезонное событие: приносит тематических монстров/украшения, которые возвращаются только раз в год."),
     ("anniversary", r"anniversar|birthday", "🎂 Годовщина", "Юбилейное событие: обычно щедрые подарки, скидки и ограниченные награды."),
     ("update", r"\bupdate\b|\bpatch\b|\bversion \d", "🆕 Обновление", "Обновление игры: могут появиться новые острова, монстры и механики."),
     ("sale", r"\bsale\b|\bdiscount|\bbundle", "🏷️ Распродажа", "Распродажа: цены в магазине временно ниже."),
@@ -22,6 +24,8 @@ KINDS: list[tuple[str, str, str, str]] = [
 
 # tag: (regex по тексту, ярлык, смысл для игрока)
 TAGS: list[tuple[str, str, str, str]] = [
+    ("promotion", r"\bpromotion\b", "🏷️ Акция", "Ограниченная по времени акция — монстр может не вернуться до следующего года, не откладывай."),
+    ("outofseason", r"out[- ]of[- ]season", "🔁 Вне сезона", "Сезонные монстры доступны вне своего праздника на несколько дней."),
     ("monsters", r"\b(new|limited|exclusive|special)\b.{0,50}\bmonsters?\b|\bmonsters?\b.{0,60}\b(available|return|returns|introduced)\b", "🐾 Монстры",
      "В событии доступны особые монстры — после окончания купить/вывести их может быть нельзя."),
     ("costumes", r"\bcostumes?\b|\bskins?\b", "🎭 Костюмы", "Выходят костюмы для монстров. Обычно их можно получить только пока идёт событие."),

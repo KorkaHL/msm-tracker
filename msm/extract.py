@@ -6,7 +6,7 @@ from datetime import date, datetime, timedelta
 
 from . import significance
 from .dates import DateSpan, day_end_exclusive, day_start, find_dates, iso
-from .wikitext import clean, lead_paragraph, links, parse_tables, parse_templates, strip_comments
+from .wikitext import Table, clean, lead_paragraph, links, parse_tables, parse_templates, strip_comments
 
 DATE_KEYS = ("date", "dates", "start", "starts", "start date", "startdate", "begins", "available",
              "duration", "time", "when", "release", "release date", "released", "period", "event date")
@@ -151,3 +151,127 @@ def monster_windows(title: str, wikitext: str, *, today: date) -> list[dict]:
                 out.append({"monster": title, "start": iso(day_start(s.start)),
                             "end": iso(day_end_exclusive(s.end)), "source": f"monster-page:{line.strip()[:80]}"})
     return out
+
+
+# ---------------------------------------------------------------------------
+# Страницы Availability*: таблицы «From | To | Monster(s) | Occasion» по годам.
+# Реальная структура вики My Singing Monsters (проверена по логам Actions):
+#   ==Раздел==  →  ===2026===  →  {| ... !From !To !Monster(s) !Occasion ... |}
+# Даты записаны как «January 15th» (год берётся из заголовка).
+# ---------------------------------------------------------------------------
+_HEADING = re.compile(r"^(=+)\s*(.*?)\s*\1\s*$", re.M)
+_TABLE = re.compile(r"\{\|.*?\n\|\}", re.S)
+
+
+def availability_tables(wikitext: str):
+    """→ [(раздел, год|None, Table)] в порядке следования на странице."""
+    text = strip_comments(wikitext)
+    items: list[tuple[int, str, object]] = []
+    for m in _HEADING.finditer(text):
+        items.append((m.start(), "h", (len(m.group(1)), m.group(2))))
+    for m in _TABLE.finditer(text):
+        items.append((m.start(), "t", m.group(0)))
+    items.sort(key=lambda x: x[0])
+    section, year = "", None
+    out = []
+    for _, kind, val in items:
+        if kind == "h":
+            level, name = val
+            ym = re.fullmatch(r"(?:19|20)\d{2}", clean(name).strip())
+            if ym:
+                year = int(ym.group(0))
+            elif level <= 2:
+                section, year = clean(name).strip(), None
+        else:
+            for t in parse_tables(val):
+                out.append((section, year, t))
+    return out
+
+
+def _cell_text(raw: str) -> str:
+    raw = raw.replace("<nowiki>'</nowiki>", "\u2019")
+    return re.sub(r"\s*\n\s*", " ", clean(raw)).strip()
+
+
+def availability_rows(wikitext: str, *, today: date) -> list[dict]:
+    rows: list[dict] = []
+    for section, year, table in availability_tables(wikitext):
+        h = [clean(x).strip().lower() for x in table.headers]
+        if year is None or len(h) < 4 or h[0] != "from" or h[1] != "to":
+            continue
+        if year > today.year + 2:
+            continue
+        for row in table.rows:
+            if len(row) < 4:
+                continue
+            a = find_dates(clean(row[0]), year)
+            b = find_dates(clean(row[1]), year)
+            if not a or not b:
+                continue
+            s, e = a[0].start, b[0].start
+            if e < s:
+                try:
+                    e = e.replace(year=e.year + 1)
+                except ValueError:
+                    continue
+            if (e - s).days > MAX_EVENT_DAYS:
+                continue
+            names = list(dict.fromkeys(links(row[2]))) or [_cell_text(row[2])]
+            rows.append({
+                "section": section,
+                "start": s, "end": e,
+                "monsters": [n for n in names if n],
+                "note": _cell_text(row[2]),
+                "occasion": _cell_text(row[3]),
+                "occ_links": list(dict.fromkeys(links(row[3]))),
+            })
+    return rows
+
+
+_PROMO = re.compile(r"['\u2018\u2019]+([^'\u2018\u2019]{3,}?)['\u2018\u2019]+\s*Promotion", re.I)
+
+
+def _strip_rarity(name: str) -> str:
+    return re.sub(r"^(Rare|Epic)\s+", "", name)
+
+
+def events_from_availability(rows: list[dict], *, base_url: str, source: str) -> list[dict]:
+    """Строки доступности → события (акции, сезонные события, out-of-season, прочее)."""
+    merged: dict[tuple, dict] = {}
+    for r in rows:
+        occ = r["occasion"]
+        low = occ.lower()
+        parent = re.search(r"\(([^)]*)\)", occ)
+        parent_txt = parent.group(1).strip() if parent else ""
+        if "promotion" in low:
+            m = _PROMO.search(occ)
+            name = (m.group(1) if m else re.split(r"\bPromotion\b", occ, flags=re.I)[0]).strip(" '\u2019\u2018") or occ
+            title, link = f"{name} (Promotion)", (r["occ_links"][0] if r["occ_links"] else r["monsters"][0])
+        elif "out-of-season" in low or "out of season" in low:
+            title, link = f"Out-of-Season: {_strip_rarity(r['monsters'][0])}", r["monsters"][0]
+        elif r["occ_links"] and re.search(r"\b(?:19|20)\d{2}\b", occ):
+            title, link = r["occ_links"][0], r["occ_links"][0]
+        else:
+            title, link = re.sub(r"\s+", " ", occ) or "Availability", (r["occ_links"] or r["monsters"])[0]
+        text = f"{occ} {parent_txt} {r['section']}"
+        kind, tags = significance.analyze(title, text)
+        tags = list(dict.fromkeys(["monsters", *tags]))
+        key = (slug(title), r["start"], r["end"])
+        if key in merged:
+            merged[key]["monsters"] = list(dict.fromkeys(merged[key]["monsters"] + r["monsters"]))
+            continue
+        merged[key] = {
+            "id": f"{slug(title)}-{r['start'].isoformat()}",
+            "series": slug(title),
+            "title": title,
+            "start": iso(day_start(r["start"])),
+            "end": iso(day_end_exclusive(r["end"])),
+            "precision": "day", "status": "confirmed", "confidence": 1.0,
+            "source": f"{source}:{r['section']}",
+            "kind": kind, "tags": tags,
+            "description": (f"{parent_txt}. " if parent_txt else "") + (f"{r['section']}." if r["section"] else ""),
+            "monsters": list(r["monsters"]),
+            "occasion": occ,
+            "url": f"{base_url}/wiki/{link.replace(' ', '_')}",
+        }
+    return list(merged.values())

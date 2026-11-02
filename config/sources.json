@@ -1,10 +1,10 @@
 {
   "wiki": "https://mysingingmonsters.fandom.com",
-  "event_categories": ["Events"],
-  "event_pages": ["Events"],
+  "availability_prefixes": ["Availability"],
+  "availability_pages": [],
+  "event_categories": [],
+  "event_pages": [],
   "list_pages": [],
-  "monster_categories": ["Monsters"],
-  "category_depth": 1,
-  "scan_monster_pages": true,
-  "max_monster_pages": 600
+  "monster_categories": [],
+  "scan_monster_pages": false
 }

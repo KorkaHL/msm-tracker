@@ -224,12 +224,14 @@ class Bot:
                 if s > now:
                     out.append(("new", f"{e['id']}:new", "🆕 <b>Новый анонс</b>\n" + render.event_card(e, now), e))
             if s <= now < min(en, s + NOTIFY_PAST_WINDOW):
-                out.append(("start", f"{e['id']}:start", "▶️ <b>Событие началось</b>\n" + render.event_card(e, now), e))
+                # акции/«вне сезона»/разовые окна — это про магазин, их включает тумблер «Монстры в магазине»
+                k = "shop" if e.get("kind") in ("promotion", "outofseason", "other") else "start"
+                out.append((k, f"{e['id']}:start", "▶️ <b>Началось</b>\n" + render.event_card(e, now), e))
             if now < en <= now + ENDING_WINDOW and now >= s:
                 out.append(("ending", f"{e['id']}:ending", "⏰ <b>Скоро конец</b>\n" + render.event_line(e, now), e))
         for r in self.ds.get("shop", []):
-            if r.get("status") != "confirmed":
-                continue
+            if r.get("status") != "confirmed" or r.get("event_id"):
+                continue  # окна, привязанные к событию, уже покрыты уведомлением о событии
             s, en = parse_iso(r["start"]), parse_iso(r["end"])
             if s <= now < min(en, s + NOTIFY_PAST_WINDOW):
                 out.append(("shop", f"shop:{r['monster']}:{r['start']}", "🐾 <b>Монстр доступен</b>\n" + render.shop_line(r, now), r))

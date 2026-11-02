@@ -37,7 +37,9 @@ def predict(events: list[dict], today: date) -> list[dict]:
         spread = max(norm) - min(norm)
         base = date.fromordinal(mid)
         n_years = len(past_years)
-        conf = 0.3 + 0.2 * min(n_years - 1, 3)
+        if n_years < 2:  # одноразовые события (напр. «New Rare Introduction») не прогнозируем
+            continue
+        conf = 0.4 + 0.15 * min(n_years - 1, 4)
         if spread > 14:
             conf *= 0.6
         if conf < MIN_CONFIDENCE:

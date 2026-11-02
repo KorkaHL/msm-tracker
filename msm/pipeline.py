@@ -88,10 +88,29 @@ def build_dataset(cfg: dict, wiki: Wiki, today: datetime, previous: dict | None 
         for t, text in extra.items():
             events += extract.events_from_tables(t, text, today=d, base_url=wiki.base, monster_titles=mt)
 
+    windows: list[dict] = []
+    avail_titles = list(cfg.get("availability_pages", []))
+    for prefix in cfg.get("availability_prefixes", []):
+        try:
+            avail_titles += wiki.pages_with_prefix(prefix)
+        except Exception as e:
+            log.warning("prefix %s: %s", prefix, e)
+    avail_titles = list(dict.fromkeys(avail_titles))
+    n_rows = 0
+    for title, text in (wiki.wikitexts(avail_titles) if avail_titles else {}).items():
+        rows = extract.availability_rows(text, today=d)
+        n_rows += len(rows)
+        events += extract.events_from_availability(rows, base_url=wiki.base, source=title)
+        for r in rows:
+            for m in r["monsters"]:
+                windows.append({"monster": m, "start": iso(extract.day_start(r["start"])),
+                                "end": iso(extract.day_end_exclusive(r["end"])),
+                                "source": f"availability:{title}", "event": r["occasion"] or None})
+    log.info("availability pages: %d, rows: %d", len(avail_titles), n_rows)
+
     by_id = {e["id"]: e for e in events}
     events = list(by_id.values())
 
-    windows: list[dict] = []
     mp = sorted(mt)[: cfg.get("max_monster_pages", 600)]
     if cfg.get("scan_monster_pages", True) and mp:
         for title, text in wiki.wikitexts(mp).items():
@@ -106,7 +125,7 @@ def build_dataset(cfg: dict, wiki: Wiki, today: datetime, previous: dict | None 
         "wiki": wiki.base,
         "events": events,
         "shop": build_shop(events, windows),
-        "stats": {"events": len(events), "monsters": len(mt), "event_pages": len(texts)},
+        "stats": {"events": len(events), "monsters": len(mt), "event_pages": len(texts), "availability_rows": n_rows},
     }
 
 
