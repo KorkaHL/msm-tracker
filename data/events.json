@@ -34836,6 +34836,26 @@
    "url": "https://mysingingmonsters.fandom.com/wiki/Spooktacle"
   },
   {
+   "announced_at": "2026-11-03T15:01:02Z",
+   "confidence": 1.0,
+   "description": "Time's running out!! Preorder your singing Rare Wubbox plushie NOW before they're GONE!!🔥🔥 Only available until November 13th, 3PM (ET)",
+   "end": "2026-11-14T00:00:00Z",
+   "first_seen": "2026-11-03T19:30:30Z",
+   "id": "ann-bluesky-3mzg45yyw3-2026-11-13",
+   "image": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:mtzaai2t4hgjptsmv5m7l5xr/bafkreie4h634hswze4dlse2pf5wmpmvdnyaldny3zctm3d53spi56hzq3e",
+   "kind": "other",
+   "monsters": [],
+   "open_ended": true,
+   "precision": "day",
+   "series": "time-s-running-out-preorder-your-singing-rare-wubbox-plushie-now-before",
+   "source": "bluesky:3mzg45yyw3k2k",
+   "start": "2026-11-13T00:00:00Z",
+   "status": "announced",
+   "tags": [],
+   "title": "Time's running out!! Preorder your singing Rare Wubbox plushie NOW before…",
+   "url": "https://bsky.app/profile/mysingingmonsters.com/post/3mzg45yyw3k2k"
+  },
+  {
    "confidence": 0.42,
    "description": "",
    "end": "2026-11-23T00:00:00Z",
@@ -39739,7 +39759,7 @@
    "url": "https://mysingingmonsters.fandom.com/wiki/Rares"
   }
  ],
- "generated_at": "2026-11-02T19:17:18Z",
+ "generated_at": "2026-11-03T19:30:30Z",
  "roadmap": {
   "monsters": [
    {
@@ -68613,17 +68633,17 @@
   }
  ],
  "stats": {
-  "announced": 8,
+  "announced": 9,
   "availability_rows": 1593,
   "event_pages": 0,
-  "events": 1559,
+  "events": 1560,
   "monsters": 0,
   "sources": {
    "bbb": 10,
-   "bluesky/mysingingmonsters.com": 49,
+   "bluesky/mysingingmonsters.com": 46,
    "history/2026": 5,
    "history/2027": 0,
-   "posts": 79,
+   "posts": 76,
    "roadmap": 8,
    "steam": 20
   }
