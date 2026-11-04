@@ -34666,29 +34666,6 @@
    "url": "https://mysingingmonsters.fandom.com/wiki/Viveine"
   },
   {
-   "announced_at": "2026-10-31T14:02:40Z",
-   "confidence": 1.0,
-   "description": "Have you submitted your costume for our Spooktacle Costume Contest yet?! Make sure to make your submission BEFORE November 2nd at 11AM (ET)!⌛ Don't miss out on a chance to design an in-game Costume and win AWESOME prizes!",
-   "end": "2026-11-03T00:00:00Z",
-   "first_seen": "2026-11-02T19:17:18Z",
-   "id": "ann-bluesky-3mz6hiuzi5-2026-11-02",
-   "image": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:mtzaai2t4hgjptsmv5m7l5xr/bafkreifje2xmtbenur5iiz5tkgoejzkioypoon7vr4e7s7dtl5kzilqzmi",
-   "kind": "seasonal",
-   "monsters": [],
-   "open_ended": true,
-   "precision": "day",
-   "series": "have-you-submitted-your-costume-for-our-spooktacle-costume-contest-yet-make",
-   "source": "bluesky:3mz6hiuzi5z2o",
-   "start": "2026-11-02T00:00:00Z",
-   "status": "announced",
-   "tags": [
-    "costumes",
-    "rewards"
-   ],
-   "title": "Have you submitted your costume for our Spooktacle Costume Contest yet?! Make…",
-   "url": "https://bsky.app/profile/mysingingmonsters.com/post/3mz6hiuzi5z2o"
-  },
-  {
    "confidence": 1.0,
    "description": "",
    "end": "2026-11-06T00:00:00Z",
@@ -34714,51 +34691,6 @@
    ],
    "title": "Heartbeat of Forever (Promotion)",
    "url": "https://mysingingmonsters.fandom.com/wiki/Beat_Hereafter"
-  },
-  {
-   "announced_at": "2026-09-30T15:01:39Z",
-   "confidence": 1.0,
-   "description": "Spooktacle Costume Contest 2026 It’s time for the most frightfully fun, Monstrously magical, and ghoulishly Ghazt-ly Contest of the Year! Prepare for the 2026 Spooktacle Costume Contest! How to Enter Create your very own My Singing Monsters Spooktacle Costume! Choose your favorite Monster from My Singing Monsters and create a Spooktacular Costume! Snap a photo or video of you haunting your trick-o",
-   "end": "2026-11-03T00:00:00Z",
-   "first_seen": "2026-11-02T19:17:18Z",
-   "id": "ann-bbb-94ec5d423e-2026-11-02",
-   "image": "http://www.bigbluebubble.com/wp-content/uploads/2018/02/App-store-Button.png",
-   "kind": "seasonal",
-   "monsters": [],
-   "open_ended": true,
-   "precision": "day",
-   "series": "spooktacle-costume-contest-2026",
-   "source": "bbb:94ec5d423e",
-   "start": "2026-11-02T00:00:00Z",
-   "status": "announced",
-   "tags": [
-    "costumes",
-    "rewards"
-   ],
-   "title": "Spooktacle Costume Contest 2026",
-   "url": "https://www.bigbluebubble.com/spooktacle-costume-contest-2026/"
-  },
-  {
-   "announced_at": "2026-10-23T14:02:28Z",
-   "confidence": 1.0,
-   "description": "The Monster-Handlers have been LOVING your Spooktacle Costume Contest Submissions!🎃 Have you submitted your costume yet?! Make sure to make your submission BEFORE November 2nd at 11AM (ET)!⌛We are SO excited to see your creative outfits🤩 Learn more 👉",
-   "end": "2026-11-03T00:00:00Z",
-   "first_seen": "2026-11-02T19:17:18Z",
-   "id": "ann-bluesky-3mykdr5uhz-2026-11-02",
-   "image": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:mtzaai2t4hgjptsmv5m7l5xr/bafkreifdog26ycacbqjl6d2fmu7bue2tzsyfwdovhokt5gwzgft6xholr4",
-   "kind": "seasonal",
-   "monsters": [],
-   "open_ended": true,
-   "precision": "day",
-   "series": "the-monster-handlers-have-been-loving-your-spooktacle-costume-contest",
-   "source": "bluesky:3mykdr5uhzs2t",
-   "start": "2026-11-02T00:00:00Z",
-   "status": "announced",
-   "tags": [
-    "costumes"
-   ],
-   "title": "The Monster-Handlers have been LOVING your Spooktacle Costume Contest…",
-   "url": "https://bsky.app/profile/mysingingmonsters.com/post/3mykdr5uhzs2t"
   },
   {
    "confidence": 0.85,
@@ -39759,7 +39691,7 @@
    "url": "https://mysingingmonsters.fandom.com/wiki/Rares"
   }
  ],
- "generated_at": "2026-11-03T19:30:30Z",
+ "generated_at": "2026-11-04T01:24:05Z",
  "roadmap": {
   "monsters": [
    {
@@ -68633,10 +68565,10 @@
   }
  ],
  "stats": {
-  "announced": 9,
+  "announced": 6,
   "availability_rows": 1593,
   "event_pages": 0,
-  "events": 1560,
+  "events": 1557,
   "monsters": 0,
   "sources": {
    "bbb": 10,
