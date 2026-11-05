@@ -34669,24 +34669,24 @@
    "url": "https://mysingingmonsters.fandom.com/wiki/Beat_Hereafter"
   },
   {
-   "confidence": 0.85,
+   "confidence": 1.0,
    "description": "",
-   "end": "2026-11-12T00:00:00Z",
-   "first_seen": "1970-01-01T00:00:00Z",
-   "id": "the-beat-goes-on-promotion-2026-11-07-pred",
+   "end": "2026-11-10T00:00:00Z",
+   "first_seen": "2026-11-05T19:58:36Z",
+   "id": "the-beat-goes-on-promotion-2026-11-05",
    "image": "https://static.wikia.nocookie.net/mysingingmonsters/images/2/2d/Bone_Island_Map_Pin.png/revision/latest?cb=20240515182834",
    "kind": "promotion",
    "monsters": [
-    "Bone Island",
-    "Rares"
+    "Bone Island"
    ],
-   "parent": "Beat Hereafter 2022",
+   "occasion": "'The Beat Goes On' Promotion (Beat Hereafter 2026)",
+   "parent": "Beat Hereafter 2026",
    "precision": "day",
    "section": "Availability",
    "series": "the-beat-goes-on-promotion",
-   "source": "prediction:4y,spread=7d",
-   "start": "2026-11-07T00:00:00Z",
-   "status": "predicted",
+   "source": "Availability/Epic:Availability",
+   "start": "2026-11-05T00:00:00Z",
+   "status": "confirmed",
    "tags": [
     "monsters",
     "promotion"
@@ -39368,11 +39368,11 @@
    "url": "https://mysingingmonsters.fandom.com/wiki/Beat_Hereafter"
   },
   {
-   "confidence": 0.85,
+   "confidence": 1.0,
    "description": "",
-   "end": "2027-11-12T00:00:00Z",
-   "first_seen": "1970-01-01T00:00:00Z",
-   "id": "the-beat-goes-on-promotion-2027-11-07-pred",
+   "end": "2027-11-11T00:00:00Z",
+   "first_seen": "2026-11-05T19:58:36Z",
+   "id": "the-beat-goes-on-promotion-2027-11-06-pred",
    "image": "https://static.wikia.nocookie.net/mysingingmonsters/images/2/2d/Bone_Island_Map_Pin.png/revision/latest?cb=20240515182834",
    "kind": "promotion",
    "monsters": [
@@ -39383,8 +39383,8 @@
    "precision": "day",
    "section": "Availability",
    "series": "the-beat-goes-on-promotion",
-   "source": "prediction:4y,spread=7d",
-   "start": "2027-11-07T00:00:00Z",
+   "source": "prediction:5y,spread=7d",
+   "start": "2027-11-06T00:00:00Z",
    "status": "predicted",
    "tags": [
     "monsters",
@@ -39691,7 +39691,7 @@
    "url": "https://mysingingmonsters.fandom.com/wiki/Festival_of_Yay_Junior"
   }
  ],
- "generated_at": "2026-11-05T01:28:32Z",
+ "generated_at": "2026-11-05T19:58:36Z",
  "roadmap": {
   "monsters": [
    {
@@ -65639,22 +65639,13 @@
    "status": "confirmed"
   },
   {
-   "confidence": 0.85,
-   "end": "2026-11-12T00:00:00Z",
+   "confidence": 1.0,
+   "end": "2026-11-10T00:00:00Z",
    "event": "The Beat Goes On (Promotion)",
-   "event_id": "the-beat-goes-on-promotion-2026-11-07-pred",
+   "event_id": "the-beat-goes-on-promotion-2026-11-05",
    "monster": "Bone Island",
-   "start": "2026-11-07T00:00:00Z",
-   "status": "predicted"
-  },
-  {
-   "confidence": 0.85,
-   "end": "2026-11-12T00:00:00Z",
-   "event": "The Beat Goes On (Promotion)",
-   "event_id": "the-beat-goes-on-promotion-2026-11-07-pred",
-   "monster": "Rares",
-   "start": "2026-11-07T00:00:00Z",
-   "status": "predicted"
+   "start": "2026-11-05T00:00:00Z",
+   "status": "confirmed"
   },
   {
    "confidence": 0.33,
@@ -68429,21 +68420,21 @@
    "status": "predicted"
   },
   {
-   "confidence": 0.85,
-   "end": "2027-11-12T00:00:00Z",
+   "confidence": 1.0,
+   "end": "2027-11-11T00:00:00Z",
    "event": "The Beat Goes On (Promotion)",
-   "event_id": "the-beat-goes-on-promotion-2027-11-07-pred",
+   "event_id": "the-beat-goes-on-promotion-2027-11-06-pred",
    "monster": "Bone Island",
-   "start": "2027-11-07T00:00:00Z",
+   "start": "2027-11-06T00:00:00Z",
    "status": "predicted"
   },
   {
-   "confidence": 0.85,
-   "end": "2027-11-12T00:00:00Z",
+   "confidence": 1.0,
+   "end": "2027-11-11T00:00:00Z",
    "event": "The Beat Goes On (Promotion)",
-   "event_id": "the-beat-goes-on-promotion-2027-11-07-pred",
+   "event_id": "the-beat-goes-on-promotion-2027-11-06-pred",
    "monster": "Rares",
-   "start": "2027-11-07T00:00:00Z",
+   "start": "2027-11-06T00:00:00Z",
    "status": "predicted"
   },
   {
@@ -68566,7 +68557,7 @@
  ],
  "stats": {
   "announced": 6,
-  "availability_rows": 1593,
+  "availability_rows": 1595,
   "event_pages": 0,
   "events": 1557,
   "monsters": 0,
