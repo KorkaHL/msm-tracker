@@ -34428,30 +34428,6 @@
    "url": "https://mysingingmonsters.fandom.com/wiki/Spooktacle"
   },
   {
-   "confidence": 0.7,
-   "description": "",
-   "end": "2026-11-05T00:00:00Z",
-   "first_seen": "1970-01-01T00:00:00Z",
-   "id": "spooktacle-junior-2026-10-16-pred",
-   "image": "https://static.wikia.nocookie.net/mysingingmonsters/images/0/0d/Punkleton_%28Young%29.png/revision/latest/scale-to-width-down/600?cb=20241030210732",
-   "kind": "seasonal",
-   "monsters": [
-    "Punkleton/DoF"
-   ],
-   "parent": "",
-   "precision": "day",
-   "section": "History",
-   "series": "spooktacle-junior",
-   "source": "prediction:3y,spread=10d",
-   "start": "2026-10-16T00:00:00Z",
-   "status": "predicted",
-   "tags": [
-    "monsters"
-   ],
-   "title": "Spooktacle Junior",
-   "url": "https://mysingingmonsters.fandom.com/wiki/Spooktacle_Junior"
-  },
-  {
    "confidence": 1.0,
    "description": "",
    "end": "2026-10-27T00:00:00Z",
@@ -39689,9 +39665,33 @@
    ],
    "title": "Putting On Airs (Promotion)",
    "url": "https://mysingingmonsters.fandom.com/wiki/Rares"
+  },
+  {
+   "confidence": 0.7,
+   "description": "",
+   "end": "2028-01-08T00:00:00Z",
+   "first_seen": "2026-11-05T01:28:32Z",
+   "id": "festival-of-yay-junior-2027-12-10-pred",
+   "image": "https://static.wikia.nocookie.net/mysingingmonsters/images/a/ae/Yool_%28Young%29.png/revision/latest/scale-to-width-down/600?cb=20241030210839",
+   "kind": "seasonal",
+   "monsters": [
+    "Yool/DoF"
+   ],
+   "parent": "",
+   "precision": "day",
+   "section": "History",
+   "series": "festival-of-yay-junior",
+   "source": "prediction:3y,spread=5d",
+   "start": "2027-12-10T00:00:00Z",
+   "status": "predicted",
+   "tags": [
+    "monsters"
+   ],
+   "title": "Festival of Yay Junior",
+   "url": "https://mysingingmonsters.fandom.com/wiki/Festival_of_Yay_Junior"
   }
  ],
- "generated_at": "2026-11-04T01:24:05Z",
+ "generated_at": "2026-11-05T01:28:32Z",
  "roadmap": {
   "monsters": [
    {
@@ -65437,15 +65437,6 @@
    "status": "confirmed"
   },
   {
-   "confidence": 0.7,
-   "end": "2026-11-05T00:00:00Z",
-   "event": "Spooktacle Junior",
-   "event_id": "spooktacle-junior-2026-10-16-pred",
-   "monster": "Punkleton/DoF",
-   "start": "2026-10-16T00:00:00Z",
-   "status": "predicted"
-  },
-  {
    "confidence": 1.0,
    "end": "2026-10-27T00:00:00Z",
    "event": "Out-of-Season: Blabbit",
@@ -68561,6 +68552,15 @@
    "event_id": "putting-on-airs-promotion-2027-12-05-pred",
    "monster": "Rares",
    "start": "2027-12-05T00:00:00Z",
+   "status": "predicted"
+  },
+  {
+   "confidence": 0.7,
+   "end": "2028-01-08T00:00:00Z",
+   "event": "Festival of Yay Junior",
+   "event_id": "festival-of-yay-junior-2027-12-10-pred",
+   "monster": "Yool/DoF",
+   "start": "2027-12-10T00:00:00Z",
    "status": "predicted"
   }
  ],
