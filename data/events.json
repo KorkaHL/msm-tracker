@@ -34185,7 +34185,6 @@
    "end": "2026-10-08T00:00:00Z",
    "first_seen": "1970-01-01T00:00:00Z",
    "id": "grand-finale-promotion-2026-09-30",
-   "image": "https://static.wikia.nocookie.net/mysingingmonsters/images/8/8d/Anniversary_Month_Element.png/revision/latest?cb=20221101152206",
    "kind": "promotion",
    "monsters": [
     "Seasonal Monsters"
@@ -39738,9 +39737,60 @@
    ],
    "title": "Festival of Yay",
    "url": "https://mysingingmonsters.fandom.com/wiki/Festival_of_Yay"
+  },
+  {
+   "confidence": 0.7,
+   "description": "",
+   "end": "2027-12-17T00:00:00Z",
+   "first_seen": "2026-11-07T00:57:12Z",
+   "id": "out-of-season-monculus-2027-12-12-pred",
+   "image": "https://static.wikia.nocookie.net/mysingingmonsters/images/e/e9/Monculus_%28Inactive%29.png/revision/latest?cb=20230607204648",
+   "kind": "outofseason",
+   "monsters": [
+    "Monculus",
+    "Rare Monculus"
+   ],
+   "parent": "",
+   "precision": "day",
+   "section": "Availability",
+   "series": "out-of-season-monculus",
+   "source": "prediction:3y,spread=9d",
+   "start": "2027-12-12T00:00:00Z",
+   "status": "predicted",
+   "tags": [
+    "monsters",
+    "outofseason"
+   ],
+   "title": "Out-of-Season: Monculus",
+   "url": "https://mysingingmonsters.fandom.com/wiki/Monculus"
+  },
+  {
+   "confidence": 0.51,
+   "description": "",
+   "end": "2027-12-17T00:00:00Z",
+   "first_seen": "2026-11-07T00:57:12Z",
+   "id": "raring-is-caring-promotion-2027-12-12-pred",
+   "image": "https://static.wikia.nocookie.net/mysingingmonsters/images/1/1b/RareYoolIdle.gif/revision/latest?cb=20241118161424",
+   "kind": "promotion",
+   "monsters": [
+    "Rare Yool"
+   ],
+   "parent": "",
+   "precision": "day",
+   "section": "Availability",
+   "series": "raring-is-caring-promotion",
+   "source": "prediction:4y,spread=16d",
+   "start": "2027-12-12T00:00:00Z",
+   "status": "predicted",
+   "tags": [
+    "monsters",
+    "promotion"
+   ],
+   "title": "Raring is Caring (Promotion)",
+   "url": "https://mysingingmonsters.fandom.com/wiki/Rare_Yool"
   }
  ],
- "generated_at": "2026-11-06T01:34:39Z",
+ "generated_at": "2026-11-07T00:57:12Z",
  "roadmap": {
   "monsters": [
    {
@@ -68620,13 +68670,40 @@
    "monster": "Yool",
    "start": "2027-12-11T00:00:00Z",
    "status": "predicted"
+  },
+  {
+   "confidence": 0.7,
+   "end": "2027-12-17T00:00:00Z",
+   "event": "Out-of-Season: Monculus",
+   "event_id": "out-of-season-monculus-2027-12-12-pred",
+   "monster": "Monculus",
+   "start": "2027-12-12T00:00:00Z",
+   "status": "predicted"
+  },
+  {
+   "confidence": 0.7,
+   "end": "2027-12-17T00:00:00Z",
+   "event": "Out-of-Season: Monculus",
+   "event_id": "out-of-season-monculus-2027-12-12-pred",
+   "monster": "Rare Monculus",
+   "start": "2027-12-12T00:00:00Z",
+   "status": "predicted"
+  },
+  {
+   "confidence": 0.51,
+   "end": "2027-12-17T00:00:00Z",
+   "event": "Raring is Caring (Promotion)",
+   "event_id": "raring-is-caring-promotion-2027-12-12-pred",
+   "monster": "Rare Yool",
+   "start": "2027-12-12T00:00:00Z",
+   "status": "predicted"
   }
  ],
  "stats": {
   "announced": 6,
   "availability_rows": 1595,
   "event_pages": 0,
-  "events": 1559,
+  "events": 1561,
   "monsters": 0,
   "sources": {
    "bbb": 10,
