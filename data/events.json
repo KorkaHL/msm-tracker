@@ -34763,6 +34763,28 @@
    "url": "https://bsky.app/profile/mysingingmonsters.com/post/3mzg45yyw3k2k"
   },
   {
+   "announced_at": "2026-11-09T15:00:27Z",
+   "confidence": 1.0,
+   "description": "In celebration of 5 year of MSM Playground, we are giving away the Noggin Playground Gamemaker costume in My Singing Monsters FOR FREE 🤩 Redeem this awesome costume before it's gone! Valid until Nov 16th at 10 AM ET! Code: PLAYGROUND5 Redeem at: store.mysingingmonsters.com",
+   "end": "2026-11-17T00:00:00Z",
+   "first_seen": "2026-11-09T22:24:54Z",
+   "id": "ann-bluesky-3mzv6winhf-2026-11-16",
+   "image": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:mtzaai2t4hgjptsmv5m7l5xr/bafkreibn3c4uwnrmkxblai5k3mhtcasv27fmfhgxdyaobgeajdg52zl3my",
+   "kind": "other",
+   "monsters": [],
+   "open_ended": true,
+   "precision": "day",
+   "series": "in-celebration-of-5-year-of-msm-playground-we-are-giving-away-the-noggin",
+   "source": "bluesky:3mzv6winhfm2v",
+   "start": "2026-11-16T00:00:00Z",
+   "status": "announced",
+   "tags": [
+    "costumes"
+   ],
+   "title": "In celebration of 5 year of MSM Playground, we are giving away the Noggin…",
+   "url": "https://bsky.app/profile/mysingingmonsters.com/post/3mzv6winhfm2v"
+  },
+  {
    "confidence": 0.42,
    "description": "",
    "end": "2026-11-23T00:00:00Z",
@@ -39790,7 +39812,7 @@
    "url": "https://mysingingmonsters.fandom.com/wiki/Rare_Yool"
   }
  ],
- "generated_at": "2026-11-07T00:57:12Z",
+ "generated_at": "2026-11-09T22:24:54Z",
  "roadmap": {
   "monsters": [
    {
@@ -39916,7 +39938,7 @@
     "when": ""
    },
    {
-    "text": "Earth Island Legendary will be released.",
+    "text": "The Earth Island Legendary will be released.",
     "when": ""
    },
    {
@@ -68700,10 +68722,10 @@
   }
  ],
  "stats": {
-  "announced": 6,
+  "announced": 7,
   "availability_rows": 1595,
   "event_pages": 0,
-  "events": 1561,
+  "events": 1562,
   "monsters": 0,
   "sources": {
    "bbb": 10,
