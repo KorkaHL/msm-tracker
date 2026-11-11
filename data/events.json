@@ -39810,9 +39810,34 @@
    ],
    "title": "Raring is Caring (Promotion)",
    "url": "https://mysingingmonsters.fandom.com/wiki/Rare_Yool"
+  },
+  {
+   "confidence": 0.55,
+   "description": "",
+   "end": "2028-01-05T00:00:00Z",
+   "first_seen": "2026-11-11T06:27:02Z",
+   "id": "festival-of-yay-promotion-2027-12-16-pred",
+   "image": "https://static.wikia.nocookie.net/mysingingmonsters/images/e/ef/Festival_of_Yay_Element.png/revision/latest?cb=20221101151829",
+   "kind": "promotion",
+   "monsters": [
+    "Epics"
+   ],
+   "parent": "",
+   "precision": "day",
+   "section": "Availability",
+   "series": "festival-of-yay-promotion",
+   "source": "prediction:2y,spread=0d",
+   "start": "2027-12-16T00:00:00Z",
+   "status": "predicted",
+   "tags": [
+    "monsters",
+    "promotion"
+   ],
+   "title": "Festival of Yay (Promotion)",
+   "url": "https://mysingingmonsters.fandom.com/wiki/Festival_of_Yay"
   }
  ],
- "generated_at": "2026-11-09T22:24:54Z",
+ "generated_at": "2026-11-11T06:27:02Z",
  "roadmap": {
   "monsters": [
    {
@@ -68719,13 +68744,22 @@
    "monster": "Rare Yool",
    "start": "2027-12-12T00:00:00Z",
    "status": "predicted"
+  },
+  {
+   "confidence": 0.55,
+   "end": "2028-01-05T00:00:00Z",
+   "event": "Festival of Yay (Promotion)",
+   "event_id": "festival-of-yay-promotion-2027-12-16-pred",
+   "monster": "Epics",
+   "start": "2027-12-16T00:00:00Z",
+   "status": "predicted"
   }
  ],
  "stats": {
   "announced": 7,
   "availability_rows": 1595,
   "event_pages": 0,
-  "events": 1562,
+  "events": 1563,
   "monsters": 0,
   "sources": {
    "bbb": 10,
