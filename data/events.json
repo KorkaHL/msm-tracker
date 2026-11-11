@@ -34743,6 +34743,24 @@
    "url": "https://mysingingmonsters.fandom.com/wiki/Spooktacle"
   },
   {
+   "confidence": 1.0,
+   "description": "The Dimensional Portal was made available in My Singing Monsters: Dawn of Fire.",
+   "end": "2026-11-12T00:00:00Z",
+   "first_seen": "2026-11-11T17:10:24Z",
+   "id": "hist-2026-11-11-b52356",
+   "kind": "other",
+   "monsters": [],
+   "open_ended": true,
+   "precision": "day",
+   "series": "dimensional-portal-was-made-available-in-my-singing-monsters",
+   "source": "history:2026",
+   "start": "2026-11-11T00:00:00Z",
+   "status": "announced",
+   "tags": [],
+   "title": "Dimensional Portal was made available in My Singing Monsters: Dawn of Fire",
+   "url": "https://mysingingmonsters.fandom.com/wiki/History/2026"
+  },
+  {
    "announced_at": "2026-11-03T15:01:02Z",
    "confidence": 1.0,
    "description": "Time's running out!! Preorder your singing Rare Wubbox plushie NOW before they're GONE!!🔥🔥 Only available until November 13th, 3PM (ET)",
@@ -39837,7 +39855,7 @@
    "url": "https://mysingingmonsters.fandom.com/wiki/Festival_of_Yay"
   }
  ],
- "generated_at": "2026-11-11T06:27:02Z",
+ "generated_at": "2026-11-11T17:10:24Z",
  "roadmap": {
   "monsters": [
    {
@@ -68756,15 +68774,15 @@
   }
  ],
  "stats": {
-  "announced": 7,
+  "announced": 8,
   "availability_rows": 1595,
   "event_pages": 0,
-  "events": 1563,
+  "events": 1564,
   "monsters": 0,
   "sources": {
    "bbb": 10,
    "bluesky/mysingingmonsters.com": 46,
-   "history/2026": 5,
+   "history/2026": 6,
    "history/2027": 0,
    "posts": 76,
    "roadmap": 8,
