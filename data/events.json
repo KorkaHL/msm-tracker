@@ -34643,6 +34643,32 @@
   {
    "confidence": 1.0,
    "description": "",
+   "end": "2026-11-15T00:00:00Z",
+   "first_seen": "2026-11-12T00:46:11Z",
+   "id": "fine-tuning-promotion-2026-11-02",
+   "image": "https://static.wikia.nocookie.net/mysingingmonsters/images/c/c2/Plasma_Element.png/revision/latest?cb=20221101151536",
+   "kind": "promotion",
+   "monsters": [
+    "Plasma Element"
+   ],
+   "occasion": "'Fine Tuning' Promotion",
+   "parent": "",
+   "precision": "day",
+   "section": "Tunable Elements",
+   "series": "fine-tuning-promotion",
+   "source": "Availability:Tunable Elements",
+   "start": "2026-11-02T00:00:00Z",
+   "status": "confirmed",
+   "tags": [
+    "monsters",
+    "promotion"
+   ],
+   "title": "Fine Tuning (Promotion)",
+   "url": "https://mysingingmonsters.fandom.com/wiki/Plasma_Element"
+  },
+  {
+   "confidence": 1.0,
+   "description": "",
    "end": "2026-11-06T00:00:00Z",
    "first_seen": "1970-01-01T00:00:00Z",
    "id": "heartbeat-of-forever-promotion-2026-11-02",
@@ -34744,21 +34770,29 @@
   },
   {
    "confidence": 1.0,
-   "description": "The Dimensional Portal was made available in My Singing Monsters: Dawn of Fire.",
-   "end": "2026-11-12T00:00:00Z",
-   "first_seen": "2026-11-11T17:10:24Z",
-   "id": "hist-2026-11-11-b52356",
-   "kind": "other",
-   "monsters": [],
-   "open_ended": true,
+   "description": "",
+   "end": "2026-11-21T00:00:00Z",
+   "first_seen": "2026-11-12T00:46:11Z",
+   "id": "november-sale-2026-11-11",
+   "image": "https://static.wikia.nocookie.net/mysingingmonsters/images/3/33/EpicCandelavraIdle.gif/revision/latest?cb=20251119184133",
+   "kind": "sale",
+   "monsters": [
+    "Epic Candelavra"
+   ],
+   "occasion": "November Sale",
+   "parent": "",
    "precision": "day",
-   "series": "dimensional-portal-was-made-available-in-my-singing-monsters",
-   "source": "history:2026",
+   "section": "Fire Expansion Monsters",
+   "series": "november-sale",
+   "source": "Availability:Fire Expansion Monsters",
    "start": "2026-11-11T00:00:00Z",
-   "status": "announced",
-   "tags": [],
-   "title": "Dimensional Portal was made available in My Singing Monsters: Dawn of Fire",
-   "url": "https://mysingingmonsters.fandom.com/wiki/History/2026"
+   "status": "confirmed",
+   "tags": [
+    "monsters",
+    "sale"
+   ],
+   "title": "November Sale",
+   "url": "https://mysingingmonsters.fandom.com/wiki/Epic_Candelavra"
   },
   {
    "announced_at": "2026-11-03T15:01:02Z",
@@ -39855,7 +39889,7 @@
    "url": "https://mysingingmonsters.fandom.com/wiki/Festival_of_Yay"
   }
  ],
- "generated_at": "2026-11-11T17:10:24Z",
+ "generated_at": "2026-11-12T00:46:11Z",
  "roadmap": {
   "monsters": [
    {
@@ -65795,6 +65829,15 @@
   },
   {
    "confidence": 1.0,
+   "end": "2026-11-15T00:00:00Z",
+   "event": "Fine Tuning (Promotion)",
+   "event_id": "fine-tuning-promotion-2026-11-02",
+   "monster": "Plasma Element",
+   "start": "2026-11-02T00:00:00Z",
+   "status": "confirmed"
+  },
+  {
+   "confidence": 1.0,
    "end": "2026-11-06T00:00:00Z",
    "event": "Heartbeat of Forever (Promotion)",
    "event_id": "heartbeat-of-forever-promotion-2026-11-02",
@@ -65828,6 +65871,15 @@
    "monster": "Rares",
    "start": "2026-11-09T00:00:00Z",
    "status": "predicted"
+  },
+  {
+   "confidence": 1.0,
+   "end": "2026-11-21T00:00:00Z",
+   "event": "November Sale",
+   "event_id": "november-sale-2026-11-11",
+   "monster": "Epic Candelavra",
+   "start": "2026-11-11T00:00:00Z",
+   "status": "confirmed"
   },
   {
    "confidence": 0.42,
@@ -68774,15 +68826,15 @@
   }
  ],
  "stats": {
-  "announced": 8,
-  "availability_rows": 1595,
+  "announced": 7,
+  "availability_rows": 1597,
   "event_pages": 0,
-  "events": 1564,
+  "events": 1565,
   "monsters": 0,
   "sources": {
    "bbb": 10,
    "bluesky/mysingingmonsters.com": 46,
-   "history/2026": 6,
+   "history/2026": 5,
    "history/2027": 0,
    "posts": 76,
    "roadmap": 8,
