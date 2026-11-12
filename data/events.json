@@ -34744,31 +34744,6 @@
    "url": "https://mysingingmonsters.fandom.com/wiki/Epic_Strombonin"
   },
   {
-   "confidence": 0.6,
-   "description": "",
-   "end": "2026-11-14T00:00:00Z",
-   "first_seen": "1970-01-01T00:00:00Z",
-   "id": "plasmaniacs-promotion-2026-11-09-pred",
-   "image": "https://static.wikia.nocookie.net/mysingingmonsters/images/6/6c/Spooktacle_Element.png/revision/latest?cb=20221101151810",
-   "kind": "promotion",
-   "monsters": [
-    "Rares"
-   ],
-   "parent": "Spooktacle 2021",
-   "precision": "day",
-   "section": "Availability",
-   "series": "plasmaniacs-promotion",
-   "source": "prediction:5y,spread=25d",
-   "start": "2026-11-09T00:00:00Z",
-   "status": "predicted",
-   "tags": [
-    "monsters",
-    "promotion"
-   ],
-   "title": "Plasmaniacs (Promotion)",
-   "url": "https://mysingingmonsters.fandom.com/wiki/Spooktacle"
-  },
-  {
    "confidence": 1.0,
    "description": "",
    "end": "2026-11-21T00:00:00Z",
@@ -34793,6 +34768,82 @@
    ],
    "title": "November Sale",
    "url": "https://mysingingmonsters.fandom.com/wiki/Epic_Candelavra"
+  },
+  {
+   "confidence": 1.0,
+   "description": "",
+   "end": "2026-11-17T00:00:00Z",
+   "first_seen": "2026-11-12T19:56:59Z",
+   "id": "dream-come-true-promotion-2026-11-12",
+   "image": "https://static.wikia.nocookie.net/mysingingmonsters/images/8/81/Epic_Knurv_%28Playing%29.png/revision/latest?cb=20260204073608",
+   "kind": "promotion",
+   "monsters": [
+    "Epic Knurv"
+   ],
+   "occasion": "'Dream Come True' Promotion",
+   "parent": "",
+   "precision": "day",
+   "section": "Availability",
+   "series": "dream-come-true-promotion",
+   "source": "Availability/Epic:Availability",
+   "start": "2026-11-12T00:00:00Z",
+   "status": "confirmed",
+   "tags": [
+    "monsters",
+    "promotion"
+   ],
+   "title": "Dream Come True (Promotion)",
+   "url": "https://mysingingmonsters.fandom.com/wiki/Epic_Knurv"
+  },
+  {
+   "confidence": 1.0,
+   "description": "",
+   "end": "2026-11-20T00:00:00Z",
+   "first_seen": "2026-11-12T19:56:59Z",
+   "id": "plasmaniacs-promotion-2026-11-12",
+   "kind": "promotion",
+   "monsters": [
+    "All Double-Element Epics"
+   ],
+   "occasion": "'Plasmaniacs' Promotion",
+   "parent": "",
+   "precision": "day",
+   "section": "Availability",
+   "series": "plasmaniacs-promotion",
+   "source": "Availability/Epic:Availability",
+   "start": "2026-11-12T00:00:00Z",
+   "status": "confirmed",
+   "tags": [
+    "monsters",
+    "promotion"
+   ],
+   "title": "Plasmaniacs (Promotion)",
+   "url": "https://mysingingmonsters.fandom.com/wiki/All_Double-Element_Epics"
+  },
+  {
+   "confidence": 1.0,
+   "description": "",
+   "end": "2026-11-20T00:00:00Z",
+   "first_seen": "2026-11-12T19:56:59Z",
+   "id": "thinking-out-loud-promotion-2026-11-12",
+   "kind": "promotion",
+   "monsters": [
+    "All Rares"
+   ],
+   "occasion": "'Thinking Out Loud' Promotion",
+   "parent": "",
+   "precision": "day",
+   "section": "Availability",
+   "series": "thinking-out-loud-promotion",
+   "source": "Availability/Rare:Availability",
+   "start": "2026-11-12T00:00:00Z",
+   "status": "confirmed",
+   "tags": [
+    "monsters",
+    "promotion"
+   ],
+   "title": "Thinking Out Loud (Promotion)",
+   "url": "https://mysingingmonsters.fandom.com/wiki/All_Rares"
   },
   {
    "announced_at": "2026-11-03T15:01:02Z",
@@ -34835,31 +34886,6 @@
    ],
    "title": "In celebration of 5 year of MSM Playground, we are giving away the Noggin…",
    "url": "https://bsky.app/profile/mysingingmonsters.com/post/3mzv6winhfm2v"
-  },
-  {
-   "confidence": 0.42,
-   "description": "",
-   "end": "2026-11-23T00:00:00Z",
-   "first_seen": "1970-01-01T00:00:00Z",
-   "id": "thinking-out-loud-promotion-2026-11-16-pred",
-   "image": "https://static.wikia.nocookie.net/mysingingmonsters/images/8/8c/Vote_Rare_Furcorn_or_PomPom.png/revision/latest/scale-to-width-down/563?cb=20150113202902",
-   "kind": "promotion",
-   "monsters": [
-    "Rare Monsters"
-   ],
-   "parent": "",
-   "precision": "day",
-   "section": "Availability",
-   "series": "thinking-out-loud-promotion",
-   "source": "prediction:3y,spread=15d",
-   "start": "2026-11-16T00:00:00Z",
-   "status": "predicted",
-   "tags": [
-    "monsters",
-    "promotion"
-   ],
-   "title": "Thinking Out Loud (Promotion)",
-   "url": "https://mysingingmonsters.fandom.com/wiki/Rare_Monsters"
   },
   {
    "confidence": 0.85,
@@ -39493,9 +39519,9 @@
   {
    "confidence": 0.6,
    "description": "",
-   "end": "2027-11-14T00:00:00Z",
-   "first_seen": "1970-01-01T00:00:00Z",
-   "id": "plasmaniacs-promotion-2027-11-09-pred",
+   "end": "2027-11-16T00:00:00Z",
+   "first_seen": "2026-11-12T19:56:59Z",
+   "id": "plasmaniacs-promotion-2027-11-11-pred",
    "image": "https://static.wikia.nocookie.net/mysingingmonsters/images/6/6c/Spooktacle_Element.png/revision/latest?cb=20221101151810",
    "kind": "promotion",
    "monsters": [
@@ -39505,8 +39531,8 @@
    "precision": "day",
    "section": "Availability",
    "series": "plasmaniacs-promotion",
-   "source": "prediction:5y,spread=25d",
-   "start": "2027-11-09T00:00:00Z",
+   "source": "prediction:6y,spread=25d",
+   "start": "2027-11-11T00:00:00Z",
    "status": "predicted",
    "tags": [
     "monsters",
@@ -39514,6 +39540,31 @@
    ],
    "title": "Plasmaniacs (Promotion)",
    "url": "https://mysingingmonsters.fandom.com/wiki/Spooktacle"
+  },
+  {
+   "confidence": 0.51,
+   "description": "",
+   "end": "2027-11-22T00:00:00Z",
+   "first_seen": "2026-11-12T19:56:59Z",
+   "id": "thinking-out-loud-promotion-2027-11-14-pred",
+   "image": "https://static.wikia.nocookie.net/mysingingmonsters/images/8/8c/Vote_Rare_Furcorn_or_PomPom.png/revision/latest/scale-to-width-down/563?cb=20150113202902",
+   "kind": "promotion",
+   "monsters": [
+    "Rare Monsters"
+   ],
+   "parent": "",
+   "precision": "day",
+   "section": "Availability",
+   "series": "thinking-out-loud-promotion",
+   "source": "prediction:4y,spread=15d",
+   "start": "2027-11-14T00:00:00Z",
+   "status": "predicted",
+   "tags": [
+    "monsters",
+    "promotion"
+   ],
+   "title": "Thinking Out Loud (Promotion)",
+   "url": "https://mysingingmonsters.fandom.com/wiki/Rare_Monsters"
   },
   {
    "confidence": 1.0,
@@ -39538,31 +39589,6 @@
    ],
    "title": "Feast-Ember",
    "url": "https://mysingingmonsters.fandom.com/wiki/Feast-Ember"
-  },
-  {
-   "confidence": 0.42,
-   "description": "",
-   "end": "2027-11-23T00:00:00Z",
-   "first_seen": "1970-01-01T00:00:00Z",
-   "id": "thinking-out-loud-promotion-2027-11-16-pred",
-   "image": "https://static.wikia.nocookie.net/mysingingmonsters/images/8/8c/Vote_Rare_Furcorn_or_PomPom.png/revision/latest/scale-to-width-down/563?cb=20150113202902",
-   "kind": "promotion",
-   "monsters": [
-    "Rare Monsters"
-   ],
-   "parent": "",
-   "precision": "day",
-   "section": "Availability",
-   "series": "thinking-out-loud-promotion",
-   "source": "prediction:3y,spread=15d",
-   "start": "2027-11-16T00:00:00Z",
-   "status": "predicted",
-   "tags": [
-    "monsters",
-    "promotion"
-   ],
-   "title": "Thinking Out Loud (Promotion)",
-   "url": "https://mysingingmonsters.fandom.com/wiki/Rare_Monsters"
   },
   {
    "confidence": 0.85,
@@ -39889,7 +39915,7 @@
    "url": "https://mysingingmonsters.fandom.com/wiki/Festival_of_Yay"
   }
  ],
- "generated_at": "2026-11-12T00:46:11Z",
+ "generated_at": "2026-11-12T19:56:59Z",
  "roadmap": {
   "monsters": [
    {
@@ -65864,15 +65890,6 @@
    "status": "predicted"
   },
   {
-   "confidence": 0.6,
-   "end": "2026-11-14T00:00:00Z",
-   "event": "Plasmaniacs (Promotion)",
-   "event_id": "plasmaniacs-promotion-2026-11-09-pred",
-   "monster": "Rares",
-   "start": "2026-11-09T00:00:00Z",
-   "status": "predicted"
-  },
-  {
    "confidence": 1.0,
    "end": "2026-11-21T00:00:00Z",
    "event": "November Sale",
@@ -65882,13 +65899,51 @@
    "status": "confirmed"
   },
   {
-   "confidence": 0.42,
-   "end": "2026-11-23T00:00:00Z",
+   "confidence": 1.0,
+   "end": "2026-11-20T00:00:00Z",
+   "event": "Plasmaniacs (Promotion)",
+   "event_id": "plasmaniacs-promotion-2026-11-12",
+   "monster": "All Double-Element Epics",
+   "start": "2026-11-12T00:00:00Z",
+   "status": "confirmed"
+  },
+  {
+   "confidence": 0.8,
+   "end": "2026-11-20T00:00:00Z",
+   "event": null,
+   "event_id": null,
+   "monster": "All Double-Element Rares",
+   "source": "availability:Availability/Rare",
+   "start": "2026-11-12T00:00:00Z",
+   "status": "confirmed"
+  },
+  {
+   "confidence": 1.0,
+   "end": "2026-11-20T00:00:00Z",
    "event": "Thinking Out Loud (Promotion)",
-   "event_id": "thinking-out-loud-promotion-2026-11-16-pred",
-   "monster": "Rare Monsters",
-   "start": "2026-11-16T00:00:00Z",
-   "status": "predicted"
+   "event_id": "thinking-out-loud-promotion-2026-11-12",
+   "monster": "All Rares",
+   "start": "2026-11-12T00:00:00Z",
+   "status": "confirmed"
+  },
+  {
+   "confidence": 1.0,
+   "end": "2026-11-17T00:00:00Z",
+   "event": "Dream Come True (Promotion)",
+   "event_id": "dream-come-true-promotion-2026-11-12",
+   "monster": "Epic Knurv",
+   "start": "2026-11-12T00:00:00Z",
+   "status": "confirmed"
+  },
+  {
+   "confidence": 0.8,
+   "end": "2026-11-17T00:00:00Z",
+   "event": null,
+   "event_id": null,
+   "monster": "Rare Knurv",
+   "source": "availability:Availability/Rare",
+   "start": "2026-11-12T00:00:00Z",
+   "status": "confirmed"
   },
   {
    "confidence": 0.85,
@@ -68664,11 +68719,20 @@
   },
   {
    "confidence": 0.6,
-   "end": "2027-11-14T00:00:00Z",
+   "end": "2027-11-16T00:00:00Z",
    "event": "Plasmaniacs (Promotion)",
-   "event_id": "plasmaniacs-promotion-2027-11-09-pred",
+   "event_id": "plasmaniacs-promotion-2027-11-11-pred",
    "monster": "Rares",
-   "start": "2027-11-09T00:00:00Z",
+   "start": "2027-11-11T00:00:00Z",
+   "status": "predicted"
+  },
+  {
+   "confidence": 0.51,
+   "end": "2027-11-22T00:00:00Z",
+   "event": "Thinking Out Loud (Promotion)",
+   "event_id": "thinking-out-loud-promotion-2027-11-14-pred",
+   "monster": "Rare Monsters",
+   "start": "2027-11-14T00:00:00Z",
    "status": "predicted"
   },
   {
@@ -68678,15 +68742,6 @@
    "event_id": "feast-ember-2027-11-15-pred",
    "monster": "Gobbleygourd",
    "start": "2027-11-15T00:00:00Z",
-   "status": "predicted"
-  },
-  {
-   "confidence": 0.42,
-   "end": "2027-11-23T00:00:00Z",
-   "event": "Thinking Out Loud (Promotion)",
-   "event_id": "thinking-out-loud-promotion-2027-11-16-pred",
-   "monster": "Rare Monsters",
-   "start": "2027-11-16T00:00:00Z",
    "status": "predicted"
   },
   {
@@ -68827,9 +68882,9 @@
  ],
  "stats": {
   "announced": 7,
-  "availability_rows": 1597,
+  "availability_rows": 1602,
   "event_pages": 0,
-  "events": 1565,
+  "events": 1566,
   "monsters": 0,
   "sources": {
    "bbb": 10,
