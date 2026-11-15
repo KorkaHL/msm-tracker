@@ -34243,7 +34243,6 @@
    "end": "2026-10-16T00:00:00Z",
    "first_seen": "1970-01-01T00:00:00Z",
    "id": "alt-of-the-earth-promotion-2026-10-08",
-   "image": "https://static.wikia.nocookie.net/mysingingmonsters/images/8/8c/Vote_Rare_Furcorn_or_PomPom.png/revision/latest/scale-to-width-down/563?cb=20150113202902",
    "kind": "promotion",
    "monsters": [
     "Rares"
@@ -34843,26 +34842,6 @@
    ],
    "title": "Thinking Out Loud (Promotion)",
    "url": "https://mysingingmonsters.fandom.com/wiki/All_Rares"
-  },
-  {
-   "announced_at": "2026-11-03T15:01:02Z",
-   "confidence": 1.0,
-   "description": "Time's running out!! Preorder your singing Rare Wubbox plushie NOW before they're GONE!!🔥🔥 Only available until November 13th, 3PM (ET)",
-   "end": "2026-11-14T00:00:00Z",
-   "first_seen": "2026-11-03T19:30:30Z",
-   "id": "ann-bluesky-3mzg45yyw3-2026-11-13",
-   "image": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:mtzaai2t4hgjptsmv5m7l5xr/bafkreie4h634hswze4dlse2pf5wmpmvdnyaldny3zctm3d53spi56hzq3e",
-   "kind": "other",
-   "monsters": [],
-   "open_ended": true,
-   "precision": "day",
-   "series": "time-s-running-out-preorder-your-singing-rare-wubbox-plushie-now-before",
-   "source": "bluesky:3mzg45yyw3k2k",
-   "start": "2026-11-13T00:00:00Z",
-   "status": "announced",
-   "tags": [],
-   "title": "Time's running out!! Preorder your singing Rare Wubbox plushie NOW before…",
-   "url": "https://bsky.app/profile/mysingingmonsters.com/post/3mzg45yyw3k2k"
   },
   {
    "announced_at": "2026-11-09T15:00:27Z",
@@ -39912,9 +39891,34 @@
    ],
    "title": "Festival of Yay (Promotion)",
    "url": "https://mysingingmonsters.fandom.com/wiki/Festival_of_Yay"
+  },
+  {
+   "confidence": 1.0,
+   "description": "",
+   "end": "2028-01-07T00:00:00Z",
+   "first_seen": "2026-11-15T06:36:13Z",
+   "id": "the-more-the-merrier-promotion-2027-12-20-pred",
+   "image": "https://static.wikia.nocookie.net/mysingingmonsters/images/f/fe/Seasonal_Monsters.png/revision/latest/scale-to-width-down/600?cb=20260506215015",
+   "kind": "promotion",
+   "monsters": [
+    "Seasonal Monsters"
+   ],
+   "parent": "",
+   "precision": "day",
+   "section": "Availability",
+   "series": "the-more-the-merrier-promotion",
+   "source": "prediction:6y,spread=7d",
+   "start": "2027-12-20T00:00:00Z",
+   "status": "predicted",
+   "tags": [
+    "monsters",
+    "promotion"
+   ],
+   "title": "The More the Merrier (Promotion)",
+   "url": "https://mysingingmonsters.fandom.com/wiki/Seasonal_Monsters"
   }
  ],
- "generated_at": "2026-11-14T01:27:33Z",
+ "generated_at": "2026-11-15T06:36:13Z",
  "roadmap": {
   "monsters": [
    {
@@ -68877,10 +68881,19 @@
    "monster": "Epics",
    "start": "2027-12-16T00:00:00Z",
    "status": "predicted"
+  },
+  {
+   "confidence": 1.0,
+   "end": "2028-01-07T00:00:00Z",
+   "event": "The More the Merrier (Promotion)",
+   "event_id": "the-more-the-merrier-promotion-2027-12-20-pred",
+   "monster": "Seasonal Monsters",
+   "start": "2027-12-20T00:00:00Z",
+   "status": "predicted"
   }
  ],
  "stats": {
-  "announced": 7,
+  "announced": 6,
   "availability_rows": 1602,
   "event_pages": 0,
   "events": 1566,
