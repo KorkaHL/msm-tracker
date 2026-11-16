@@ -39916,9 +39916,35 @@
    ],
    "title": "The More the Merrier (Promotion)",
    "url": "https://mysingingmonsters.fandom.com/wiki/Seasonal_Monsters"
+  },
+  {
+   "confidence": 0.7,
+   "description": "",
+   "end": "2028-01-05T00:00:00Z",
+   "first_seen": "2026-11-16T06:33:23Z",
+   "id": "making-merry-promotion-2027-12-21-pred",
+   "image": "https://static.wikia.nocookie.net/mysingingmonsters/images/1/1b/RareYoolIdle.gif/revision/latest?cb=20241118161424",
+   "kind": "promotion",
+   "monsters": [
+    "Rare Yool",
+    "Epic Yool"
+   ],
+   "parent": "",
+   "precision": "day",
+   "section": "Availability",
+   "series": "making-merry-promotion",
+   "source": "prediction:3y,spread=2d",
+   "start": "2027-12-21T00:00:00Z",
+   "status": "predicted",
+   "tags": [
+    "monsters",
+    "promotion"
+   ],
+   "title": "Making Merry (Promotion)",
+   "url": "https://mysingingmonsters.fandom.com/wiki/Rare_Yool"
   }
  ],
- "generated_at": "2026-11-15T06:36:13Z",
+ "generated_at": "2026-11-16T06:33:23Z",
  "roadmap": {
   "monsters": [
    {
@@ -68890,13 +68916,31 @@
    "monster": "Seasonal Monsters",
    "start": "2027-12-20T00:00:00Z",
    "status": "predicted"
+  },
+  {
+   "confidence": 0.7,
+   "end": "2028-01-05T00:00:00Z",
+   "event": "Making Merry (Promotion)",
+   "event_id": "making-merry-promotion-2027-12-21-pred",
+   "monster": "Epic Yool",
+   "start": "2027-12-21T00:00:00Z",
+   "status": "predicted"
+  },
+  {
+   "confidence": 0.7,
+   "end": "2028-01-05T00:00:00Z",
+   "event": "Making Merry (Promotion)",
+   "event_id": "making-merry-promotion-2027-12-21-pred",
+   "monster": "Rare Yool",
+   "start": "2027-12-21T00:00:00Z",
+   "status": "predicted"
   }
  ],
  "stats": {
   "announced": 6,
   "availability_rows": 1602,
   "event_pages": 0,
-  "events": 1566,
+  "events": 1567,
   "monsters": 0,
   "sources": {
    "bbb": 10,
