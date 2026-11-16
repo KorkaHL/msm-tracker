@@ -34909,6 +34909,49 @@
    "url": "https://mysingingmonsters.fandom.com/wiki/History/2026"
   },
   {
+   "announced_at": "2026-11-16T17:01:23Z",
+   "confidence": 1.0,
+   "description": "It's time for YOU to vote for our GRAND PRIZE winner! Head over to the 2026 Spooktacle Costume Contest Voting poll, and cast your vote on your favorite costume👻 Make sure to get your vote in before Wednesday, November 18th at 12PM (ET) ⌛ Vote now!",
+   "end": "2026-11-19T00:00:00Z",
+   "first_seen": "2026-11-16T19:37:55Z",
+   "id": "ann-bluesky-3n2gyx6f6q-2026-11-18",
+   "image": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:mtzaai2t4hgjptsmv5m7l5xr/bafkreidpbtmvkud3jyw7uu5dqk3mrllet6oksfjy2zhf6wbz7gqxhuzyyy",
+   "kind": "seasonal",
+   "monsters": [],
+   "open_ended": true,
+   "precision": "day",
+   "series": "it-s-time-for-you-to-vote-for-our-grand-prize-winner-head-over-to-the-2026",
+   "source": "bluesky:3n2gyx6f6qz2f",
+   "start": "2026-11-18T00:00:00Z",
+   "status": "announced",
+   "tags": [
+    "costumes",
+    "rewards"
+   ],
+   "title": "It's time for YOU to vote for our GRAND PRIZE winner! Head over to the 2026…",
+   "url": "https://bsky.app/profile/mysingingmonsters.com/post/3n2gyx6f6qz2f"
+  },
+  {
+   "announced_at": "2026-11-16T16:00:37Z",
+   "confidence": 1.0,
+   "description": "Join the Monster-Handlers Wednesday, November 18th at 5PM (ET) 🔴LIVE to chat about all things My Singing Monsters! Come join, only on our official YouTube channel 📺",
+   "end": "2026-11-19T00:00:00Z",
+   "first_seen": "2026-11-16T19:37:55Z",
+   "id": "ann-bluesky-3n2gvkjuum-2026-11-18",
+   "image": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:mtzaai2t4hgjptsmv5m7l5xr/bafkreiasbjzmb3utn4grjzqcgb2mpig4thw6ghdrywcsh45ud2xf5m5doi",
+   "kind": "other",
+   "monsters": [],
+   "open_ended": true,
+   "precision": "day",
+   "series": "join-the-monster-handlers-wednesday-november-18th-at-5pm-et-live-to-chat",
+   "source": "bluesky:3n2gvkjuumo2z",
+   "start": "2026-11-18T00:00:00Z",
+   "status": "announced",
+   "tags": [],
+   "title": "Join the Monster-Handlers Wednesday, November 18th at 5PM (ET) 🔴LIVE to chat…",
+   "url": "https://bsky.app/profile/mysingingmonsters.com/post/3n2gvkjuumo2z"
+  },
+  {
    "confidence": 1.0,
    "description": "A new Epic Monster will be released.",
    "end": "2026-11-19T00:00:00Z",
@@ -39944,7 +39987,7 @@
    "url": "https://mysingingmonsters.fandom.com/wiki/Rare_Yool"
   }
  ],
- "generated_at": "2026-11-16T06:33:23Z",
+ "generated_at": "2026-11-16T19:37:55Z",
  "roadmap": {
   "monsters": [
    {
@@ -68937,10 +68980,10 @@
   }
  ],
  "stats": {
-  "announced": 6,
+  "announced": 8,
   "availability_rows": 1602,
   "event_pages": 0,
-  "events": 1567,
+  "events": 1569,
   "monsters": 0,
   "sources": {
    "bbb": 10,
