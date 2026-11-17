@@ -34718,30 +34718,6 @@
    "url": "https://mysingingmonsters.fandom.com/wiki/Beat_Hereafter"
   },
   {
-   "confidence": 0.33,
-   "description": "",
-   "end": "2026-11-17T00:00:00Z",
-   "first_seen": "1970-01-01T00:00:00Z",
-   "id": "epic-mythical-reveal-2026-11-09-pred",
-   "image": "https://static.wikia.nocookie.net/mysingingmonsters/images/5/5a/EpicStromboninIdle.gif/revision/latest?cb=20241211155532",
-   "kind": "intro",
-   "monsters": [
-    "Epic Strombonin"
-   ],
-   "parent": "",
-   "precision": "day",
-   "section": "Availability",
-   "series": "epic-mythical-reveal",
-   "source": "prediction:2y,spread=259d",
-   "start": "2026-11-09T00:00:00Z",
-   "status": "predicted",
-   "tags": [
-    "monsters"
-   ],
-   "title": "Epic-Mythical Reveal",
-   "url": "https://mysingingmonsters.fandom.com/wiki/Epic_Strombonin"
-  },
-  {
    "confidence": 1.0,
    "description": "",
    "end": "2026-11-21T00:00:00Z",
@@ -39987,7 +39963,7 @@
    "url": "https://mysingingmonsters.fandom.com/wiki/Rare_Yool"
   }
  ],
- "generated_at": "2026-11-16T19:37:55Z",
+ "generated_at": "2026-11-17T03:55:42Z",
  "roadmap": {
   "monsters": [
    {
@@ -65953,15 +65929,6 @@
    "status": "confirmed"
   },
   {
-   "confidence": 0.33,
-   "end": "2026-11-17T00:00:00Z",
-   "event": "Epic-Mythical Reveal",
-   "event_id": "epic-mythical-reveal-2026-11-09-pred",
-   "monster": "Epic Strombonin",
-   "start": "2026-11-09T00:00:00Z",
-   "status": "predicted"
-  },
-  {
    "confidence": 1.0,
    "end": "2026-11-21T00:00:00Z",
    "event": "November Sale",
@@ -68983,7 +68950,7 @@
   "announced": 8,
   "availability_rows": 1602,
   "event_pages": 0,
-  "events": 1569,
+  "events": 1568,
   "monsters": 0,
   "sources": {
    "bbb": 10,
