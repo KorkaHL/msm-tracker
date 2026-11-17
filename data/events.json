@@ -29690,7 +29690,7 @@
    "id": "quintessence-amber-rerun-2026-02-11",
    "kind": "amber",
    "monsters": [
-    "Rootitoot",
+    "Bisonorus",
     "Glowl",
     "Woolabee",
     "Krillby",
@@ -29709,7 +29709,7 @@
     "amber"
    ],
    "title": "Quintessence Amber Rerun",
-   "url": "https://mysingingmonsters.fandom.com/wiki/Rootitoot"
+   "url": "https://mysingingmonsters.fandom.com/wiki/Bisonorus"
   },
   {
    "confidence": 1.0,
@@ -39963,7 +39963,7 @@
    "url": "https://mysingingmonsters.fandom.com/wiki/Rare_Yool"
   }
  ],
- "generated_at": "2026-11-17T03:55:42Z",
+ "generated_at": "2026-11-17T16:02:36Z",
  "roadmap": {
   "monsters": [
    {
@@ -61650,6 +61650,15 @@
   },
   {
    "confidence": 1.0,
+   "end": "2026-03-12T00:00:00Z",
+   "event": "Quintessence Amber Rerun",
+   "event_id": "quintessence-amber-rerun-2026-02-11",
+   "monster": "Bisonorus",
+   "start": "2026-02-11T00:00:00Z",
+   "status": "confirmed"
+  },
+  {
+   "confidence": 1.0,
    "end": "2026-02-24T00:00:00Z",
    "event": "Crescendo Moon",
    "event_id": "crescendo-moon-2026-02-11",
@@ -61735,15 +61744,6 @@
    "event": "4 Heads Are Better Than 2 (Promotion)",
    "event_id": "4-heads-are-better-than-2-promotion-2026-02-11",
    "monster": "Rare Schmoochle",
-   "start": "2026-02-11T00:00:00Z",
-   "status": "confirmed"
-  },
-  {
-   "confidence": 1.0,
-   "end": "2026-03-12T00:00:00Z",
-   "event": "Quintessence Amber Rerun",
-   "event_id": "quintessence-amber-rerun-2026-02-11",
-   "monster": "Rootitoot",
    "start": "2026-02-11T00:00:00Z",
    "status": "confirmed"
   },
