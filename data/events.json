@@ -34374,7 +34374,6 @@
    "end": "2026-10-20T00:00:00Z",
    "first_seen": "1970-01-01T00:00:00Z",
    "id": "a-rare-scare-promotion-2026-10-15",
-   "image": "https://static.wikia.nocookie.net/mysingingmonsters/images/4/46/RarePunkletonIdle.gif/revision/latest?cb=20241025032127",
    "kind": "promotion",
    "monsters": [
     "Rare Punkleton"
@@ -34400,7 +34399,6 @@
    "end": "2026-10-20T00:00:00Z",
    "first_seen": "1970-01-01T00:00:00Z",
    "id": "dressed-to-thrill-promotion-2026-10-15",
-   "image": "https://static.wikia.nocookie.net/mysingingmonsters/images/4/41/EpicToeJammerIdle.gif/revision/latest?cb=20241005000616",
    "kind": "promotion",
    "monsters": [
     "Epic Toe Jammer",
@@ -34820,6 +34818,30 @@
    "url": "https://mysingingmonsters.fandom.com/wiki/All_Rares"
   },
   {
+   "confidence": 1.0,
+   "description": "",
+   "end": "2026-11-28T00:00:00Z",
+   "first_seen": "2026-11-19T02:35:46Z",
+   "id": "feast-ember-2026-11-15-pred",
+   "image": "https://static.wikia.nocookie.net/mysingingmonsters/images/1/13/GobbleygourdIdle.gif/revision/latest?cb=20241120040110",
+   "kind": "seasonal",
+   "monsters": [
+    "Gobbleygourd"
+   ],
+   "parent": "",
+   "precision": "day",
+   "section": "Availability",
+   "series": "feast-ember",
+   "source": "prediction:6y,spread=10d",
+   "start": "2026-11-15T00:00:00Z",
+   "status": "predicted",
+   "tags": [
+    "monsters"
+   ],
+   "title": "Feast-Ember",
+   "url": "https://mysingingmonsters.fandom.com/wiki/Feast-Ember"
+  },
+  {
    "confidence": 0.85,
    "description": "",
    "end": "2026-11-22T00:00:00Z",
@@ -34843,103 +34865,6 @@
    ],
    "title": "A Rare Flair (Promotion)",
    "url": "https://mysingingmonsters.fandom.com/wiki/Rare_Gobbleygourd"
-  },
-  {
-   "confidence": 1.0,
-   "description": "The \"First Verchuoso\" was made available on Fire Haven",
-   "end": "2026-11-19T00:00:00Z",
-   "first_seen": "2026-11-18T20:34:27Z",
-   "id": "hist-2026-11-18-709203",
-   "kind": "other",
-   "monsters": [],
-   "open_ended": true,
-   "precision": "day",
-   "series": "first-verchuoso-was-made-available-on-fire-haven",
-   "source": "history:2026",
-   "start": "2026-11-18T00:00:00Z",
-   "status": "announced",
-   "tags": [],
-   "title": "\"First Verchuoso\" was made available on Fire Haven",
-   "url": "https://mysingingmonsters.fandom.com/wiki/History/2026"
-  },
-  {
-   "confidence": 1.0,
-   "description": "Aquatic Fa, Knight Fa, & Sol-stice were added on every other island with Dipsters, but were not yet obtainable.",
-   "end": "2026-11-19T00:00:00Z",
-   "first_seen": "2026-11-18T20:34:27Z",
-   "id": "hist-2026-11-18-7dffcb",
-   "kind": "other",
-   "monsters": [],
-   "open_ended": true,
-   "precision": "day",
-   "series": "aquatic-fa-knight-fa-sol-stice-were-added-on-every-other-isl",
-   "source": "history:2026",
-   "start": "2026-11-18T00:00:00Z",
-   "status": "announced",
-   "tags": [
-    "island"
-   ],
-   "title": "Aquatic Fa, Knight Fa, & Sol-stice were added on every other island with Dipsters, but wer",
-   "url": "https://mysingingmonsters.fandom.com/wiki/History/2026"
-  },
-  {
-   "confidence": 1.0,
-   "description": "Epic Gob was added to Light Island & Magical Nexus, but was not yet obtainable.",
-   "end": "2026-11-19T00:00:00Z",
-   "first_seen": "2026-11-18T20:34:27Z",
-   "id": "hist-2026-11-18-f5ed2e",
-   "kind": "other",
-   "monsters": [],
-   "open_ended": true,
-   "precision": "day",
-   "series": "epic-gob-was-added-to-light-island-magical-nexus-but-was-not",
-   "source": "history:2026",
-   "start": "2026-11-18T00:00:00Z",
-   "status": "announced",
-   "tags": [
-    "island"
-   ],
-   "title": "Epic Gob was added to Light Island & Magical Nexus, but was not yet obtainable",
-   "url": "https://mysingingmonsters.fandom.com/wiki/History/2026"
-  },
-  {
-   "confidence": 1.0,
-   "description": "Epic Maulch was made available on Wublin Island",
-   "end": "2026-11-19T00:00:00Z",
-   "first_seen": "2026-11-18T20:34:27Z",
-   "id": "hist-2026-11-18-97f73b",
-   "kind": "wublin",
-   "monsters": [],
-   "open_ended": true,
-   "precision": "day",
-   "series": "epic-maulch-was-made-available-on-wublin-island",
-   "source": "history:2026",
-   "start": "2026-11-18T00:00:00Z",
-   "status": "announced",
-   "tags": [
-    "wublin",
-    "island"
-   ],
-   "title": "Epic Maulch was made available on Wublin Island",
-   "url": "https://mysingingmonsters.fandom.com/wiki/History/2026"
-  },
-  {
-   "confidence": 1.0,
-   "description": "The eighth Feast-Ember was celebrated.",
-   "end": "2026-11-19T00:00:00Z",
-   "first_seen": "2026-11-18T20:34:27Z",
-   "id": "hist-2026-11-18-9508c1",
-   "kind": "seasonal",
-   "monsters": [],
-   "open_ended": true,
-   "precision": "day",
-   "series": "feast-ember",
-   "source": "history:2026",
-   "start": "2026-11-18T00:00:00Z",
-   "status": "announced",
-   "tags": [],
-   "title": "Feast-Ember",
-   "url": "https://mysingingmonsters.fandom.com/wiki/History/2026"
   },
   {
    "announced_at": "2026-11-16T17:01:23Z",
@@ -35037,22 +34962,22 @@
   },
   {
    "confidence": 1.0,
-   "description": "Aquatic Fa, Knight Fa, & Sol-stice were made available on every other island with Dipsters.",
+   "description": "Aquatic Fa, Knight Fa, and Sol-stice were made available on every other island with Dipsters.",
    "end": "2026-11-26T00:00:00Z",
-   "first_seen": "2026-11-18T20:34:27Z",
-   "id": "hist-2026-11-25-a77d42",
+   "first_seen": "2026-11-19T02:35:46Z",
+   "id": "hist-2026-11-25-902f3b",
    "kind": "other",
    "monsters": [],
    "open_ended": true,
    "precision": "day",
-   "series": "aquatic-fa-knight-fa-sol-stice-were-made-available-on-every-",
+   "series": "aquatic-fa-knight-fa-and-sol-stice-were-made-available-on-ev",
    "source": "history:2026",
    "start": "2026-11-25T00:00:00Z",
    "status": "announced",
    "tags": [
     "island"
    ],
-   "title": "Aquatic Fa, Knight Fa, & Sol-stice were made available on every other island with Dipsters",
+   "title": "Aquatic Fa, Knight Fa, and Sol-stice were made available on every other island with Dipste",
    "url": "https://mysingingmonsters.fandom.com/wiki/History/2026"
   },
   {
@@ -35173,6 +35098,24 @@
    ],
    "title": "Putting On Airs (Promotion)",
    "url": "https://mysingingmonsters.fandom.com/wiki/Rares"
+  },
+  {
+   "confidence": 1.0,
+   "description": "The Albuquirky Clubbox Act will be made available.",
+   "end": "2026-12-10T00:00:00Z",
+   "first_seen": "2026-11-19T02:35:46Z",
+   "id": "hist-2026-12-09-a074f8",
+   "kind": "other",
+   "monsters": [],
+   "open_ended": true,
+   "precision": "day",
+   "series": "albuquirky-clubbox-act-will-be-made-available",
+   "source": "history:2026",
+   "start": "2026-12-09T00:00:00Z",
+   "status": "announced",
+   "tags": [],
+   "title": "Albuquirky Clubbox Act will be made available",
+   "url": "https://mysingingmonsters.fandom.com/wiki/History/2026"
   },
   {
    "confidence": 0.7,
@@ -39982,7 +39925,7 @@
    "url": "https://mysingingmonsters.fandom.com/wiki/Rare_Yool"
   }
  ],
- "generated_at": "2026-11-18T20:34:27Z",
+ "generated_at": "2026-11-19T02:35:46Z",
  "roadmap": {
   "monsters": [
    {
@@ -40059,9 +40002,9 @@
    {
     "group": "Upcoming Royal Dipsters",
     "monsters": [
-     "Fa",
      "Sol",
-     "La"
+     "La",
+     "Ti"
     ]
    },
    {
@@ -65998,6 +65941,15 @@
    "status": "confirmed"
   },
   {
+   "confidence": 1.0,
+   "end": "2026-11-28T00:00:00Z",
+   "event": "Feast-Ember",
+   "event_id": "feast-ember-2026-11-15-pred",
+   "monster": "Gobbleygourd",
+   "start": "2026-11-15T00:00:00Z",
+   "status": "predicted"
+  },
+  {
    "confidence": 0.85,
    "end": "2026-11-22T00:00:00Z",
    "event": "A Rare Flair (Promotion)",
@@ -68960,15 +68912,15 @@
   }
  ],
  "stats": {
-  "announced": 9,
+  "announced": 5,
   "availability_rows": 1602,
   "event_pages": 0,
-  "events": 1569,
+  "events": 1566,
   "monsters": 0,
   "sources": {
    "bbb": 10,
    "bluesky/mysingingmonsters.com": 45,
-   "history/2026": 7,
+   "history/2026": 3,
    "history/2027": 0,
    "posts": 75,
    "roadmap": 8,
