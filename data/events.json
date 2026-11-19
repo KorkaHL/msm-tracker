@@ -34910,30 +34910,117 @@
    "url": "https://bsky.app/profile/mysingingmonsters.com/post/3n2gvkjuumo2z"
   },
   {
-   "confidence": 0.7,
+   "confidence": 1.0,
    "description": "",
-   "end": "2026-11-25T00:00:00Z",
-   "first_seen": "1970-01-01T00:00:00Z",
-   "id": "out-of-season-spurrit-2026-11-20-pred",
+   "end": "2026-11-26T00:00:00Z",
+   "first_seen": "2026-11-19T20:40:32Z",
+   "id": "secret-sauce-promotion-2026-11-18",
+   "image": "https://static.wikia.nocookie.net/mysingingmonsters/images/7/72/EpicNogginIdle.gif/revision/latest?cb=20241123054358",
+   "kind": "promotion",
+   "monsters": [
+    "Epic Noggin",
+    "Epic Furcorn",
+    "Epic Spunge",
+    "Epic Pummel",
+    "Epic Clamble",
+    "Epic Quarrister",
+    "Epic Entbrat",
+    "Epic Flowah",
+    "Epic Barrb"
+   ],
+   "occasion": "'Secret Sauce' Promotion (Epic Maulch)",
+   "parent": "Epic Maulch",
+   "precision": "day",
+   "section": "Availability",
+   "series": "secret-sauce-promotion",
+   "source": "Availability/Epic:Availability",
+   "start": "2026-11-18T00:00:00Z",
+   "status": "confirmed",
+   "tags": [
+    "monsters",
+    "promotion"
+   ],
+   "title": "Secret Sauce (Promotion)",
+   "url": "https://mysingingmonsters.fandom.com/wiki/Epic_Maulch"
+  },
+  {
+   "confidence": 1.0,
+   "description": "",
+   "end": "2026-11-24T00:00:00Z",
+   "first_seen": "2026-11-19T20:40:32Z",
+   "id": "mythterious-promotion-2026-11-19",
+   "image": "https://static.wikia.nocookie.net/mysingingmonsters/images/b/b2/EpicCherubbleIdle.gif/revision/latest?cb=20250514164829",
+   "kind": "promotion",
+   "monsters": [
+    "Epic Cherubble"
+   ],
+   "occasion": "'Mythterious' Promotion",
+   "parent": "",
+   "precision": "day",
+   "section": "Availability",
+   "series": "mythterious-promotion",
+   "source": "Availability/Epic:Availability",
+   "start": "2026-11-19T00:00:00Z",
+   "status": "confirmed",
+   "tags": [
+    "monsters",
+    "promotion"
+   ],
+   "title": "Mythterious (Promotion)",
+   "url": "https://mysingingmonsters.fandom.com/wiki/Epic_Cherubble"
+  },
+  {
+   "confidence": 1.0,
+   "description": "",
+   "end": "2026-11-24T00:00:00Z",
+   "first_seen": "2026-11-19T20:40:32Z",
+   "id": "out-of-season-spurrit-2026-11-19",
    "image": "https://static.wikia.nocookie.net/mysingingmonsters/images/6/62/SpurritIdle.gif/revision/latest?cb=20241118024241",
    "kind": "outofseason",
    "monsters": [
     "Spurrit",
-    "Rare Spurrit"
+    "Rare Spurrit",
+    "Epic Spurrit"
    ],
+   "occasion": "Out-of-Season",
    "parent": "",
    "precision": "day",
    "section": "Availability",
    "series": "out-of-season-spurrit",
-   "source": "prediction:3y,spread=6d",
-   "start": "2026-11-20T00:00:00Z",
-   "status": "predicted",
+   "source": "Availability/Seasonal:Availability",
+   "start": "2026-11-19T00:00:00Z",
+   "status": "confirmed",
    "tags": [
     "monsters",
     "outofseason"
    ],
    "title": "Out-of-Season: Spurrit",
    "url": "https://mysingingmonsters.fandom.com/wiki/Spurrit"
+  },
+  {
+   "confidence": 1.0,
+   "description": "",
+   "end": "2026-11-27T00:00:00Z",
+   "first_seen": "2026-11-19T20:40:32Z",
+   "id": "plasmisfits-promotion-2026-11-19",
+   "kind": "promotion",
+   "monsters": [
+    "All Triple and Quad Element Rares"
+   ],
+   "occasion": "'Plasmisfits' Promotion",
+   "parent": "",
+   "precision": "day",
+   "section": "Availability",
+   "series": "plasmisfits-promotion",
+   "source": "Availability/Rare:Availability",
+   "start": "2026-11-19T00:00:00Z",
+   "status": "confirmed",
+   "tags": [
+    "monsters",
+    "promotion"
+   ],
+   "title": "Plasmisfits (Promotion)",
+   "url": "https://mysingingmonsters.fandom.com/wiki/All_Triple_and_Quad_Element_Rares"
   },
   {
    "confidence": 0.55,
@@ -34999,6 +35086,31 @@
    ],
    "title": "Epic Gob will be made available on Light Island & Magical Nexus",
    "url": "https://mysingingmonsters.fandom.com/wiki/History/2026"
+  },
+  {
+   "confidence": 1.0,
+   "description": "",
+   "end": "2026-12-01T00:00:00Z",
+   "first_seen": "2026-11-19T20:40:32Z",
+   "id": "new-epic-introduction-2026-11-25",
+   "image": "https://static.wikia.nocookie.net/mysingingmonsters/images/6/67/Epic_Gob_%28Playing%29.png/revision/latest?cb=20261118204648",
+   "kind": "intro",
+   "monsters": [
+    "Epic Gob"
+   ],
+   "occasion": "New Epic Introduction",
+   "parent": "",
+   "precision": "day",
+   "section": "Availability",
+   "series": "new-epic-introduction",
+   "source": "Availability/Epic:Availability",
+   "start": "2026-11-25T00:00:00Z",
+   "status": "confirmed",
+   "tags": [
+    "monsters"
+   ],
+   "title": "New Epic Introduction",
+   "url": "https://mysingingmonsters.fandom.com/wiki/Epic_Gob"
   },
   {
    "confidence": 0.55,
@@ -36795,30 +36907,6 @@
   {
    "confidence": 0.33,
    "description": "",
-   "end": "2027-05-21T00:00:00Z",
-   "first_seen": "1970-01-01T00:00:00Z",
-   "id": "new-epic-introduction-2027-05-13-pred",
-   "image": "https://static.wikia.nocookie.net/mysingingmonsters/images/1/14/EpicWithurIdle.gif/revision/latest?cb=20261028223751",
-   "kind": "intro",
-   "monsters": [
-    "Epic Withur"
-   ],
-   "parent": "",
-   "precision": "day",
-   "section": "Availability",
-   "series": "new-epic-introduction",
-   "source": "prediction:2y,spread=293d",
-   "start": "2027-05-13T00:00:00Z",
-   "status": "predicted",
-   "tags": [
-    "monsters"
-   ],
-   "title": "New Epic Introduction",
-   "url": "https://mysingingmonsters.fandom.com/wiki/Epic_Withur"
-  },
-  {
-   "confidence": 0.33,
-   "description": "",
    "end": "2027-06-12T00:00:00Z",
    "first_seen": "1970-01-01T00:00:00Z",
    "id": "fire-with-fire-promotion-2027-05-14-pred",
@@ -36969,6 +37057,30 @@
   {
    "confidence": 0.33,
    "description": "",
+   "end": "2027-05-25T00:00:00Z",
+   "first_seen": "2026-11-19T20:40:32Z",
+   "id": "new-epic-introduction-2027-05-17-pred",
+   "image": "https://static.wikia.nocookie.net/mysingingmonsters/images/6/67/Epic_Gob_%28Playing%29.png/revision/latest?cb=20261118204648",
+   "kind": "intro",
+   "monsters": [
+    "Epic Gob"
+   ],
+   "parent": "",
+   "precision": "day",
+   "section": "Availability",
+   "series": "new-epic-introduction",
+   "source": "prediction:2y,spread=321d",
+   "start": "2027-05-17T00:00:00Z",
+   "status": "predicted",
+   "tags": [
+    "monsters"
+   ],
+   "title": "New Epic Introduction",
+   "url": "https://mysingingmonsters.fandom.com/wiki/Epic_Gob"
+  },
+  {
+   "confidence": 0.33,
+   "description": "",
    "end": "2027-06-08T00:00:00Z",
    "first_seen": "1970-01-01T00:00:00Z",
    "id": "mythical-event-promotion-2027-05-19-pred",
@@ -37095,38 +37207,6 @@
    "url": "https://mysingingmonsters.fandom.com/wiki/Gobbleygourd"
   },
   {
-   "confidence": 0.33,
-   "description": "",
-   "end": "2027-06-05T00:00:00Z",
-   "first_seen": "1970-01-01T00:00:00Z",
-   "id": "secret-sauce-promotion-2027-05-28-pred",
-   "image": "https://static.wikia.nocookie.net/mysingingmonsters/images/6/6e/EpicCybopIdle.gif/revision/latest?cb=20241005000445",
-   "kind": "promotion",
-   "monsters": [
-    "Epic Cybop",
-    "Epic Reedling",
-    "Epic Scups",
-    "Epic PomPom",
-    "Epic Riff",
-    "Epic Sooza",
-    "Epic Thrumble",
-    "Epic Sneyser"
-   ],
-   "parent": "Epic Gheegur",
-   "precision": "day",
-   "section": "Availability",
-   "series": "secret-sauce-promotion",
-   "source": "prediction:2y,spread=330d",
-   "start": "2027-05-28T00:00:00Z",
-   "status": "predicted",
-   "tags": [
-    "monsters",
-    "promotion"
-   ],
-   "title": "Secret Sauce (Promotion)",
-   "url": "https://mysingingmonsters.fandom.com/wiki/Epic_Gheegur"
-  },
-  {
    "confidence": 0.6,
    "description": "",
    "end": "2027-06-03T00:00:00Z",
@@ -37149,31 +37229,6 @@
    ],
    "title": "Cloud",
    "url": "https://mysingingmonsters.fandom.com/wiki/Cloud_Island"
-  },
-  {
-   "confidence": 0.33,
-   "description": "",
-   "end": "2027-06-03T00:00:00Z",
-   "first_seen": "1970-01-01T00:00:00Z",
-   "id": "mythterious-promotion-2027-05-29-pred",
-   "image": "https://static.wikia.nocookie.net/mysingingmonsters/images/b/b2/EpicCherubbleIdle.gif/revision/latest?cb=20250514164829",
-   "kind": "promotion",
-   "monsters": [
-    "Epic Cherubble"
-   ],
-   "parent": "",
-   "precision": "day",
-   "section": "Availability",
-   "series": "mythterious-promotion",
-   "source": "prediction:2y,spread=274d",
-   "start": "2027-05-29T00:00:00Z",
-   "status": "predicted",
-   "tags": [
-    "monsters",
-    "promotion"
-   ],
-   "title": "Mythterious (Promotion)",
-   "url": "https://mysingingmonsters.fandom.com/wiki/Epic_Cherubble"
   },
   {
    "confidence": 0.33,
@@ -37257,6 +37312,38 @@
    ],
    "title": "Party, Space",
    "url": "https://mysingingmonsters.fandom.com/wiki/Party_Island"
+  },
+  {
+   "confidence": 0.33,
+   "description": "",
+   "end": "2027-06-12T00:00:00Z",
+   "first_seen": "2026-11-19T20:40:32Z",
+   "id": "secret-sauce-promotion-2027-06-04-pred",
+   "image": "https://static.wikia.nocookie.net/mysingingmonsters/images/6/6e/EpicCybopIdle.gif/revision/latest?cb=20241005000445",
+   "kind": "promotion",
+   "monsters": [
+    "Epic Cybop",
+    "Epic Reedling",
+    "Epic Scups",
+    "Epic PomPom",
+    "Epic Riff",
+    "Epic Sooza",
+    "Epic Thrumble",
+    "Epic Sneyser"
+   ],
+   "parent": "Epic Gheegur",
+   "precision": "day",
+   "section": "Availability",
+   "series": "secret-sauce-promotion",
+   "source": "prediction:2y,spread=330d",
+   "start": "2027-06-04T00:00:00Z",
+   "status": "predicted",
+   "tags": [
+    "monsters",
+    "promotion"
+   ],
+   "title": "Secret Sauce (Promotion)",
+   "url": "https://mysingingmonsters.fandom.com/wiki/Epic_Gheegur"
   },
   {
    "confidence": 0.85,
@@ -37485,6 +37572,31 @@
    ],
    "title": "Mything Link (Promotion)",
    "url": "https://mysingingmonsters.fandom.com/wiki/G'joob/DoF"
+  },
+  {
+   "confidence": 0.33,
+   "description": "",
+   "end": "2027-06-23T00:00:00Z",
+   "first_seen": "2026-11-19T20:40:32Z",
+   "id": "mythterious-promotion-2027-06-18-pred",
+   "image": "https://static.wikia.nocookie.net/mysingingmonsters/images/b/b2/EpicCherubbleIdle.gif/revision/latest?cb=20250514164829",
+   "kind": "promotion",
+   "monsters": [
+    "Epic Cherubble"
+   ],
+   "parent": "",
+   "precision": "day",
+   "section": "Availability",
+   "series": "mythterious-promotion",
+   "source": "prediction:2y,spread=274d",
+   "start": "2027-06-18T00:00:00Z",
+   "status": "predicted",
+   "tags": [
+    "monsters",
+    "promotion"
+   ],
+   "title": "Mythterious (Promotion)",
+   "url": "https://mysingingmonsters.fandom.com/wiki/Epic_Cherubble"
   },
   {
    "confidence": 0.6,
@@ -39575,11 +39687,11 @@
    "url": "https://mysingingmonsters.fandom.com/wiki/Rare_Gobbleygourd"
   },
   {
-   "confidence": 0.7,
+   "confidence": 0.85,
    "description": "",
-   "end": "2027-11-25T00:00:00Z",
-   "first_seen": "1970-01-01T00:00:00Z",
-   "id": "out-of-season-spurrit-2027-11-20-pred",
+   "end": "2027-11-24T00:00:00Z",
+   "first_seen": "2026-11-19T20:40:32Z",
+   "id": "out-of-season-spurrit-2027-11-19-pred",
    "image": "https://static.wikia.nocookie.net/mysingingmonsters/images/6/62/SpurritIdle.gif/revision/latest?cb=20241118024241",
    "kind": "outofseason",
    "monsters": [
@@ -39590,8 +39702,8 @@
    "precision": "day",
    "section": "Availability",
    "series": "out-of-season-spurrit",
-   "source": "prediction:3y,spread=6d",
-   "start": "2027-11-20T00:00:00Z",
+   "source": "prediction:4y,spread=6d",
+   "start": "2027-11-19T00:00:00Z",
    "status": "predicted",
    "tags": [
     "monsters",
@@ -39599,6 +39711,30 @@
    ],
    "title": "Out-of-Season: Spurrit",
    "url": "https://mysingingmonsters.fandom.com/wiki/Spurrit"
+  },
+  {
+   "confidence": 0.55,
+   "description": "",
+   "end": "2027-11-27T00:00:00Z",
+   "first_seen": "2026-11-19T20:40:32Z",
+   "id": "plasmisfits-promotion-2027-11-19-pred",
+   "kind": "promotion",
+   "monsters": [
+    "All Triple-Element Rares"
+   ],
+   "parent": "",
+   "precision": "day",
+   "section": "Availability",
+   "series": "plasmisfits-promotion",
+   "source": "prediction:2y,spread=1d",
+   "start": "2027-11-19T00:00:00Z",
+   "status": "predicted",
+   "tags": [
+    "monsters",
+    "promotion"
+   ],
+   "title": "Plasmisfits (Promotion)",
+   "url": "https://mysingingmonsters.fandom.com/wiki/All_Triple-Element_Rares"
   },
   {
    "confidence": 0.55,
@@ -39925,7 +40061,7 @@
    "url": "https://mysingingmonsters.fandom.com/wiki/Rare_Yool"
   }
  ],
- "generated_at": "2026-11-19T02:35:46Z",
+ "generated_at": "2026-11-19T20:40:32Z",
  "roadmap": {
   "monsters": [
    {
@@ -65959,22 +66095,150 @@
    "status": "predicted"
   },
   {
-   "confidence": 0.7,
-   "end": "2026-11-25T00:00:00Z",
-   "event": "Out-of-Season: Spurrit",
-   "event_id": "out-of-season-spurrit-2026-11-20-pred",
-   "monster": "Rare Spurrit",
-   "start": "2026-11-20T00:00:00Z",
-   "status": "predicted"
+   "confidence": 1.0,
+   "end": "2026-11-26T00:00:00Z",
+   "event": "Secret Sauce (Promotion)",
+   "event_id": "secret-sauce-promotion-2026-11-18",
+   "monster": "Epic Barrb",
+   "start": "2026-11-18T00:00:00Z",
+   "status": "confirmed"
   },
   {
-   "confidence": 0.7,
-   "end": "2026-11-25T00:00:00Z",
+   "confidence": 1.0,
+   "end": "2026-11-26T00:00:00Z",
+   "event": "Secret Sauce (Promotion)",
+   "event_id": "secret-sauce-promotion-2026-11-18",
+   "monster": "Epic Clamble",
+   "start": "2026-11-18T00:00:00Z",
+   "status": "confirmed"
+  },
+  {
+   "confidence": 0.8,
+   "end": "2026-11-26T00:00:00Z",
+   "event": null,
+   "event_id": null,
+   "monster": "Epic Edamimi",
+   "source": "availability:Availability",
+   "start": "2026-11-18T00:00:00Z",
+   "status": "confirmed"
+  },
+  {
+   "confidence": 1.0,
+   "end": "2026-11-26T00:00:00Z",
+   "event": "Secret Sauce (Promotion)",
+   "event_id": "secret-sauce-promotion-2026-11-18",
+   "monster": "Epic Entbrat",
+   "start": "2026-11-18T00:00:00Z",
+   "status": "confirmed"
+  },
+  {
+   "confidence": 1.0,
+   "end": "2026-11-26T00:00:00Z",
+   "event": "Secret Sauce (Promotion)",
+   "event_id": "secret-sauce-promotion-2026-11-18",
+   "monster": "Epic Flowah",
+   "start": "2026-11-18T00:00:00Z",
+   "status": "confirmed"
+  },
+  {
+   "confidence": 1.0,
+   "end": "2026-11-26T00:00:00Z",
+   "event": "Secret Sauce (Promotion)",
+   "event_id": "secret-sauce-promotion-2026-11-18",
+   "monster": "Epic Furcorn",
+   "start": "2026-11-18T00:00:00Z",
+   "status": "confirmed"
+  },
+  {
+   "confidence": 1.0,
+   "end": "2026-11-26T00:00:00Z",
+   "event": "Secret Sauce (Promotion)",
+   "event_id": "secret-sauce-promotion-2026-11-18",
+   "monster": "Epic Noggin",
+   "start": "2026-11-18T00:00:00Z",
+   "status": "confirmed"
+  },
+  {
+   "confidence": 1.0,
+   "end": "2026-11-26T00:00:00Z",
+   "event": "Secret Sauce (Promotion)",
+   "event_id": "secret-sauce-promotion-2026-11-18",
+   "monster": "Epic Pummel",
+   "start": "2026-11-18T00:00:00Z",
+   "status": "confirmed"
+  },
+  {
+   "confidence": 1.0,
+   "end": "2026-11-26T00:00:00Z",
+   "event": "Secret Sauce (Promotion)",
+   "event_id": "secret-sauce-promotion-2026-11-18",
+   "monster": "Epic Quarrister",
+   "start": "2026-11-18T00:00:00Z",
+   "status": "confirmed"
+  },
+  {
+   "confidence": 1.0,
+   "end": "2026-11-26T00:00:00Z",
+   "event": "Secret Sauce (Promotion)",
+   "event_id": "secret-sauce-promotion-2026-11-18",
+   "monster": "Epic Spunge",
+   "start": "2026-11-18T00:00:00Z",
+   "status": "confirmed"
+  },
+  {
+   "confidence": 1.0,
+   "end": "2026-11-27T00:00:00Z",
+   "event": "Plasmisfits (Promotion)",
+   "event_id": "plasmisfits-promotion-2026-11-19",
+   "monster": "All Triple and Quad Element Rares",
+   "start": "2026-11-19T00:00:00Z",
+   "status": "confirmed"
+  },
+  {
+   "confidence": 1.0,
+   "end": "2026-11-24T00:00:00Z",
+   "event": "Mythterious (Promotion)",
+   "event_id": "mythterious-promotion-2026-11-19",
+   "monster": "Epic Cherubble",
+   "start": "2026-11-19T00:00:00Z",
+   "status": "confirmed"
+  },
+  {
+   "confidence": 1.0,
+   "end": "2026-11-24T00:00:00Z",
    "event": "Out-of-Season: Spurrit",
-   "event_id": "out-of-season-spurrit-2026-11-20-pred",
+   "event_id": "out-of-season-spurrit-2026-11-19",
+   "monster": "Epic Spurrit",
+   "start": "2026-11-19T00:00:00Z",
+   "status": "confirmed"
+  },
+  {
+   "confidence": 0.8,
+   "end": "2026-11-24T00:00:00Z",
+   "event": null,
+   "event_id": null,
+   "monster": "Rare Cherubble",
+   "source": "availability:Availability/Rare",
+   "start": "2026-11-19T00:00:00Z",
+   "status": "confirmed"
+  },
+  {
+   "confidence": 1.0,
+   "end": "2026-11-24T00:00:00Z",
+   "event": "Out-of-Season: Spurrit",
+   "event_id": "out-of-season-spurrit-2026-11-19",
+   "monster": "Rare Spurrit",
+   "start": "2026-11-19T00:00:00Z",
+   "status": "confirmed"
+  },
+  {
+   "confidence": 1.0,
+   "end": "2026-11-24T00:00:00Z",
+   "event": "Out-of-Season: Spurrit",
+   "event_id": "out-of-season-spurrit-2026-11-19",
    "monster": "Spurrit",
-   "start": "2026-11-20T00:00:00Z",
-   "status": "predicted"
+   "start": "2026-11-19T00:00:00Z",
+   "status": "confirmed"
   },
   {
    "confidence": 0.55,
@@ -65984,6 +66248,15 @@
    "monster": "Seasonal Monsters",
    "start": "2026-11-24T00:00:00Z",
    "status": "predicted"
+  },
+  {
+   "confidence": 1.0,
+   "end": "2026-12-01T00:00:00Z",
+   "event": "New Epic Introduction",
+   "event_id": "new-epic-introduction-2026-11-25",
+   "monster": "Epic Gob",
+   "start": "2026-11-25T00:00:00Z",
+   "status": "confirmed"
   },
   {
    "confidence": 0.55,
@@ -66986,15 +67259,6 @@
   },
   {
    "confidence": 0.33,
-   "end": "2027-05-21T00:00:00Z",
-   "event": "New Epic Introduction",
-   "event_id": "new-epic-introduction-2027-05-13-pred",
-   "monster": "Epic Withur",
-   "start": "2027-05-13T00:00:00Z",
-   "status": "predicted"
-  },
-  {
-   "confidence": 0.33,
    "end": "2027-06-12T00:00:00Z",
    "event": "Fire with Fire (Promotion)",
    "event_id": "fire-with-fire-promotion-2027-05-14-pred",
@@ -67076,6 +67340,15 @@
   },
   {
    "confidence": 0.33,
+   "end": "2027-05-25T00:00:00Z",
+   "event": "New Epic Introduction",
+   "event_id": "new-epic-introduction-2027-05-17-pred",
+   "monster": "Epic Gob",
+   "start": "2027-05-17T00:00:00Z",
+   "status": "predicted"
+  },
+  {
+   "confidence": 0.33,
    "end": "2027-06-08T00:00:00Z",
    "event": "Mythical Event (Promotion)",
    "event_id": "mythical-event-promotion-2027-05-19-pred",
@@ -67147,92 +67420,11 @@
    "status": "predicted"
   },
   {
-   "confidence": 0.33,
-   "end": "2027-06-05T00:00:00Z",
-   "event": "Secret Sauce (Promotion)",
-   "event_id": "secret-sauce-promotion-2027-05-28-pred",
-   "monster": "Epic Cybop",
-   "start": "2027-05-28T00:00:00Z",
-   "status": "predicted"
-  },
-  {
-   "confidence": 0.33,
-   "end": "2027-06-05T00:00:00Z",
-   "event": "Secret Sauce (Promotion)",
-   "event_id": "secret-sauce-promotion-2027-05-28-pred",
-   "monster": "Epic PomPom",
-   "start": "2027-05-28T00:00:00Z",
-   "status": "predicted"
-  },
-  {
-   "confidence": 0.33,
-   "end": "2027-06-05T00:00:00Z",
-   "event": "Secret Sauce (Promotion)",
-   "event_id": "secret-sauce-promotion-2027-05-28-pred",
-   "monster": "Epic Reedling",
-   "start": "2027-05-28T00:00:00Z",
-   "status": "predicted"
-  },
-  {
-   "confidence": 0.33,
-   "end": "2027-06-05T00:00:00Z",
-   "event": "Secret Sauce (Promotion)",
-   "event_id": "secret-sauce-promotion-2027-05-28-pred",
-   "monster": "Epic Riff",
-   "start": "2027-05-28T00:00:00Z",
-   "status": "predicted"
-  },
-  {
-   "confidence": 0.33,
-   "end": "2027-06-05T00:00:00Z",
-   "event": "Secret Sauce (Promotion)",
-   "event_id": "secret-sauce-promotion-2027-05-28-pred",
-   "monster": "Epic Scups",
-   "start": "2027-05-28T00:00:00Z",
-   "status": "predicted"
-  },
-  {
-   "confidence": 0.33,
-   "end": "2027-06-05T00:00:00Z",
-   "event": "Secret Sauce (Promotion)",
-   "event_id": "secret-sauce-promotion-2027-05-28-pred",
-   "monster": "Epic Sneyser",
-   "start": "2027-05-28T00:00:00Z",
-   "status": "predicted"
-  },
-  {
-   "confidence": 0.33,
-   "end": "2027-06-05T00:00:00Z",
-   "event": "Secret Sauce (Promotion)",
-   "event_id": "secret-sauce-promotion-2027-05-28-pred",
-   "monster": "Epic Sooza",
-   "start": "2027-05-28T00:00:00Z",
-   "status": "predicted"
-  },
-  {
-   "confidence": 0.33,
-   "end": "2027-06-05T00:00:00Z",
-   "event": "Secret Sauce (Promotion)",
-   "event_id": "secret-sauce-promotion-2027-05-28-pred",
-   "monster": "Epic Thrumble",
-   "start": "2027-05-28T00:00:00Z",
-   "status": "predicted"
-  },
-  {
    "confidence": 0.6,
    "end": "2027-06-03T00:00:00Z",
    "event": "Cloud",
    "event_id": "cloud-2027-05-29-pred",
    "monster": "Entbrat/DoF",
-   "start": "2027-05-29T00:00:00Z",
-   "status": "predicted"
-  },
-  {
-   "confidence": 0.33,
-   "end": "2027-06-03T00:00:00Z",
-   "event": "Mythterious (Promotion)",
-   "event_id": "mythterious-promotion-2027-05-29-pred",
-   "monster": "Epic Cherubble",
    "start": "2027-05-29T00:00:00Z",
    "status": "predicted"
   },
@@ -67333,6 +67525,78 @@
    "event_id": "mythed-opportunity-promotion-2027-06-01-pred",
    "monster": "Rares",
    "start": "2027-06-01T00:00:00Z",
+   "status": "predicted"
+  },
+  {
+   "confidence": 0.33,
+   "end": "2027-06-12T00:00:00Z",
+   "event": "Secret Sauce (Promotion)",
+   "event_id": "secret-sauce-promotion-2027-06-04-pred",
+   "monster": "Epic Cybop",
+   "start": "2027-06-04T00:00:00Z",
+   "status": "predicted"
+  },
+  {
+   "confidence": 0.33,
+   "end": "2027-06-12T00:00:00Z",
+   "event": "Secret Sauce (Promotion)",
+   "event_id": "secret-sauce-promotion-2027-06-04-pred",
+   "monster": "Epic PomPom",
+   "start": "2027-06-04T00:00:00Z",
+   "status": "predicted"
+  },
+  {
+   "confidence": 0.33,
+   "end": "2027-06-12T00:00:00Z",
+   "event": "Secret Sauce (Promotion)",
+   "event_id": "secret-sauce-promotion-2027-06-04-pred",
+   "monster": "Epic Reedling",
+   "start": "2027-06-04T00:00:00Z",
+   "status": "predicted"
+  },
+  {
+   "confidence": 0.33,
+   "end": "2027-06-12T00:00:00Z",
+   "event": "Secret Sauce (Promotion)",
+   "event_id": "secret-sauce-promotion-2027-06-04-pred",
+   "monster": "Epic Riff",
+   "start": "2027-06-04T00:00:00Z",
+   "status": "predicted"
+  },
+  {
+   "confidence": 0.33,
+   "end": "2027-06-12T00:00:00Z",
+   "event": "Secret Sauce (Promotion)",
+   "event_id": "secret-sauce-promotion-2027-06-04-pred",
+   "monster": "Epic Scups",
+   "start": "2027-06-04T00:00:00Z",
+   "status": "predicted"
+  },
+  {
+   "confidence": 0.33,
+   "end": "2027-06-12T00:00:00Z",
+   "event": "Secret Sauce (Promotion)",
+   "event_id": "secret-sauce-promotion-2027-06-04-pred",
+   "monster": "Epic Sneyser",
+   "start": "2027-06-04T00:00:00Z",
+   "status": "predicted"
+  },
+  {
+   "confidence": 0.33,
+   "end": "2027-06-12T00:00:00Z",
+   "event": "Secret Sauce (Promotion)",
+   "event_id": "secret-sauce-promotion-2027-06-04-pred",
+   "monster": "Epic Sooza",
+   "start": "2027-06-04T00:00:00Z",
+   "status": "predicted"
+  },
+  {
+   "confidence": 0.33,
+   "end": "2027-06-12T00:00:00Z",
+   "event": "Secret Sauce (Promotion)",
+   "event_id": "secret-sauce-promotion-2027-06-04-pred",
+   "monster": "Epic Thrumble",
+   "start": "2027-06-04T00:00:00Z",
    "status": "predicted"
   },
   {
@@ -67441,6 +67705,15 @@
    "event_id": "ether-way-promotion-2027-06-15-pred",
    "monster": "Rarethereal",
    "start": "2027-06-15T00:00:00Z",
+   "status": "predicted"
+  },
+  {
+   "confidence": 0.33,
+   "end": "2027-06-23T00:00:00Z",
+   "event": "Mythterious (Promotion)",
+   "event_id": "mythterious-promotion-2027-06-18-pred",
+   "monster": "Epic Cherubble",
+   "start": "2027-06-18T00:00:00Z",
    "status": "predicted"
   },
   {
@@ -68758,21 +69031,30 @@
    "status": "predicted"
   },
   {
-   "confidence": 0.7,
-   "end": "2027-11-25T00:00:00Z",
-   "event": "Out-of-Season: Spurrit",
-   "event_id": "out-of-season-spurrit-2027-11-20-pred",
-   "monster": "Rare Spurrit",
-   "start": "2027-11-20T00:00:00Z",
+   "confidence": 0.55,
+   "end": "2027-11-27T00:00:00Z",
+   "event": "Plasmisfits (Promotion)",
+   "event_id": "plasmisfits-promotion-2027-11-19-pred",
+   "monster": "All Triple-Element Rares",
+   "start": "2027-11-19T00:00:00Z",
    "status": "predicted"
   },
   {
-   "confidence": 0.7,
-   "end": "2027-11-25T00:00:00Z",
+   "confidence": 0.85,
+   "end": "2027-11-24T00:00:00Z",
    "event": "Out-of-Season: Spurrit",
-   "event_id": "out-of-season-spurrit-2027-11-20-pred",
+   "event_id": "out-of-season-spurrit-2027-11-19-pred",
+   "monster": "Rare Spurrit",
+   "start": "2027-11-19T00:00:00Z",
+   "status": "predicted"
+  },
+  {
+   "confidence": 0.85,
+   "end": "2027-11-24T00:00:00Z",
+   "event": "Out-of-Season: Spurrit",
+   "event_id": "out-of-season-spurrit-2027-11-19-pred",
    "monster": "Spurrit",
-   "start": "2027-11-20T00:00:00Z",
+   "start": "2027-11-19T00:00:00Z",
    "status": "predicted"
   },
   {
@@ -68913,9 +69195,9 @@
  ],
  "stats": {
   "announced": 5,
-  "availability_rows": 1602,
+  "availability_rows": 1609,
   "event_pages": 0,
-  "events": 1566,
+  "events": 1571,
   "monsters": 0,
   "sources": {
    "bbb": 10,
