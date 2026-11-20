@@ -34867,49 +34867,6 @@
    "url": "https://mysingingmonsters.fandom.com/wiki/Rare_Gobbleygourd"
   },
   {
-   "announced_at": "2026-11-16T17:01:23Z",
-   "confidence": 1.0,
-   "description": "It's time for YOU to vote for our GRAND PRIZE winner! Head over to the 2026 Spooktacle Costume Contest Voting poll, and cast your vote on your favorite costume👻 Make sure to get your vote in before Wednesday, November 18th at 12PM (ET) ⌛ Vote now!",
-   "end": "2026-11-19T00:00:00Z",
-   "first_seen": "2026-11-16T19:37:55Z",
-   "id": "ann-bluesky-3n2gyx6f6q-2026-11-18",
-   "image": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:mtzaai2t4hgjptsmv5m7l5xr/bafkreidpbtmvkud3jyw7uu5dqk3mrllet6oksfjy2zhf6wbz7gqxhuzyyy",
-   "kind": "seasonal",
-   "monsters": [],
-   "open_ended": true,
-   "precision": "day",
-   "series": "it-s-time-for-you-to-vote-for-our-grand-prize-winner-head-over-to-the-2026",
-   "source": "bluesky:3n2gyx6f6qz2f",
-   "start": "2026-11-18T00:00:00Z",
-   "status": "announced",
-   "tags": [
-    "costumes",
-    "rewards"
-   ],
-   "title": "It's time for YOU to vote for our GRAND PRIZE winner! Head over to the 2026…",
-   "url": "https://bsky.app/profile/mysingingmonsters.com/post/3n2gyx6f6qz2f"
-  },
-  {
-   "announced_at": "2026-11-16T16:00:37Z",
-   "confidence": 1.0,
-   "description": "Join the Monster-Handlers Wednesday, November 18th at 5PM (ET) 🔴LIVE to chat about all things My Singing Monsters! Come join, only on our official YouTube channel 📺",
-   "end": "2026-11-19T00:00:00Z",
-   "first_seen": "2026-11-16T19:37:55Z",
-   "id": "ann-bluesky-3n2gvkjuum-2026-11-18",
-   "image": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:mtzaai2t4hgjptsmv5m7l5xr/bafkreiasbjzmb3utn4grjzqcgb2mpig4thw6ghdrywcsh45ud2xf5m5doi",
-   "kind": "other",
-   "monsters": [],
-   "open_ended": true,
-   "precision": "day",
-   "series": "join-the-monster-handlers-wednesday-november-18th-at-5pm-et-live-to-chat",
-   "source": "bluesky:3n2gvkjuumo2z",
-   "start": "2026-11-18T00:00:00Z",
-   "status": "announced",
-   "tags": [],
-   "title": "Join the Monster-Handlers Wednesday, November 18th at 5PM (ET) 🔴LIVE to chat…",
-   "url": "https://bsky.app/profile/mysingingmonsters.com/post/3n2gvkjuumo2z"
-  },
-  {
    "confidence": 1.0,
    "description": "",
    "end": "2026-11-26T00:00:00Z",
@@ -40059,9 +40016,60 @@
    ],
    "title": "Making Merry (Promotion)",
    "url": "https://mysingingmonsters.fandom.com/wiki/Rare_Yool"
+  },
+  {
+   "confidence": 0.55,
+   "description": "",
+   "end": "2027-12-31T00:00:00Z",
+   "first_seen": "2026-11-20T02:20:53Z",
+   "id": "myth-kin-promotion-2027-12-25-pred",
+   "image": "https://static.wikia.nocookie.net/mysingingmonsters/images/9/97/Festival_of_Yay_Element_%28DoF%29.png/revision/latest?cb=20250908204520",
+   "kind": "promotion",
+   "monsters": [
+    "Seasonal Monsters/DoF",
+    "Mythical Monsters/DoF"
+   ],
+   "parent": "Festival of Yay Junior 2024",
+   "precision": "day",
+   "section": "History",
+   "series": "myth-kin-promotion",
+   "source": "prediction:2y,spread=1d",
+   "start": "2027-12-25T00:00:00Z",
+   "status": "predicted",
+   "tags": [
+    "monsters",
+    "promotion"
+   ],
+   "title": "Myth & Kin (Promotion)",
+   "url": "https://mysingingmonsters.fandom.com/wiki/Festival_of_Yay_Junior"
+  },
+  {
+   "confidence": 0.7,
+   "description": "",
+   "end": "2027-12-31T00:00:00Z",
+   "first_seen": "2026-11-20T02:20:53Z",
+   "id": "song-in-your-heart-promotion-2027-12-25-pred",
+   "image": "https://static.wikia.nocookie.net/mysingingmonsters/images/f/fe/Seasonal_Monsters.png/revision/latest/scale-to-width-down/600?cb=20260506215015",
+   "kind": "promotion",
+   "monsters": [
+    "Seasonals"
+   ],
+   "parent": "Festival of Yay 2023",
+   "precision": "day",
+   "section": "Availability",
+   "series": "song-in-your-heart-promotion",
+   "source": "prediction:3y,spread=1d",
+   "start": "2027-12-25T00:00:00Z",
+   "status": "predicted",
+   "tags": [
+    "monsters",
+    "promotion"
+   ],
+   "title": "Song in Your Heart (Promotion)",
+   "url": "https://mysingingmonsters.fandom.com/wiki/Seasonals"
   }
  ],
- "generated_at": "2026-11-19T20:40:32Z",
+ "generated_at": "2026-11-20T02:20:53Z",
  "roadmap": {
   "monsters": [
    {
@@ -69191,10 +69199,37 @@
    "monster": "Rare Yool",
    "start": "2027-12-21T00:00:00Z",
    "status": "predicted"
+  },
+  {
+   "confidence": 0.55,
+   "end": "2027-12-31T00:00:00Z",
+   "event": "Myth & Kin (Promotion)",
+   "event_id": "myth-kin-promotion-2027-12-25-pred",
+   "monster": "Mythical Monsters/DoF",
+   "start": "2027-12-25T00:00:00Z",
+   "status": "predicted"
+  },
+  {
+   "confidence": 0.55,
+   "end": "2027-12-31T00:00:00Z",
+   "event": "Myth & Kin (Promotion)",
+   "event_id": "myth-kin-promotion-2027-12-25-pred",
+   "monster": "Seasonal Monsters/DoF",
+   "start": "2027-12-25T00:00:00Z",
+   "status": "predicted"
+  },
+  {
+   "confidence": 0.7,
+   "end": "2027-12-31T00:00:00Z",
+   "event": "Song in Your Heart (Promotion)",
+   "event_id": "song-in-your-heart-promotion-2027-12-25-pred",
+   "monster": "Seasonals",
+   "start": "2027-12-25T00:00:00Z",
+   "status": "predicted"
   }
  ],
  "stats": {
-  "announced": 5,
+  "announced": 3,
   "availability_rows": 1609,
   "event_pages": 0,
   "events": 1571,
