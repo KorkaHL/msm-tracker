@@ -34953,6 +34953,32 @@
    "url": "https://mysingingmonsters.fandom.com/wiki/All_Triple_and_Quad_Element_Rares"
   },
   {
+   "confidence": 1.0,
+   "description": "",
+   "end": "2026-12-03T00:00:00Z",
+   "first_seen": "2026-11-24T02:14:35Z",
+   "id": "november-sale-2026-11-23",
+   "image": "https://static.wikia.nocookie.net/mysingingmonsters/images/0/05/EpicMimicIdle.gif/revision/latest?cb=20260513173022",
+   "kind": "sale",
+   "monsters": [
+    "Epic Mimic"
+   ],
+   "occasion": "November Sale",
+   "parent": "",
+   "precision": "day",
+   "section": "Fire Expansion Monsters",
+   "series": "november-sale",
+   "source": "Availability:Fire Expansion Monsters",
+   "start": "2026-11-23T00:00:00Z",
+   "status": "confirmed",
+   "tags": [
+    "monsters",
+    "sale"
+   ],
+   "title": "November Sale",
+   "url": "https://mysingingmonsters.fandom.com/wiki/Epic_Mimic"
+  },
+  {
    "confidence": 0.55,
    "description": "",
    "end": "2026-11-28T00:00:00Z",
@@ -40059,9 +40085,34 @@
    ],
    "title": "Song in Your Heart (Promotion)",
    "url": "https://mysingingmonsters.fandom.com/wiki/Seasonals"
+  },
+  {
+   "confidence": 0.7,
+   "description": "",
+   "end": "2028-01-03T00:00:00Z",
+   "first_seen": "2026-11-24T02:14:35Z",
+   "id": "out-of-season-whiz-bang-2027-12-29-pred",
+   "image": "https://static.wikia.nocookie.net/mysingingmonsters/images/7/75/RareWhiz-bangIdle.gif/revision/latest?cb=20240930024114",
+   "kind": "outofseason",
+   "monsters": [
+    "Rare Whiz-bang"
+   ],
+   "parent": "",
+   "precision": "day",
+   "section": "Availability",
+   "series": "out-of-season-whiz-bang",
+   "source": "prediction:3y,spread=5d",
+   "start": "2027-12-29T00:00:00Z",
+   "status": "predicted",
+   "tags": [
+    "monsters",
+    "outofseason"
+   ],
+   "title": "Out-of-Season: Whiz-bang",
+   "url": "https://mysingingmonsters.fandom.com/wiki/Rare_Whiz-bang"
   }
  ],
- "generated_at": "2026-11-23T01:45:27Z",
+ "generated_at": "2026-11-24T02:14:35Z",
  "roadmap": {
   "monsters": [
    {
@@ -66232,6 +66283,15 @@
    "status": "confirmed"
   },
   {
+   "confidence": 1.0,
+   "end": "2026-12-03T00:00:00Z",
+   "event": "November Sale",
+   "event_id": "november-sale-2026-11-23",
+   "monster": "Epic Mimic",
+   "start": "2026-11-23T00:00:00Z",
+   "status": "confirmed"
+  },
+  {
    "confidence": 0.55,
    "end": "2026-11-28T00:00:00Z",
    "event": "Black Friday (Promotion)",
@@ -69209,13 +69269,22 @@
    "monster": "Seasonals",
    "start": "2027-12-25T00:00:00Z",
    "status": "predicted"
+  },
+  {
+   "confidence": 0.7,
+   "end": "2028-01-03T00:00:00Z",
+   "event": "Out-of-Season: Whiz-bang",
+   "event_id": "out-of-season-whiz-bang-2027-12-29-pred",
+   "monster": "Rare Whiz-bang",
+   "start": "2027-12-29T00:00:00Z",
+   "status": "predicted"
   }
  ],
  "stats": {
   "announced": 4,
-  "availability_rows": 1609,
+  "availability_rows": 1610,
   "event_pages": 0,
-  "events": 1571,
+  "events": 1573,
   "monsters": 0,
   "sources": {
    "bbb": 10,
