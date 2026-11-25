@@ -35025,22 +35025,22 @@
   },
   {
    "confidence": 1.0,
-   "description": "Epic Gob will be made available on Light Island & Magical Nexus.",
+   "description": "Epic Gob was made available on Light Island & Magical Nexus.",
    "end": "2026-11-26T00:00:00Z",
-   "first_seen": "2026-11-18T20:34:27Z",
-   "id": "hist-2026-11-25-1f4940",
+   "first_seen": "2026-11-25T19:18:49Z",
+   "id": "hist-2026-11-25-5e839f",
    "kind": "other",
    "monsters": [],
    "open_ended": true,
    "precision": "day",
-   "series": "epic-gob-will-be-made-available-on-light-island-magical-nexu",
+   "series": "epic-gob-was-made-available-on-light-island-magical-nexus",
    "source": "history:2026",
    "start": "2026-11-25T00:00:00Z",
    "status": "announced",
    "tags": [
     "island"
    ],
-   "title": "Epic Gob will be made available on Light Island & Magical Nexus",
+   "title": "Epic Gob was made available on Light Island & Magical Nexus",
    "url": "https://mysingingmonsters.fandom.com/wiki/History/2026"
   },
   {
@@ -40112,7 +40112,7 @@
    "url": "https://mysingingmonsters.fandom.com/wiki/Rare_Whiz-bang"
   }
  ],
- "generated_at": "2026-11-24T02:14:35Z",
+ "generated_at": "2026-11-25T19:18:49Z",
  "roadmap": {
   "monsters": [
    {
