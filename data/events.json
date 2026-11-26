@@ -34426,7 +34426,6 @@
    "end": "2026-10-27T00:00:00Z",
    "first_seen": "1970-01-01T00:00:00Z",
    "id": "out-of-season-blabbit-2026-10-22",
-   "image": "https://static.wikia.nocookie.net/mysingingmonsters/images/f/f0/BlabbitIdle.gif/revision/latest?cb=20240915235845",
    "kind": "outofseason",
    "monsters": [
     "Blabbit",
@@ -34454,7 +34453,6 @@
    "end": "2026-10-27T00:00:00Z",
    "first_seen": "1970-01-01T00:00:00Z",
    "id": "scared-silly-promotion-2026-10-22",
-   "image": "https://static.wikia.nocookie.net/mysingingmonsters/images/d/d2/EpicGhaztIdle.gif/revision/latest?cb=20241002025751",
    "kind": "promotion",
    "monsters": [
     "Epic Ghazt",
@@ -35005,46 +35003,6 @@
   },
   {
    "confidence": 1.0,
-   "description": "Aquatic Fa, Knight Fa, and Sol-stice were made available on every other island with Dipsters.",
-   "end": "2026-11-26T00:00:00Z",
-   "first_seen": "2026-11-19T02:35:46Z",
-   "id": "hist-2026-11-25-902f3b",
-   "kind": "other",
-   "monsters": [],
-   "open_ended": true,
-   "precision": "day",
-   "series": "aquatic-fa-knight-fa-and-sol-stice-were-made-available-on-ev",
-   "source": "history:2026",
-   "start": "2026-11-25T00:00:00Z",
-   "status": "announced",
-   "tags": [
-    "island"
-   ],
-   "title": "Aquatic Fa, Knight Fa, and Sol-stice were made available on every other island with Dipste",
-   "url": "https://mysingingmonsters.fandom.com/wiki/History/2026"
-  },
-  {
-   "confidence": 1.0,
-   "description": "Epic Gob was made available on Light Island & Magical Nexus.",
-   "end": "2026-11-26T00:00:00Z",
-   "first_seen": "2026-11-25T19:18:49Z",
-   "id": "hist-2026-11-25-5e839f",
-   "kind": "other",
-   "monsters": [],
-   "open_ended": true,
-   "precision": "day",
-   "series": "epic-gob-was-made-available-on-light-island-magical-nexus",
-   "source": "history:2026",
-   "start": "2026-11-25T00:00:00Z",
-   "status": "announced",
-   "tags": [
-    "island"
-   ],
-   "title": "Epic Gob was made available on Light Island & Magical Nexus",
-   "url": "https://mysingingmonsters.fandom.com/wiki/History/2026"
-  },
-  {
-   "confidence": 1.0,
    "description": "",
    "end": "2026-12-01T00:00:00Z",
    "first_seen": "2026-11-19T20:40:32Z",
@@ -35141,6 +35099,25 @@
    ],
    "title": "Greetings (Promotion)",
    "url": "https://mysingingmonsters.fandom.com/wiki/Seasonal_Monsters"
+  },
+  {
+   "announced_at": "2026-11-25T20:00:31Z",
+   "confidence": 1.0,
+   "description": "Nominations are now open for the 2026 Steam Awards! My Singing Monsters has been a true Labor of Love for Big Blue Bubble over the last 14 years, and we wouldn't have been able to do it without our amazing players and community. If you love playing My Singing Monsters and have been enjoying all of the updates this year, please consider nominating us in the \"Labor of Love\" category for the 2026 Ste",
+   "end": "2026-12-01T00:00:00Z",
+   "first_seen": "2026-11-26T03:35:59Z",
+   "id": "ann-steam-1850460852-2026-11-30",
+   "kind": "other",
+   "monsters": [],
+   "open_ended": true,
+   "precision": "day",
+   "series": "nominate-us-for-the-labor-of-love-category-in-the-2026-steam-awards",
+   "source": "steam:1850460852982770",
+   "start": "2026-11-30T00:00:00Z",
+   "status": "announced",
+   "tags": [],
+   "title": "Nominate us for the \"Labor of Love\" category in the 2026 Steam Awards",
+   "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1850460852982770"
   },
   {
    "confidence": 0.85,
@@ -40112,7 +40089,7 @@
    "url": "https://mysingingmonsters.fandom.com/wiki/Rare_Whiz-bang"
   }
  ],
- "generated_at": "2026-11-25T19:18:49Z",
+ "generated_at": "2026-11-26T03:35:59Z",
  "roadmap": {
   "monsters": [
    {
@@ -69281,15 +69258,15 @@
   }
  ],
  "stats": {
-  "announced": 4,
+  "announced": 3,
   "availability_rows": 1610,
   "event_pages": 0,
-  "events": 1573,
+  "events": 1572,
   "monsters": 0,
   "sources": {
    "bbb": 10,
    "bluesky/mysingingmonsters.com": 45,
-   "history/2026": 3,
+   "history/2026": 1,
    "history/2027": 0,
    "posts": 75,
    "roadmap": 8,
