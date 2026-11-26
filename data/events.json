@@ -35027,23 +35027,24 @@
    "url": "https://mysingingmonsters.fandom.com/wiki/Epic_Gob"
   },
   {
-   "confidence": 0.55,
+   "confidence": 1.0,
    "description": "",
-   "end": "2026-12-02T00:00:00Z",
-   "first_seen": "1970-01-01T00:00:00Z",
-   "id": "family-reunion-promotion-2026-11-27-pred",
+   "end": "2026-12-01T00:00:00Z",
+   "first_seen": "2026-11-26T16:56:29Z",
+   "id": "family-reunion-promotion-2026-11-26",
    "image": "https://static.wikia.nocookie.net/mysingingmonsters/images/c/c8/Feast-Ember_Element.png/revision/latest?cb=20221101152101",
    "kind": "promotion",
    "monsters": [
     "All Fire Expansion Monsters"
    ],
-   "parent": "Feast-Ember 2024",
+   "occasion": "'Family Reunion' Promotion (Feast-Ember 2026)",
+   "parent": "Feast-Ember 2026",
    "precision": "day",
    "section": "Fire Expansion Monsters",
    "series": "family-reunion-promotion",
-   "source": "prediction:2y,spread=1d",
-   "start": "2026-11-27T00:00:00Z",
-   "status": "predicted",
+   "source": "Availability:Fire Expansion Monsters",
+   "start": "2026-11-26T00:00:00Z",
+   "status": "confirmed",
    "tags": [
     "monsters",
     "promotion"
@@ -35052,28 +35053,57 @@
    "url": "https://mysingingmonsters.fandom.com/wiki/Feast-Ember"
   },
   {
-   "confidence": 0.42,
+   "confidence": 1.0,
    "description": "",
-   "end": "2026-12-02T00:00:00Z",
-   "first_seen": "1970-01-01T00:00:00Z",
-   "id": "warm-hearts-promotion-2026-11-27-pred",
+   "end": "2026-12-01T00:00:00Z",
+   "first_seen": "2026-11-26T16:56:29Z",
+   "id": "quirky-turkeys-promotion-2026-11-26",
+   "image": "https://static.wikia.nocookie.net/mysingingmonsters/images/8/85/RareGobbleygourdIdle.gif/revision/latest?cb=20241104045814",
    "kind": "promotion",
    "monsters": [
-    "All Rares"
+    "Rare Gobbleygourd",
+    "Epic Gobbleygourd"
    ],
-   "parent": "",
+   "occasion": "'Quirky Turkeys' Promotion (Feast-Ember 2026)",
+   "parent": "Feast-Ember 2026",
+   "precision": "day",
+   "section": "Availability",
+   "series": "quirky-turkeys-promotion",
+   "source": "Availability/Seasonal:Availability",
+   "start": "2026-11-26T00:00:00Z",
+   "status": "confirmed",
+   "tags": [
+    "monsters",
+    "promotion"
+   ],
+   "title": "Quirky Turkeys (Promotion)",
+   "url": "https://mysingingmonsters.fandom.com/wiki/Feast-Ember"
+  },
+  {
+   "confidence": 1.0,
+   "description": "",
+   "end": "2026-12-01T00:00:00Z",
+   "first_seen": "2026-11-26T16:56:29Z",
+   "id": "warm-hearts-promotion-2026-11-26",
+   "image": "https://static.wikia.nocookie.net/mysingingmonsters/images/3/3b/Fire_Haven_Map_Pin.png/revision/latest?cb=20240515182129",
+   "kind": "promotion",
+   "monsters": [
+    "Fire Haven"
+   ],
+   "occasion": "'Warm Hearts' Promotion (Feast-Ember 2026)",
+   "parent": "Feast-Ember 2026",
    "precision": "day",
    "section": "Availability",
    "series": "warm-hearts-promotion",
-   "source": "prediction:3y,spread=278d",
-   "start": "2026-11-27T00:00:00Z",
-   "status": "predicted",
+   "source": "Availability/Epic:Availability",
+   "start": "2026-11-26T00:00:00Z",
+   "status": "confirmed",
    "tags": [
     "monsters",
     "promotion"
    ],
    "title": "Warm Hearts (Promotion)",
-   "url": "https://mysingingmonsters.fandom.com/wiki/All_Rares"
+   "url": "https://mysingingmonsters.fandom.com/wiki/Feast-Ember"
   },
   {
    "confidence": 0.55,
@@ -39716,6 +39746,32 @@
   {
    "confidence": 0.55,
    "description": "",
+   "end": "2027-11-30T00:00:00Z",
+   "first_seen": "2026-11-26T16:56:29Z",
+   "id": "quirky-turkeys-promotion-2027-11-25-pred",
+   "image": "https://static.wikia.nocookie.net/mysingingmonsters/images/8/85/RareGobbleygourdIdle.gif/revision/latest?cb=20241104045814",
+   "kind": "promotion",
+   "monsters": [
+    "Rare Gobbleygourd",
+    "Epic Gobbleygourd"
+   ],
+   "parent": "",
+   "precision": "day",
+   "section": "Availability",
+   "series": "quirky-turkeys-promotion",
+   "source": "prediction:2y,spread=2d",
+   "start": "2027-11-25T00:00:00Z",
+   "status": "predicted",
+   "tags": [
+    "monsters",
+    "promotion"
+   ],
+   "title": "Quirky Turkeys (Promotion)",
+   "url": "https://mysingingmonsters.fandom.com/wiki/Rare_Gobbleygourd"
+  },
+  {
+   "confidence": 0.7,
+   "description": "",
    "end": "2027-12-02T00:00:00Z",
    "first_seen": "1970-01-01T00:00:00Z",
    "id": "family-reunion-promotion-2027-11-27-pred",
@@ -39728,7 +39784,7 @@
    "precision": "day",
    "section": "Fire Expansion Monsters",
    "series": "family-reunion-promotion",
-   "source": "prediction:2y,spread=1d",
+   "source": "prediction:3y,spread=2d",
    "start": "2027-11-27T00:00:00Z",
    "status": "predicted",
    "tags": [
@@ -39739,7 +39795,7 @@
    "url": "https://mysingingmonsters.fandom.com/wiki/Feast-Ember"
   },
   {
-   "confidence": 0.42,
+   "confidence": 0.51,
    "description": "",
    "end": "2027-12-02T00:00:00Z",
    "first_seen": "1970-01-01T00:00:00Z",
@@ -39752,7 +39808,7 @@
    "precision": "day",
    "section": "Availability",
    "series": "warm-hearts-promotion",
-   "source": "prediction:3y,spread=278d",
+   "source": "prediction:4y,spread=278d",
    "start": "2027-11-27T00:00:00Z",
    "status": "predicted",
    "tags": [
@@ -40089,7 +40145,7 @@
    "url": "https://mysingingmonsters.fandom.com/wiki/Rare_Whiz-bang"
   }
  ],
- "generated_at": "2026-11-26T03:35:59Z",
+ "generated_at": "2026-11-26T16:56:29Z",
  "roadmap": {
   "monsters": [
    {
@@ -66287,22 +66343,40 @@
    "status": "confirmed"
   },
   {
-   "confidence": 0.55,
-   "end": "2026-12-02T00:00:00Z",
+   "confidence": 1.0,
+   "end": "2026-12-01T00:00:00Z",
    "event": "Family Reunion (Promotion)",
-   "event_id": "family-reunion-promotion-2026-11-27-pred",
+   "event_id": "family-reunion-promotion-2026-11-26",
    "monster": "All Fire Expansion Monsters",
-   "start": "2026-11-27T00:00:00Z",
-   "status": "predicted"
+   "start": "2026-11-26T00:00:00Z",
+   "status": "confirmed"
   },
   {
-   "confidence": 0.42,
-   "end": "2026-12-02T00:00:00Z",
+   "confidence": 1.0,
+   "end": "2026-12-01T00:00:00Z",
+   "event": "Quirky Turkeys (Promotion)",
+   "event_id": "quirky-turkeys-promotion-2026-11-26",
+   "monster": "Epic Gobbleygourd",
+   "start": "2026-11-26T00:00:00Z",
+   "status": "confirmed"
+  },
+  {
+   "confidence": 1.0,
+   "end": "2026-12-01T00:00:00Z",
    "event": "Warm Hearts (Promotion)",
-   "event_id": "warm-hearts-promotion-2026-11-27-pred",
-   "monster": "All Rares",
-   "start": "2026-11-27T00:00:00Z",
-   "status": "predicted"
+   "event_id": "warm-hearts-promotion-2026-11-26",
+   "monster": "Fire Haven",
+   "start": "2026-11-26T00:00:00Z",
+   "status": "confirmed"
+  },
+  {
+   "confidence": 1.0,
+   "end": "2026-12-01T00:00:00Z",
+   "event": "Quirky Turkeys (Promotion)",
+   "event_id": "quirky-turkeys-promotion-2026-11-26",
+   "monster": "Rare Gobbleygourd",
+   "start": "2026-11-26T00:00:00Z",
+   "status": "confirmed"
   },
   {
    "confidence": 0.55,
@@ -69096,6 +69170,24 @@
   },
   {
    "confidence": 0.55,
+   "end": "2027-11-30T00:00:00Z",
+   "event": "Quirky Turkeys (Promotion)",
+   "event_id": "quirky-turkeys-promotion-2027-11-25-pred",
+   "monster": "Epic Gobbleygourd",
+   "start": "2027-11-25T00:00:00Z",
+   "status": "predicted"
+  },
+  {
+   "confidence": 0.55,
+   "end": "2027-11-30T00:00:00Z",
+   "event": "Quirky Turkeys (Promotion)",
+   "event_id": "quirky-turkeys-promotion-2027-11-25-pred",
+   "monster": "Rare Gobbleygourd",
+   "start": "2027-11-25T00:00:00Z",
+   "status": "predicted"
+  },
+  {
+   "confidence": 0.7,
    "end": "2027-12-02T00:00:00Z",
    "event": "Family Reunion (Promotion)",
    "event_id": "family-reunion-promotion-2027-11-27-pred",
@@ -69104,7 +69196,7 @@
    "status": "predicted"
   },
   {
-   "confidence": 0.42,
+   "confidence": 0.51,
    "end": "2027-12-02T00:00:00Z",
    "event": "Warm Hearts (Promotion)",
    "event_id": "warm-hearts-promotion-2027-11-27-pred",
@@ -69259,9 +69351,9 @@
  ],
  "stats": {
   "announced": 3,
-  "availability_rows": 1610,
+  "availability_rows": 1614,
   "event_pages": 0,
-  "events": 1572,
+  "events": 1574,
   "monsters": 0,
   "sources": {
    "bbb": 10,
