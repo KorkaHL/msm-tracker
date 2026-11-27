@@ -35106,29 +35106,29 @@
    "url": "https://mysingingmonsters.fandom.com/wiki/Feast-Ember"
   },
   {
-   "confidence": 0.55,
+   "confidence": 1.0,
    "description": "",
-   "end": "2026-12-03T00:00:00Z",
-   "first_seen": "1970-01-01T00:00:00Z",
-   "id": "greetings-promotion-2026-11-29-pred",
-   "image": "https://static.wikia.nocookie.net/mysingingmonsters/images/f/fe/Seasonal_Monsters.png/revision/latest/scale-to-width-down/600?cb=20260506215015",
+   "end": "2026-12-01T00:00:00Z",
+   "first_seen": "2026-11-27T23:28:36Z",
+   "id": "greetings-promotion-2026-11-27",
    "kind": "promotion",
    "monsters": [
-    "Seasonal Monsters"
+    "All Core Seasonals"
    ],
-   "parent": "",
+   "occasion": "'Seasonals' Greetings' Promotion (Black Friday 2026)",
+   "parent": "Black Friday 2026",
    "precision": "day",
    "section": "Availability",
    "series": "greetings-promotion",
-   "source": "prediction:2y,spread=1d",
-   "start": "2026-11-29T00:00:00Z",
-   "status": "predicted",
+   "source": "Availability/Seasonal:Availability",
+   "start": "2026-11-27T00:00:00Z",
+   "status": "confirmed",
    "tags": [
     "monsters",
     "promotion"
    ],
    "title": "Greetings (Promotion)",
-   "url": "https://mysingingmonsters.fandom.com/wiki/Seasonal_Monsters"
+   "url": "https://mysingingmonsters.fandom.com/wiki/All_Core_Seasonals"
   },
   {
    "announced_at": "2026-11-25T20:00:31Z",
@@ -39819,29 +39819,28 @@
    "url": "https://mysingingmonsters.fandom.com/wiki/All_Rares"
   },
   {
-   "confidence": 0.55,
+   "confidence": 0.7,
    "description": "",
-   "end": "2027-12-03T00:00:00Z",
-   "first_seen": "1970-01-01T00:00:00Z",
-   "id": "greetings-promotion-2027-11-29-pred",
-   "image": "https://static.wikia.nocookie.net/mysingingmonsters/images/f/fe/Seasonal_Monsters.png/revision/latest/scale-to-width-down/600?cb=20260506215015",
+   "end": "2027-12-02T00:00:00Z",
+   "first_seen": "2026-11-27T23:28:36Z",
+   "id": "greetings-promotion-2027-11-28-pred",
    "kind": "promotion",
    "monsters": [
-    "Seasonal Monsters"
+    "All Core Seasonals"
    ],
-   "parent": "",
+   "parent": "Black Friday 2026",
    "precision": "day",
    "section": "Availability",
    "series": "greetings-promotion",
-   "source": "prediction:2y,spread=1d",
-   "start": "2027-11-29T00:00:00Z",
+   "source": "prediction:3y,spread=2d",
+   "start": "2027-11-28T00:00:00Z",
    "status": "predicted",
    "tags": [
     "monsters",
     "promotion"
    ],
    "title": "Greetings (Promotion)",
-   "url": "https://mysingingmonsters.fandom.com/wiki/Seasonal_Monsters"
+   "url": "https://mysingingmonsters.fandom.com/wiki/All_Core_Seasonals"
   },
   {
    "confidence": 0.85,
@@ -40145,7 +40144,7 @@
    "url": "https://mysingingmonsters.fandom.com/wiki/Rare_Whiz-bang"
   }
  ],
- "generated_at": "2026-11-26T16:56:29Z",
+ "generated_at": "2026-11-27T23:28:36Z",
  "roadmap": {
   "monsters": [
    {
@@ -66379,13 +66378,13 @@
    "status": "confirmed"
   },
   {
-   "confidence": 0.55,
-   "end": "2026-12-03T00:00:00Z",
+   "confidence": 1.0,
+   "end": "2026-12-01T00:00:00Z",
    "event": "Greetings (Promotion)",
-   "event_id": "greetings-promotion-2026-11-29-pred",
-   "monster": "Seasonal Monsters",
-   "start": "2026-11-29T00:00:00Z",
-   "status": "predicted"
+   "event_id": "greetings-promotion-2026-11-27",
+   "monster": "All Core Seasonals",
+   "start": "2026-11-27T00:00:00Z",
+   "status": "confirmed"
   },
   {
    "confidence": 0.85,
@@ -69205,12 +69204,12 @@
    "status": "predicted"
   },
   {
-   "confidence": 0.55,
-   "end": "2027-12-03T00:00:00Z",
+   "confidence": 0.7,
+   "end": "2027-12-02T00:00:00Z",
    "event": "Greetings (Promotion)",
-   "event_id": "greetings-promotion-2027-11-29-pred",
-   "monster": "Seasonal Monsters",
-   "start": "2027-11-29T00:00:00Z",
+   "event_id": "greetings-promotion-2027-11-28-pred",
+   "monster": "All Core Seasonals",
+   "start": "2027-11-28T00:00:00Z",
    "status": "predicted"
   },
   {
@@ -69351,7 +69350,7 @@
  ],
  "stats": {
   "announced": 3,
-  "availability_rows": 1614,
+  "availability_rows": 1615,
   "event_pages": 0,
   "events": 1574,
   "monsters": 0,
