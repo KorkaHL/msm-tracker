@@ -34816,30 +34816,6 @@
   {
    "confidence": 1.0,
    "description": "",
-   "end": "2026-11-28T00:00:00Z",
-   "first_seen": "2026-11-19T02:35:46Z",
-   "id": "feast-ember-2026-11-15-pred",
-   "image": "https://static.wikia.nocookie.net/mysingingmonsters/images/1/13/GobbleygourdIdle.gif/revision/latest?cb=20241120040110",
-   "kind": "seasonal",
-   "monsters": [
-    "Gobbleygourd"
-   ],
-   "parent": "",
-   "precision": "day",
-   "section": "Availability",
-   "series": "feast-ember",
-   "source": "prediction:6y,spread=10d",
-   "start": "2026-11-15T00:00:00Z",
-   "status": "predicted",
-   "tags": [
-    "monsters"
-   ],
-   "title": "Feast-Ember",
-   "url": "https://mysingingmonsters.fandom.com/wiki/Feast-Ember"
-  },
-  {
-   "confidence": 1.0,
-   "description": "",
    "end": "2026-11-26T00:00:00Z",
    "first_seen": "2026-11-19T20:40:32Z",
    "id": "secret-sauce-promotion-2026-11-18",
@@ -34975,31 +34951,6 @@
    ],
    "title": "November Sale",
    "url": "https://mysingingmonsters.fandom.com/wiki/Epic_Mimic"
-  },
-  {
-   "confidence": 0.55,
-   "description": "",
-   "end": "2026-11-28T00:00:00Z",
-   "first_seen": "1970-01-01T00:00:00Z",
-   "id": "black-friday-promotion-2026-11-24-pred",
-   "image": "https://static.wikia.nocookie.net/mysingingmonsters/images/f/fe/Seasonal_Monsters.png/revision/latest/scale-to-width-down/600?cb=20260506215015",
-   "kind": "promotion",
-   "monsters": [
-    "Seasonal Monsters"
-   ],
-   "parent": "",
-   "precision": "day",
-   "section": "Availability",
-   "series": "black-friday-promotion",
-   "source": "prediction:2y,spread=0d",
-   "start": "2026-11-24T00:00:00Z",
-   "status": "predicted",
-   "tags": [
-    "monsters",
-    "promotion"
-   ],
-   "title": "Black Friday (Promotion)",
-   "url": "https://mysingingmonsters.fandom.com/wiki/Seasonal_Monsters"
   },
   {
    "confidence": 1.0,
@@ -40144,7 +40095,7 @@
    "url": "https://mysingingmonsters.fandom.com/wiki/Rare_Whiz-bang"
   }
  ],
- "generated_at": "2026-11-27T23:28:36Z",
+ "generated_at": "2026-11-28T07:52:17Z",
  "roadmap": {
   "monsters": [
    {
@@ -40277,6 +40228,10 @@
    },
    {
     "text": "More Epic Wublins will be released.",
+    "when": ""
+   },
+   {
+    "text": "More Clubbox Acts will be released",
     "when": ""
    },
    {
@@ -66161,15 +66116,6 @@
   },
   {
    "confidence": 1.0,
-   "end": "2026-11-28T00:00:00Z",
-   "event": "Feast-Ember",
-   "event_id": "feast-ember-2026-11-15-pred",
-   "monster": "Gobbleygourd",
-   "start": "2026-11-15T00:00:00Z",
-   "status": "predicted"
-  },
-  {
-   "confidence": 1.0,
    "end": "2026-11-26T00:00:00Z",
    "event": "Secret Sauce (Promotion)",
    "event_id": "secret-sauce-promotion-2026-11-18",
@@ -66322,15 +66268,6 @@
    "monster": "Epic Mimic",
    "start": "2026-11-23T00:00:00Z",
    "status": "confirmed"
-  },
-  {
-   "confidence": 0.55,
-   "end": "2026-11-28T00:00:00Z",
-   "event": "Black Friday (Promotion)",
-   "event_id": "black-friday-promotion-2026-11-24-pred",
-   "monster": "Seasonal Monsters",
-   "start": "2026-11-24T00:00:00Z",
-   "status": "predicted"
   },
   {
    "confidence": 1.0,
@@ -69352,7 +69289,7 @@
   "announced": 3,
   "availability_rows": 1615,
   "event_pages": 0,
-  "events": 1574,
+  "events": 1572,
   "monsters": 0,
   "sources": {
    "bbb": 10,
